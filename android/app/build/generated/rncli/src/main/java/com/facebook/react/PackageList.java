@@ -35,6 +35,8 @@ import com.rnmaps.maps.MapsPackage;
 import com.reactnativepagerview.PagerViewPackage;
 // react-native-paystack
 import com.arttitude360.reactnative.rnpaystack.RNPaystackPackage;
+// react-native-paystack-webview
+import com.oluwatobishokunbi.reactnativepaystackwebview.ReactNativePaystackWebviewPackage;
 // react-native-reanimated
 import com.swmansion.reanimated.ReanimatedPackage;
 // react-native-safe-area-context
@@ -45,6 +47,8 @@ import com.swmansion.rnscreens.RNScreensPackage;
 import com.azendoo.reactnativesnackbar.SnackbarPackage;
 // react-native-svg
 import com.horcrux.svg.SvgPackage;
+// react-native-webview
+import com.reactnativecommunity.webview.RNCWebViewPackage;
 
 public class PackageList {
   private Application application;
@@ -102,11 +106,13 @@ public class PackageList {
       new MapsPackage(),
       new PagerViewPackage(),
       new RNPaystackPackage(),
+      new ReactNativePaystackWebviewPackage(),
       new ReanimatedPackage(),
       new SafeAreaContextPackage(),
       new RNScreensPackage(),
       new SnackbarPackage(),
-      new SvgPackage()
+      new SvgPackage(),
+      new RNCWebViewPackage()
     ));
   }
 }

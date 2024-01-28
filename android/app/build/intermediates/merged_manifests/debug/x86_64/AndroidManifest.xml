@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.app.upfrica"
-    android:versionCode="11004"
-    android:versionName="1.10" >
+    android:versionCode="14004"
+    android:versionName="1.14" >
 
     <uses-sdk
         android:minSdkVersion="21"
@@ -13,7 +13,8 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- See https://developer.android.com/training/package-visibility/declaring for more details. -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" /> <!-- See https://developer.android.com/training/package-visibility/declaring for more details. -->
     <queries>
 
         <!-- Added to check the default browser that will host the AuthFlow. -->
@@ -27,7 +28,6 @@
         <package android:name="com.google.android.apps.maps" />
     </queries>
 
-    <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
@@ -88,7 +88,31 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/imagepicker_provider_paths" />
         </provider>
+        <provider
+            android:name="com.reactnativecommunity.webview.RNCWebViewFileProvider"
+            android:authorities="com.app.upfrica.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_paths" />
+        </provider>
 
+        <activity
+            android:name="co.paystack.android.ui.PinActivity"
+            android:theme="@style/Paystack.Dialog.PinEntry" />
+        <activity
+            android:name="co.paystack.android.ui.OtpActivity"
+            android:theme="@style/Paystack.Dialog.OtpEntry" />
+        <activity
+            android:name="co.paystack.android.ui.AuthActivity"
+            android:theme="@style/Paystack.Dialog.OtpEntry" />
+        <activity
+            android:name="co.paystack.android.ui.CardActivity"
+            android:theme="@style/Paystack.Dialog.CardEntry" />
+        <activity
+            android:name="co.paystack.android.ui.AddressVerificationActivity"
+            android:theme="@style/Paystack.Dialog" />
         <activity
             android:name="com.stripe.android.paymentsheet.PaymentSheetActivity"
             android:exported="false"
@@ -197,21 +221,6 @@
             android:exported="false"
             android:multiprocess="true" />
 
-        <activity
-            android:name="co.paystack.android.ui.PinActivity"
-            android:theme="@style/Paystack.Dialog.PinEntry" />
-        <activity
-            android:name="co.paystack.android.ui.OtpActivity"
-            android:theme="@style/Paystack.Dialog.OtpEntry" />
-        <activity
-            android:name="co.paystack.android.ui.AuthActivity"
-            android:theme="@style/Paystack.Dialog.OtpEntry" />
-        <activity
-            android:name="co.paystack.android.ui.CardActivity"
-            android:theme="@style/Paystack.Dialog.CardEntry" />
-        <activity
-            android:name="co.paystack.android.ui.AddressVerificationActivity"
-            android:theme="@style/Paystack.Dialog" />
         <activity
             android:name="com.stripe.android.ui.core.cardscan.CardScanActivity"
             android:exported="false"

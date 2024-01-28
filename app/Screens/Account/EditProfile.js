@@ -5,8 +5,12 @@ import { GlobalStyleSheet } from '../../constants/StyleSheet';
 import { COLORS } from '../../constants/theme';
 import Header from '../../layout/Header';
 import { useTheme } from '@react-navigation/native';
+import { useSelector } from "react-redux";
+
 
 const EditProfile = ({ navigation }) => {
+    const { token, user } = useSelector((state) => state.user);
+
 
     const {colors} = useTheme();
 
@@ -51,7 +55,7 @@ const EditProfile = ({ navigation }) => {
                                             },
                                             isFocused && GlobalStyleSheet.activeInput
                                         ]}
-                                        defaultValue={'+8801627789564'}
+                                        defaultValue={user.phone_number}
                                         onFocus={() => setisFocused(true)}
                                         onBlur={() => setisFocused(false)}
                                         placeholder='Type Mobile number'
@@ -59,22 +63,47 @@ const EditProfile = ({ navigation }) => {
                                     />
                                 </View>
                                 <View style={GlobalStyleSheet.inputGroup}>
-                                    <Text style={[GlobalStyleSheet.label,{color:colors.title}]}>Full Name</Text>
-                                    <TextInput
-                                        style={[GlobalStyleSheet.formControl,
-                                            {
-                                                backgroundColor:colors.input,
-                                                color:colors.title,
-                                                borderColor:colors.borderColor,
-                                            },
-                                            isFocused2 && GlobalStyleSheet.activeInput
-                                        ]}
-                                        defaultValue={'Srikanto Rajbongshi'}
-                                        onFocus={() => setisFocused2(true)}
-                                        onBlur={() => setisFocused2(false)}
-                                        placeholder='Type your name'
-                                        placeholderTextColor={colors.textLight}
-                                    />
+                                    <View style={{flexDirection:'row', justifyContent:'space-between'}}>
+                                        <View style={{flex:1, marginRight:10}}>
+                                            <Text style={[GlobalStyleSheet.label,{color:colors.title}]}>First Name</Text>
+                                            <TextInput
+                                                style={[GlobalStyleSheet.formControl,
+                                                    {
+                                                        backgroundColor:colors.input,
+                                                        color:colors.title,
+                                                        borderColor:colors.borderColor,
+                                                        
+                                                    },
+                                                    isFocused2 && GlobalStyleSheet.activeInput
+                                                ]}
+                                                defaultValue={user.first_name}
+                                                onFocus={() => setisFocused2(true)}
+                                                onBlur={() => setisFocused2(false)}
+                                                placeholder='Type your name'
+                                                placeholderTextColor={colors.textLight}
+                                            />
+                                        </View>
+                                        <View style={{flex:1}}>
+                                            <Text style={[GlobalStyleSheet.label,{color:colors.title}]}>Last Name</Text>
+                                            <TextInput
+                                                style={[GlobalStyleSheet.formControl,
+                                                    {
+                                                        backgroundColor:colors.input,
+                                                        color:colors.title,
+                                                        borderColor:colors.borderColor,
+                                                        
+                                                    },
+                                                    isFocused2 && GlobalStyleSheet.activeInput
+                                                ]}
+                                                defaultValue={user.last_name}
+                                                onFocus={() => setisFocused2(true)}
+                                                onBlur={() => setisFocused2(false)}
+                                                placeholder='Type your name'
+                                                placeholderTextColor={colors.textLight}
+                                            />
+                                        </View>
+                                  
+                                    </View>
                                 </View>
                                 <View style={GlobalStyleSheet.inputGroup}>
                                     <Text style={[GlobalStyleSheet.label,{color:colors.title}]}>Email</Text>
@@ -87,7 +116,7 @@ const EditProfile = ({ navigation }) => {
                                             },
                                             isFocused3 && GlobalStyleSheet.activeInput
                                         ]}
-                                        defaultValue={'srikantoraj123@gmail.com'}
+                                        defaultValue={user.email}
                                         onFocus={() => setisFocused3(true)}
                                         onBlur={() => setisFocused3(false)}
                                         placeholder='Type your email'
@@ -95,22 +124,47 @@ const EditProfile = ({ navigation }) => {
                                     />
                                 </View>
                                 <View style={GlobalStyleSheet.inputGroup}>
-                                    <Text style={[GlobalStyleSheet.label,{color:colors.title}]}>Location</Text>
-                                    <TextInput
-                                        style={[GlobalStyleSheet.formControl,
-                                            {
-                                                backgroundColor:colors.input,
-                                                color:colors.title,
-                                                borderColor:colors.borderColor,
-                                            },
-                                            isFocused4 && GlobalStyleSheet.activeInput
-                                        ]}
-                                        onFocus={() => setisFocused4(true)}
-                                        onBlur={() => setisFocused4(false)}
-                                        placeholder='Type your location'
-                                        placeholderTextColor={colors.textLight}
-                                        defaultValue={'Dhaka-1213, Bangladesh'}
-                                    />
+                                    <View style={{flexDirection:'row', justifyContent:'space-between'}}>
+                                        <View style={{flex:1, marginRight:10}}>
+                                            <Text style={[GlobalStyleSheet.label,{color:colors.title}]}>Town/City</Text>
+                                            <TextInput
+                                                style={[GlobalStyleSheet.formControl,
+                                                    {
+                                                        backgroundColor:colors.input,
+                                                        color:colors.title,
+                                                        borderColor:colors.borderColor,
+                                                        
+                                                    },
+                                                    isFocused2 && GlobalStyleSheet.activeInput
+                                                ]}
+                                                defaultValue={user.town}
+                                                onFocus={() => setisFocused2(true)}
+                                                onBlur={() => setisFocused2(false)}
+                                                placeholder='Type your name'
+                                                placeholderTextColor={colors.textLight}
+                                            />
+                                        </View>
+                                        <View style={{flex:1}}>
+                                            <Text style={[GlobalStyleSheet.label,{color:colors.title}]}>Country</Text>
+                                            <TextInput
+                                                style={[GlobalStyleSheet.formControl,
+                                                    {
+                                                        backgroundColor:colors.input,
+                                                        color:colors.title,
+                                                        borderColor:colors.borderColor,
+                                                        
+                                                    },
+                                                    isFocused2 && GlobalStyleSheet.activeInput
+                                                ]}
+                                                defaultValue={user.country}
+                                                onFocus={() => setisFocused2(true)}
+                                                onBlur={() => setisFocused2(false)}
+                                                placeholder='Country'
+                                                placeholderTextColor={colors.textLight}
+                                            />
+                                        </View>
+                                  
+                                    </View>
                                 </View>
                             </View>
                         </ScrollView>

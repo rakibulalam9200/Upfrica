@@ -98,8 +98,8 @@ android {
         applicationId "com.app.upfrica"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 12
-        versionName "1.11"
+        versionCode 14
+        versionName "1.14"
     }
 
     splits {
@@ -159,6 +159,9 @@ android {
 
 dependencies {
     // compile project(':react-native-paystack')
+    // compile project(':react-native-paystack')
+    implementation project(':react-native-paystack')
+
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
 

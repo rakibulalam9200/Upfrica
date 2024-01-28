@@ -1,5 +1,6 @@
-import { baseURL } from "@env";
+
 import { useTheme } from "@react-navigation/native";
+import { baseURL } from "@env";
 import axios from "axios";
 import React, { useState } from "react";
 import {
@@ -31,8 +32,8 @@ const SignIn = (props) => {
 
   const [isLoading, setIsLoading] = useState(false);
   // sign in module
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("srikantorajbongshi139@gmail.com");
+  const [password, setPassword] = useState("@srikanto12345");
 
   // console.log(isLoading, "isloading...");
 
@@ -98,7 +99,7 @@ const SignIn = (props) => {
         // Successfully signed in
         console.log("Success", "You have successfully signed in.");
         setIsLoading(false);
-        props.navigation.navigate("DrawerNavigation");
+        // props.navigation.navigate("DrawerNavigation");
       } else {
         // Sign-in failed
         console.log("Error", data.error);
@@ -161,6 +162,7 @@ const SignIn = (props) => {
               value={email}
               onChangeText={setEmail}
               keyboardType="email-address"
+              defaultValue="srikantorajbongshi139@gmail.com"
             />
           </View>
           <View style={GlobalStyleSheet.inputGroup}>
@@ -204,6 +206,7 @@ const SignIn = (props) => {
                 placeholderTextColor={colors.textLight}
                 value={password}
                 onChangeText={setPassword}
+                defaultValue="@srikanto12345"
               />
             </View>
           </View>

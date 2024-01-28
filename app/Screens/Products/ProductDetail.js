@@ -17,6 +17,8 @@ import { addToCart } from "../../../Store/cart";
 import CustomButton from "../../components/CustomButton";
 import { COLORS, FONTS } from "../../constants/theme";
 import Header from "../../layout/Header";
+// import { useSelector } from "react-redux";
+
 
 const productImg1 = require("../../assets/images/product/detail/pic1.png");
 const productImg2 = require("../../assets/images/product/detail/pic2.png");
@@ -56,6 +58,8 @@ const ProductDetail = ({ route, navigation }) => {
   const dispatch = useDispatch();
   const [details, setDetails] = useState({});
   const [ProductImages, setImages] = useState([]);
+  const { token, user } = useSelector((state) => state.user);
+
 
   const { data } = route.params;
   console.log(data?.description?.body);
@@ -105,6 +109,40 @@ const ProductDetail = ({ route, navigation }) => {
   const source = {
     html: `${data?.description?.body}`,
   };
+
+  const Cart = () =>{
+    console.log("cart clicked!!!")
+    var myHeaders = new Headers();
+    myHeaders.append("Accept", "application/json");
+    myHeaders.append("Authorization", `Bearer ${token}`);
+    // var raw = "{\n    \"cart\": {}\n}";
+
+    // var requestOptions = {
+    //   method: 'POST',
+    //   headers: myHeaders,
+    //   body: raw,
+    //   redirect: 'follow'
+    // };
+
+    // fetch("https://upfrica-staging.herokuapp.com/api/v1/carts", requestOptions)
+    //   .then(response => response.text())
+    //   .then(result => console.log(result))
+    //   .catch(error => console.log('error', error));
+
+    var requestOptions = {
+      method: 'GET',
+      headers: myHeaders,
+      redirect: 'follow'
+    };
+    
+    fetch("https://upfrica-staging.herokuapp.com/api/v1/carts?page=1", requestOptions)
+      .then(response => response.json())
+      .then(result => console.log(result[0]?.cart_items[0]))
+      .catch(error => console.log('error', error));
+      }
+
+
+
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.card }}>
@@ -465,8 +503,7 @@ const ProductDetail = ({ route, navigation }) => {
         </View>
         <CustomButton
           onPress={() => {
-            // console.log("Add cart clicked...");
-            // console.log("======", data);
+           
            let tempData =  {id:data.id,image:data?.product_images[0],title:data?.title,quantity:1, price:data?.sale_price?.cents/100,type:data?.description?.body,postage:data?.postage_fee?.cents/100,secondary_postage:data?.secondary_postage_fee?.cents/100} 
             dispatch(addToCart(tempData));
             navigation.navigate("Cart", { data });
@@ -477,6 +514,21 @@ const ProductDetail = ({ route, navigation }) => {
             paddingHorizontal: 40,
           }}
         />
+        {/* <CustomButton
+          onPress={() => {
+            // console.log("Add cart clicked...");
+            // console.log("======", data);
+           let tempData =  {id:data.id,image:data?.product_images[0],title:data?.title,quantity:1, price:data?.sale_price?.cents/100,type:data?.description?.body,postage:data?.postage_fee?.cents/100,secondary_postage:data?.secondary_postage_fee?.cents/100} 
+            dispatch(addToCart(tempData));
+            navigation.navigate("Cart", { data });
+            Cart()
+          }}
+          color={COLORS.upfricaTitle}
+          title="Add Cart"
+          style={{
+            paddingHorizontal: 40,
+          }}
+        /> */}
       </View>
       <Snackbar
         visible={isSnackbar}

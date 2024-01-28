@@ -2,7 +2,7 @@ import { COLORS, FONTS, SIZES } from "./theme";
 
 export const GlobalStyleSheet = {
     container : {
-        padding : 15,
+        paddingHorizontal:15,
     },
     formControl : {
         height : 50,

@@ -19,26 +19,21 @@ import Divider from "../../components/Dividers/Divider";
 import { GlobalStyleSheet } from "../../constants/StyleSheet";
 import { COLORS, FONTS } from "../../constants/theme";
 import Header from "../../layout/Header";
-
-// const CheckoutData = [
-//     {
-//         image : pic1,
-//         title : "Peter England Causual",
-//         type  : "Printed Longline Pure Cotteon T-shirt",
-//         quantity : 1,
-//         price : "$158.2",
-//         oldPrice : "$170",
-//     },
-
-// ]
+import { setCartId } from "../../../Store/cart";
+import { baseURL } from "@env";
+import axios from "axios";
+// import { cartItemList } from "../../../Store/cart";
 
 const Cart = ({ route, navigation }) => {
-  const { cart } = useSelector((state) => state.cart);
+  const { token, user } = useSelector((state) => state.user);
+  const { cart,cartId } = useSelector((state) => state.cart);
+  console.log(cartId)
   const { currency } = useSelector((state) => state.currency);
   const dispatch = useDispatch();
-
   const [CheckoutData, setCheckoutData] = useState([]);
   const [cartData, setCartData] = useState(cart);
+  const [isLoading, setIsLoading] = useState(false);
+
   let data = null;
 
   try {
@@ -49,55 +44,21 @@ const Cart = ({ route, navigation }) => {
     console.error("Error:", error);
   }
 
-  //   if () {
-  //     return (
-  //       <View>
-  //         <Text style={{ marginTop: "50%", textAlign: "center" }}>
-  //           Your cart is empty!!!
-  //         </Text>
-  //       </View>
-  //     );
-  //   }
 
-  //   useEffect(() => {
-  //     let tempData = [
-  //       {
-  //         id: data.id,
-  //         image: data?.product_images[0],
-  //         title: data?.title,
-  //         quantity: 1,
-  //         price: data?.sale_price?.cents / 100,
-  //         type: data?.description?.body,
-  //         postage: data?.postage_fee?.cents / 100,
-  //         secondary_postage: data?.secondary_postage_fee?.cents / 100,
-  //       },
-  //     ];
-  //     setCheckoutData(cart);
-  //   }, []);
-
-  // useEffect(()=>{
-
-  // })
-
-  // console.log("cart...",cart,'cart...')
 
   useEffect(() => {
     console.log("cart...", cart, "cart...");
     setCartData(cart);
   }, [cart]);
 
-  // console.log(CheckoutData,'llllllllllllll')
 
   const { colors } = useTheme();
-
   const [quantity, setquantity] = useState("");
   const [totalPrice, setTotalPrice] = useState(0);
   const [postageFee, setPostageFee] = useState(0);
   const [sndPostageFee, setSndPostageFee] = useState(0);
 
-  // const handleChildValueChange = (value) => {
-  // setTotalPrice(parseInt(value)*parseFloat(CheckoutData[0]?.price)?parseInt(value)*parseFloat(CheckoutData[0]?.price):data?.sale_price?.cents/100);
-  // };
+
 
   const handleTotalPrice = (cart) => {
     if (cart?.length > 0) {
@@ -142,6 +103,65 @@ const Cart = ({ route, navigation }) => {
     }
   }, [cart]);
 
+
+  const cartItems = async () => {
+    setIsLoading(true);
+
+    if(!cart.length)  return;
+    const headers = {
+      'Content-Type': 'application/json', 
+      'Authorization': `Bearer ${token}`, 
+    };
+
+
+    let itemList =[];
+    for( let item of cart){
+      console.log({"product_id" : item?.id, "quantity":item?.quantity})
+      let obj = {"product_id" : item?.id, "quantity":item?.quantity}
+      itemList.push(obj)
+    }
+  
+    var data = {
+        cart_items:{
+          user_id: user?.id,
+          items:itemList
+        }
+      };
+      console.log(data)
+      var requestOptions = {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify(data),
+        redirect: 'follow'
+      };
+
+      // dispatch(setCartId("100"))
+  
+      fetch("https://upfrica-staging.herokuapp.com/api/v1/cart_items/bulk_create", requestOptions)
+        .then(response => response.json())
+        .then(result => {
+          console.log(result);
+          console.log(result?.cart?.id)
+          dispatch(setCartId(result?.cart?.id))
+          setIsLoading(false);
+
+
+          if (cart?.length >0) {
+            navigation.navigate("AddDeliveryAddress", {
+              total: (totalPrice + postageFee + sndPostageFee).toFixed(2),
+            });
+          }else{
+              Alert.alert("Empty Card is not able to checkout!")
+          }
+
+
+        })
+        .catch(error => console.log('error', error));
+       
+   
+
+  };
+
   return (
     <SafeAreaView
       style={{
@@ -182,11 +202,10 @@ const Cart = ({ route, navigation }) => {
                       }}
                     >
                       <CheckoutItem
-                        // onPress={() => navigation.navigate('ProductDetail')}
-                        // onValueChange={handleChildValueChange}
+                       
                         data={data}
 
-                        // removeItem={removeItemData(data?.id)}
+                        
                       />
                     </View>
                   ))}
@@ -361,15 +380,12 @@ const Cart = ({ route, navigation }) => {
               btnSm
               color={COLORS.upfricaTitle}
               onPress={() => {
-                if (cart?.length > 0) {
-                  navigation.navigate("AddDeliveryAddress", {
-                    total: (totalPrice + postageFee + sndPostageFee).toFixed(2),
-                  });
-                }else{
-                    Alert.alert("Empty Card is not able to checkout!")
-                }
+                cartItems()
+                
               }}
               title="Checkout"
+              isLoading={isLoading}
+
             />
           </View>
         </View>
