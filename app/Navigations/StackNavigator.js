@@ -48,6 +48,7 @@ import { StatusBar } from "react-native";
 import { useTheme } from "@react-navigation/native";
 import Empty from "../Screens/Empty/Empty";
 import DirectBuy from "../Screens/Cart/DirectBuy";
+import RefundOrder from "../Screens/Orders/RefundOrder";
 const StackComponent = createNativeStackNavigator();
 
 const StackNavigator = () => {
@@ -112,6 +113,7 @@ const StackNavigator = () => {
         <StackComponent.Screen name={"Tables"} component={Tables} />
         <StackComponent.Screen name={"Toggles"} component={Toggles} />
         <StackComponent.Screen name={"DirectBuy"} component={DirectBuy} />
+        <StackComponent.Screen name={"Refund"} component={RefundOrder} />
       </StackComponent.Navigator>
     </>
   );

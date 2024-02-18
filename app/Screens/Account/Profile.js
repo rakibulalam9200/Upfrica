@@ -201,22 +201,16 @@ const Profile = ({navigation}) => {
                                     <Text style={{...FONTS.font,color:colors.title,flex:1}}>Edit Profile</Text>
                                     <FeatherIcon size={20} color={colors.textLight} name='chevron-right'/>
                                 </TouchableOpacity>
-                                {/* <TouchableOpacity
-                                    onPress={() => navigation.navigate('Address')}
+
+                                <TouchableOpacity
+                                    onPress={() => navigation.navigate('Refund')}
                                     style={[styles.listItem,{borderBottomColor:colors.borderColor}]}
                                 >
-                                    <FeatherIcon style={{marginRight:12}} color={colors.textLight} size={18} name='map-pin'/>
-                                    <Text style={{...FONTS.font,color:colors.title,flex:1}}>Saved Addresses</Text>
+                                    <FeatherIcon style={{marginRight:12}} color={colors.textLight} size={20} name='user'/>
+                                    <Text style={{...FONTS.font,color:colors.title,flex:1}}>Refund order</Text>
                                     <FeatherIcon size={20} color={colors.textLight} name='chevron-right'/>
-                                </TouchableOpacity> */}
-                                {/* <TouchableOpacity
-                                    onPress={() => RBSheetLanguage.current.open()}
-                                    style={[styles.listItem,{borderBottomColor:colors.borderColor}]}
-                                >
-                                    <Ionicons style={{marginRight:12}} color={colors.textLight} size={20} name='ios-language'/>
-                                    <Text style={{...FONTS.font,color:colors.title,flex:1}}>Select Language</Text>
-                                    <FeatherIcon size={20} color={colors.textLight} name='chevron-right'/>
-                                </TouchableOpacity> */}
+                                </TouchableOpacity>
+                               
                                 <TouchableOpacity
                                     style={[styles.listItem,{borderBottomColor:colors.borderColor}]}
                                 >

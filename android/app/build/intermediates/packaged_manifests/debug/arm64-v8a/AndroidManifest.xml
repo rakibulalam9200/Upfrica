@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.app.upfrica"
-    android:versionCode="14003"
-    android:versionName="1.14" >
+    android:versionCode="15003"
+    android:versionName="1.15" >
 
     <uses-sdk
         android:minSdkVersion="21"
@@ -14,20 +14,22 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.VIBRATE" /> <!-- See https://developer.android.com/training/package-visibility/declaring for more details. -->
-    <queries>
 
+    <queries>
+        <intent>
+            <action android:name="android.support.customtabs.action.CustomTabsService" />
+        </intent>
         <!-- Added to check the default browser that will host the AuthFlow. -->
         <intent>
             <action android:name="android.intent.action.VIEW" />
 
             <data android:scheme="http" />
-        </intent>
-        <!-- Added to check if Chrome is installed for browser-based payment authentication (e.g. 3DS1). -->
+        </intent> <!-- Added to check if Chrome is installed for browser-based payment authentication (e.g. 3DS1). -->
         <package android:name="com.android.chrome" /> <!-- Needs to be explicitly declared on Android R+ -->
         <package android:name="com.google.android.apps.maps" />
     </queries>
 
+    <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
@@ -68,6 +70,16 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="my-host"
+                    android:pathPrefix=""
+                    android:scheme="my-scheme" />
             </intent-filter>
         </activity>
 
@@ -88,6 +100,12 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/imagepicker_provider_paths" />
         </provider>
+
+        <activity
+            android:name="com.proyecto26.inappbrowser.ChromeTabsManagerActivity"
+            android:exported="false" >
+        </activity>
+
         <provider
             android:name="com.reactnativecommunity.webview.RNCWebViewFileProvider"
             android:authorities="com.app.upfrica.fileprovider"

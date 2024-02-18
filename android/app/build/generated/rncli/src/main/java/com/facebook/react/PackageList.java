@@ -27,6 +27,8 @@ import com.dropShadow.DropShadowPackage;
 import com.swmansion.gesturehandler.RNGestureHandlerPackage;
 // react-native-image-picker
 import com.imagepicker.ImagePickerPackage;
+// react-native-inappbrowser-reborn
+import com.proyecto26.inappbrowser.RNInAppBrowserPackage;
 // react-native-linear-gradient
 import com.BV.LinearGradient.LinearGradientPackage;
 // react-native-maps
@@ -102,6 +104,7 @@ public class PackageList {
       new DropShadowPackage(),
       new RNGestureHandlerPackage(),
       new ImagePickerPackage(),
+      new RNInAppBrowserPackage(),
       new LinearGradientPackage(),
       new MapsPackage(),
       new PagerViewPackage(),

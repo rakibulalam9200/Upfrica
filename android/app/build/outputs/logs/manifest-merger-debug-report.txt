@@ -1,10 +1,10 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:1:1-32:12
-INJECTED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:1:1-32:12
-INJECTED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:1:1-32:12
-INJECTED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:1:1-32:12
-MERGED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:1:1-32:12
+ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:1:1-36:12
+INJECTED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:1:1-36:12
+INJECTED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:1:1-36:12
+INJECTED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:1:1-36:12
+MERGED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:1:1-36:12
 MERGED from [com.facebook.flipper:flipper-network-plugin:0.125.0] C:\Users\srika\.gradle\caches\transforms-3\78849f144acfe48841156c5a1c4cf1ec\transformed\jetified-flipper-network-plugin-0.125.0\AndroidManifest.xml:8:1-15:12
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] C:\Users\srika\.gradle\caches\transforms-3\024dbf42cdc8215807d769da963f7240\transformed\jetified-flipper-fresco-plugin-0.125.0\AndroidManifest.xml:8:1-15:12
 MERGED from [com.facebook.flipper:flipper:0.125.0] C:\Users\srika\.gradle\caches\transforms-3\7791fe77b8ab9730d0e25ce55c6aa090\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:8:1-18:12
@@ -17,6 +17,7 @@ MERGED from [:stripe_stripe-react-native] C:\Users\srika\OneDrive\Documents\Upfr
 MERGED from [:react-native-drop-shadow] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-drop-shadow\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-gesture-handler] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-gesture-handler\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-image-picker] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-21:12
+MERGED from [:react-native-inappbrowser-reborn] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-inappbrowser-reborn\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-24:12
 MERGED from [:react-native-linear-gradient] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-linear-gradient\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-maps] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-maps\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-pager-view] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-pager-view\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
@@ -174,17 +175,17 @@ INJECTED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\debug\An
 INJECTED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\debug\AndroidManifest.xml:2:1-13:12
 	package
 		INJECTED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:1:1-32:12
+		ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:1:1-36:12
 		INJECTED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\debug\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:1:1-32:12
+		ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:1:1-36:12
 		INJECTED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\debug\AndroidManifest.xml
 	xmlns:tools
 		ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\debug\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:1:1-32:12
+		ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:1:1-36:12
 		INJECTED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\debug\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:1:11-69
@@ -194,6 +195,8 @@ MERGED from [com.facebook.flipper:flipper:0.125.0] C:\Users\srika\.gradle\caches
 MERGED from [com.facebook.flipper:flipper:0.125.0] C:\Users\srika\.gradle\caches\transforms-3\7791fe77b8ab9730d0e25ce55c6aa090\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:15:5-67
 MERGED from [:react-native-paystack] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-paystack\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-67
 MERGED from [:react-native-paystack] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-paystack\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-67
+MERGED from [:react-native-inappbrowser-reborn] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-inappbrowser-reborn\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-67
+MERGED from [:react-native-inappbrowser-reborn] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-inappbrowser-reborn\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-67
 MERGED from [com.stripe:financial-connections:20.29.2] C:\Users\srika\.gradle\caches\transforms-3\794a944da27277ee6864b0aeba47d052\transformed\jetified-financial-connections-20.29.2\AndroidManifest.xml:7:5-67
 MERGED from [com.stripe:financial-connections:20.29.2] C:\Users\srika\.gradle\caches\transforms-3\794a944da27277ee6864b0aeba47d052\transformed\jetified-financial-connections-20.29.2\AndroidManifest.xml:7:5-67
 MERGED from [com.google.android.gms:play-services-maps:18.0.2] C:\Users\srika\.gradle\caches\transforms-3\189eb831011d70b66f6d3e01d41a6374\transformed\jetified-play-services-maps-18.0.2\AndroidManifest.xml:24:5-67
@@ -213,15 +216,17 @@ ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\Androi
 	android:name
 		ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:6:22-78
 application
-ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:8:5-31:19
-MERGED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:8:5-31:19
-MERGED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:8:5-31:19
+ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:8:5-35:19
+MERGED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:8:5-35:19
+MERGED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:8:5-35:19
 MERGED from [:react-native-paystack] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-paystack\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:5-14:19
 MERGED from [:react-native-paystack] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-paystack\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:5-14:19
 MERGED from [:react-native-community_datetimepicker] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\@react-native-community\datetimepicker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-20
 MERGED from [:react-native-community_datetimepicker] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\@react-native-community\datetimepicker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-20
 MERGED from [:react-native-image-picker] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-19:19
 MERGED from [:react-native-image-picker] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-19:19
+MERGED from [:react-native-inappbrowser-reborn] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-inappbrowser-reborn\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:5-22:19
+MERGED from [:react-native-inappbrowser-reborn] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-inappbrowser-reborn\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:5-22:19
 MERGED from [:react-native-webview] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-webview\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-19:19
 MERGED from [:react-native-webview] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-webview\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-19:19
 MERGED from [com.facebook.react:react-android:0.71.8] C:\Users\srika\.gradle\caches\transforms-3\065ec53aec35c6822e50d60161b0331c\transformed\jetified-react-android-0.71.8-debug\AndroidManifest.xml:9:5-20
@@ -315,7 +320,7 @@ MERGED from [com.google.android.instantapps:instantapps:1.1.0] C:\Users\srika\.g
 		ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:9:7-38
 		ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:9:7-38
 activity#com.app.upfrica.MainActivity
-ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:15:7-26:18
+ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:15:7-30:18
 	android:label
 		ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:17:9-41
 	android:launchMode
@@ -328,8 +333,8 @@ ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\Androi
 		ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:18:9-118
 	android:name
 		ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:16:9-37
-intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:22:9-25:25
+intent-filter#action:name:android.intent.action.MAIN+action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+category:name:android.intent.category.LAUNCHER+data:host:my-host+data:pathPrefix:+data:scheme:my-scheme
+ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:22:9-29:25
 action#android.intent.action.MAIN
 ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:23:13-65
 	android:name
@@ -338,20 +343,40 @@ category#android.intent.category.LAUNCHER
 ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:24:13-73
 	android:name
 		ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:24:23-70
-meta-data#com.google.android.geo.API_KEY
-ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:27:7-29:66
-	android:value
-		ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:29:9-64
+action#android.intent.action.VIEW
+ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:25:13-65
 	android:name
-		ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:28:9-54
+		ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:25:21-62
+category#android.intent.category.DEFAULT
+ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:26:23-69
+category#android.intent.category.BROWSABLE
+ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:27:13-74
+	android:name
+		ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:27:23-71
+data
+ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:28:13-93
+	android:host
+		ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:28:46-68
+	android:scheme
+		ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:28:19-45
+	android:pathPrefix
+		ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:28:69-90
+meta-data#com.google.android.geo.API_KEY
+ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:31:7-33:66
+	android:value
+		ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:33:9-64
+	android:name
+		ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:32:9-54
 uses-library#org.apache.http.legacy
-ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:30:7-85
+ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:34:7-85
 MERGED from [com.google.android.gms:play-services-maps:18.0.2] C:\Users\srika\.gradle\caches\transforms-3\189eb831011d70b66f6d3e01d41a6374\transformed\jetified-play-services-maps-18.0.2\AndroidManifest.xml:39:9-41:40
 MERGED from [com.google.android.gms:play-services-maps:18.0.2] C:\Users\srika\.gradle\caches\transforms-3\189eb831011d70b66f6d3e01d41a6374\transformed\jetified-play-services-maps-18.0.2\AndroidManifest.xml:39:9-41:40
 	android:required
-		ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:30:59-83
+		ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:34:59-83
 	android:name
-		ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:30:21-58
+		ADDED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml:34:21-58
 uses-sdk
 INJECTED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\srika\OneDrive\Documents\Upfrica\android\app\src\main\AndroidManifest.xml
@@ -380,6 +405,8 @@ MERGED from [:react-native-gesture-handler] C:\Users\srika\OneDrive\Documents\Up
 MERGED from [:react-native-gesture-handler] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-gesture-handler\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-image-picker] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-image-picker] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-inappbrowser-reborn] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-inappbrowser-reborn\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-inappbrowser-reborn] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-inappbrowser-reborn\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-linear-gradient] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-linear-gradient\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-linear-gradient] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-linear-gradient\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-maps] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-maps\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
@@ -724,6 +751,26 @@ ADDED from [:react-native-image-picker] C:\Users\srika\OneDrive\Documents\Upfric
 		ADDED from [:react-native-image-picker] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-67
 	android:name
 		ADDED from [:react-native-image-picker] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:17-67
+queries
+ADDED from [:react-native-inappbrowser-reborn] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-inappbrowser-reborn\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:5-15:15
+MERGED from [com.stripe:financial-connections:20.29.2] C:\Users\srika\.gradle\caches\transforms-3\794a944da27277ee6864b0aeba47d052\transformed\jetified-financial-connections-20.29.2\AndroidManifest.xml:10:5-18:15
+MERGED from [com.stripe:financial-connections:20.29.2] C:\Users\srika\.gradle\caches\transforms-3\794a944da27277ee6864b0aeba47d052\transformed\jetified-financial-connections-20.29.2\AndroidManifest.xml:10:5-18:15
+MERGED from [com.stripe:payments-core:20.29.2] C:\Users\srika\.gradle\caches\transforms-3\35a6336b7baed2749fa5ecaa987d97d9\transformed\jetified-payments-core-20.29.2\AndroidManifest.xml:8:5-12:15
+MERGED from [com.stripe:payments-core:20.29.2] C:\Users\srika\.gradle\caches\transforms-3\35a6336b7baed2749fa5ecaa987d97d9\transformed\jetified-payments-core-20.29.2\AndroidManifest.xml:8:5-12:15
+MERGED from [com.google.android.gms:play-services-maps:18.0.2] C:\Users\srika\.gradle\caches\transforms-3\189eb831011d70b66f6d3e01d41a6374\transformed\jetified-play-services-maps-18.0.2\AndroidManifest.xml:30:5-34:15
+MERGED from [com.google.android.gms:play-services-maps:18.0.2] C:\Users\srika\.gradle\caches\transforms-3\189eb831011d70b66f6d3e01d41a6374\transformed\jetified-play-services-maps-18.0.2\AndroidManifest.xml:30:5-34:15
+intent#action:name:android.support.customtabs.action.CustomTabsService
+ADDED from [:react-native-inappbrowser-reborn] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-inappbrowser-reborn\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:9-14:18
+action#android.support.customtabs.action.CustomTabsService
+ADDED from [:react-native-inappbrowser-reborn] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-inappbrowser-reborn\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-90
+	android:name
+		ADDED from [:react-native-inappbrowser-reborn] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-inappbrowser-reborn\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:21-87
+activity#com.proyecto26.inappbrowser.ChromeTabsManagerActivity
+ADDED from [:react-native-inappbrowser-reborn] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-inappbrowser-reborn\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:9-21:20
+	android:exported
+		ADDED from [:react-native-inappbrowser-reborn] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-inappbrowser-reborn\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:20:13-37
+	android:name
+		ADDED from [:react-native-inappbrowser-reborn] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-inappbrowser-reborn\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:13-81
 provider#com.reactnativecommunity.webview.RNCWebViewFileProvider
 ADDED from [:react-native-webview] C:\Users\srika\OneDrive\Documents\Upfrica\node_modules\react-native-webview\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-18:20
 	android:grantUriPermissions
@@ -842,32 +889,6 @@ intent-filter#action:name:android.intent.action.VIEW+category:name:android.inten
 ADDED from [com.stripe:link:20.29.2] C:\Users\srika\.gradle\caches\transforms-3\057ebfdb47d014f7781d3d0a8902e5a2\transformed\jetified-link-20.29.2\AndroidManifest.xml:20:13-30:29
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:complete+data:path:/com.app.upfrica+data:scheme:link-popup
 ADDED from [com.stripe:link:20.29.2] C:\Users\srika\.gradle\caches\transforms-3\057ebfdb47d014f7781d3d0a8902e5a2\transformed\jetified-link-20.29.2\AndroidManifest.xml:20:13-30:29
-action#android.intent.action.VIEW
-ADDED from [com.stripe:link:20.29.2] C:\Users\srika\.gradle\caches\transforms-3\057ebfdb47d014f7781d3d0a8902e5a2\transformed\jetified-link-20.29.2\AndroidManifest.xml:21:17-69
-	android:name
-		ADDED from [com.stripe:link:20.29.2] C:\Users\srika\.gradle\caches\transforms-3\057ebfdb47d014f7781d3d0a8902e5a2\transformed\jetified-link-20.29.2\AndroidManifest.xml:21:25-66
-category#android.intent.category.DEFAULT
-ADDED from [com.stripe:link:20.29.2] C:\Users\srika\.gradle\caches\transforms-3\057ebfdb47d014f7781d3d0a8902e5a2\transformed\jetified-link-20.29.2\AndroidManifest.xml:23:17-76
-	android:name
-		ADDED from [com.stripe:link:20.29.2] C:\Users\srika\.gradle\caches\transforms-3\057ebfdb47d014f7781d3d0a8902e5a2\transformed\jetified-link-20.29.2\AndroidManifest.xml:23:27-73
-category#android.intent.category.BROWSABLE
-ADDED from [com.stripe:link:20.29.2] C:\Users\srika\.gradle\caches\transforms-3\057ebfdb47d014f7781d3d0a8902e5a2\transformed\jetified-link-20.29.2\AndroidManifest.xml:24:17-78
-	android:name
-		ADDED from [com.stripe:link:20.29.2] C:\Users\srika\.gradle\caches\transforms-3\057ebfdb47d014f7781d3d0a8902e5a2\transformed\jetified-link-20.29.2\AndroidManifest.xml:24:27-75
-data
-ADDED from [com.stripe:link:20.29.2] C:\Users\srika\.gradle\caches\transforms-3\057ebfdb47d014f7781d3d0a8902e5a2\transformed\jetified-link-20.29.2\AndroidManifest.xml:26:17-29:51
-	android:path
-		ADDED from [com.stripe:link:20.29.2] C:\Users\srika\.gradle\caches\transforms-3\057ebfdb47d014f7781d3d0a8902e5a2\transformed\jetified-link-20.29.2\AndroidManifest.xml:28:21-53
-	android:host
-		ADDED from [com.stripe:link:20.29.2] C:\Users\srika\.gradle\caches\transforms-3\057ebfdb47d014f7781d3d0a8902e5a2\transformed\jetified-link-20.29.2\AndroidManifest.xml:27:21-44
-	android:scheme
-		ADDED from [com.stripe:link:20.29.2] C:\Users\srika\.gradle\caches\transforms-3\057ebfdb47d014f7781d3d0a8902e5a2\transformed\jetified-link-20.29.2\AndroidManifest.xml:29:21-48
-queries
-ADDED from [com.stripe:financial-connections:20.29.2] C:\Users\srika\.gradle\caches\transforms-3\794a944da27277ee6864b0aeba47d052\transformed\jetified-financial-connections-20.29.2\AndroidManifest.xml:10:5-18:15
-MERGED from [com.stripe:payments-core:20.29.2] C:\Users\srika\.gradle\caches\transforms-3\35a6336b7baed2749fa5ecaa987d97d9\transformed\jetified-payments-core-20.29.2\AndroidManifest.xml:8:5-12:15
-MERGED from [com.stripe:payments-core:20.29.2] C:\Users\srika\.gradle\caches\transforms-3\35a6336b7baed2749fa5ecaa987d97d9\transformed\jetified-payments-core-20.29.2\AndroidManifest.xml:8:5-12:15
-MERGED from [com.google.android.gms:play-services-maps:18.0.2] C:\Users\srika\.gradle\caches\transforms-3\189eb831011d70b66f6d3e01d41a6374\transformed\jetified-play-services-maps-18.0.2\AndroidManifest.xml:30:5-34:15
-MERGED from [com.google.android.gms:play-services-maps:18.0.2] C:\Users\srika\.gradle\caches\transforms-3\189eb831011d70b66f6d3e01d41a6374\transformed\jetified-play-services-maps-18.0.2\AndroidManifest.xml:30:5-34:15
 intent#action:name:android.intent.action.VIEW+data:scheme:http
 ADDED from [com.stripe:financial-connections:20.29.2] C:\Users\srika\.gradle\caches\transforms-3\794a944da27277ee6864b0aeba47d052\transformed\jetified-financial-connections-20.29.2\AndroidManifest.xml:13:9-17:18
 activity#com.stripe.android.financialconnections.FinancialConnectionsSheetRedirectActivity

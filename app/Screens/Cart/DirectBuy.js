@@ -1,5 +1,8 @@
+// https://blog.logrocket.com/improving-mobile-ux-react-native-inappbrowser-reborn/
 import { useTheme } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
+import { InAppBrowser } from 'react-native-inappbrowser-reborn'
+import { getDeepLink } from "../../../utilities";
 import {
   Alert,
   KeyboardAvoidingView,
@@ -13,6 +16,7 @@ import {
   Linking
 } from "react-native";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
+// import InAppBrowser from 'react-native-inappbrowser-reborn';
 import FeatherIcon from "react-native-vector-icons/Feather";
 import { useDispatch, useSelector } from "react-redux";
 import CheckoutItem from "../../components/CheckoutItem";
@@ -46,6 +50,9 @@ const DirectBuy = ({ route, navigation }) => {
   } catch (error) {
     console.error("Error:", error);
   }
+
+
+
 
 
   useEffect(()=>{
@@ -127,10 +134,38 @@ const DirectBuy = ({ route, navigation }) => {
 
 
 
+  const  onLogin = async(URL)=> {
+    const deepLink = getDeepLink('callback')
+    const url = `${URL}?redirect_uri=${deepLink}`
+    try {
+      if (await InAppBrowser.isAvailable()) {
+        InAppBrowser.openAuth(url, deepLink, {
+          // iOS Properties
+          ephemeralWebSession: false,
+          // Android Properties
+          showTitle: false,
+          enableUrlBarHiding: true,
+          enableDefaultShare: false
+        }).then((response) => {
+          navigation.navigate('Refund');
+          if (
+            response.type === 'success' &&
+            response.url
+          ) {
+            Linking.openURL(response.url)
+          }
+        })
+      } else Linking.openURL(url)
+    } catch (error) {
+      Linking.openURL(url)
+    }
+  }
+
 
   const placeOrder = async () => {
     setIsLoading(true);
     // setIsLoading(false);
+
 
     if(!cart.length)  return;
     const headers = {
@@ -149,17 +184,22 @@ const DirectBuy = ({ route, navigation }) => {
     if (!addressId){
       Alert.alert("Address must be selected")
     }
-  
+    const deepLink = getDeepLink('callback')
     var data = {
         checkout:{
           address_id: addressId,
-          product_id:itemList[0].product_id,
-          quantity:itemList[0]?.quantity,
-          currency: "usd",
+          products:[
+            {
+              id:itemList[0].product_id,
+              quantity:itemList[0]?.quantity
+            }
+          ],
+          redirect_uri: deepLink,
           payment_method: "paystack",
         }
       };
-      console.log(data)
+
+      
       
       
       var requestOptions = {
@@ -169,13 +209,15 @@ const DirectBuy = ({ route, navigation }) => {
         redirect: 'follow'
       };
 
-      
+      // _addLinkingListener();
   
       fetch("https://upfrica-staging.herokuapp.com/api/v1/orders/checkout", requestOptions)
         .then(response => response.json())
         .then(result => {
-          console.log(result)
-          Linking.openURL(result?.paystack?.data?.authorization_url);
+          // console.log(result)
+          // Linking.openURL(result?.paystack?.data?.authorization_url);
+          // handleOpenInAppBrowser(result?.paystack?.data?.authorization_url);
+          onLogin(result?.paystack?.data?.authorization_url);
           setIsLoading(false);
         })
         .catch(error =>{ console.log('error', error);
@@ -185,7 +227,13 @@ const DirectBuy = ({ route, navigation }) => {
    
 
   };
-
+  // const  _addLinkingListener = () => {
+  //   Linking.addEventListener("url", _handleRedirect);
+  // };
+  const _handleRedirect = (event) => {
+    let data = Linking.parse(event.url);
+    console.log(data)
+  }
   return (
     <SafeAreaView
       style={{

@@ -94,16 +94,17 @@ const AddDeliveryAddress = ({ route, navigation }) => {
     };
     
     
-    var data = {
-        order: {
-            currency: "USD"
-        }};
+    // var data = {
+    //     order: {
+    //         currency: "USD"
+    //     }};
+        var data = {redirect_uri:"https://google.com"};
       
       axios.post(`https://upfrica-staging.herokuapp.com/api/v1/orders/${id}/create_paystack_transaction`, JSON.stringify(data), { headers })
             .then(response => {
               console.log(response?.data);
 
-              Linking.openURL(response?.data?.paystack?.data?.authorization_url +"/?name=srikanto");
+              // Linking.openURL(response?.data?.paystack?.data?.authorization_url );
               setIsLoading(false);
 
             })
