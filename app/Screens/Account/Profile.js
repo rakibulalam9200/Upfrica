@@ -1,19 +1,16 @@
 import React, { useRef } from 'react';
 import { Image, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import FeatherIcon from 'react-native-vector-icons/Feather';
 import RBSheet from 'react-native-raw-bottom-sheet';
-import Octicons from 'react-native-vector-icons/Octicons';
-import { GlobalStyleSheet } from '../../constants/StyleSheet';
-import { COLORS, FONTS, IMAGES } from '../../constants/theme';
-import Header from '../../layout/Header';
-import india from '../../assets/images/flags/india.png';
+import FeatherIcon from 'react-native-vector-icons/Feather';
+import { useSelector } from "react-redux";
 import UnitedStates from '../../assets/images/flags/UnitedStates.png';
 import german from '../../assets/images/flags/german.png';
+import india from '../../assets/images/flags/india.png';
 import italian from '../../assets/images/flags/italian.png';
 import spanish from '../../assets/images/flags/spanish.png';
-import { IconButton } from 'react-native-paper';
-import { useSelector } from "react-redux";
+import { GlobalStyleSheet } from '../../constants/StyleSheet';
+import { FONTS, IMAGES } from '../../constants/theme';
+import Header from '../../layout/Header';
 
 import { useTheme } from '@react-navigation/native';
 
@@ -202,6 +199,22 @@ const Profile = ({navigation}) => {
                                     <FeatherIcon size={20} color={colors.textLight} name='chevron-right'/>
                                 </TouchableOpacity>
 
+                                <TouchableOpacity
+                                    onPress={() => navigation.navigate('OrderList')}
+                                    style={[styles.listItem,{borderBottomColor:colors.borderColor}]}
+                                >
+                                    <FeatherIcon style={{marginRight:12}} color={colors.textLight} size={20} name='user'/>
+                                    <Text style={{...FONTS.font,color:colors.title,flex:1}}>Orders List</Text>
+                                    <FeatherIcon size={20} color={colors.textLight} name='chevron-right'/>
+                                </TouchableOpacity>
+                                <TouchableOpacity
+                                    onPress={() => navigation.navigate('CancelOrders')}
+                                    style={[styles.listItem,{borderBottomColor:colors.borderColor}]}
+                                >
+                                    <FeatherIcon style={{marginRight:12}} color={colors.textLight} size={20} name='user'/>
+                                    <Text style={{...FONTS.font,color:colors.title,flex:1}}>Cancel Orders</Text>
+                                    <FeatherIcon size={20} color={colors.textLight} name='chevron-right'/>
+                                </TouchableOpacity>
                                 <TouchableOpacity
                                     onPress={() => navigation.navigate('Refund')}
                                     style={[styles.listItem,{borderBottomColor:colors.borderColor}]}

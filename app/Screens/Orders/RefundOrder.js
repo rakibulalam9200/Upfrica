@@ -1,169 +1,331 @@
-import { useNavigation, useTheme } from '@react-navigation/native';
-import React, { useEffect } from 'react';
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import { useDispatch, useSelector } from 'react-redux';
+import { useNavigation, useTheme } from "@react-navigation/native";
+import React, { useEffect, useRef, useState } from "react";
+import {
+  ActivityIndicator,
+  FlatList,
+  Pressable,
+  SafeAreaView,
+  StyleSheet,
+  View,
+} from "react-native";
+import { useDispatch, useSelector } from "react-redux";
 // import { COLORS, FONTS } from '../constants/theme';
-import { COLORS, FONTS } from '../../constants/theme';
-import { addToCart } from '../../../Store/cart';
+import { baseURL } from "@env";
+import axios from "axios";
+import { Text } from "react-native";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import DeleteModal from "../../components/Modal/DeleteModal";
+import { GlobalStyleSheet } from "../../constants/StyleSheet";
+import { FONTS } from "../../constants/theme";
+import Header from "../../layout/Header";
 
-const RefundOrder = ({ onPress,id=1,image="",category="",title="",price="0",oldPrice="",isLike=true,offer="",handleLike,description="", postage_fee = "0", secondary_postage_fee = "0", type="0"}) => {
-    const currency = useSelector(((state)=> state.currency.currency))
-    const navigation = useNavigation();
-    const product ={}
-    const {colors} = useTheme();
-    const dispatch = useDispatch();
-    console.log(postage_fee, secondary_postage_fee)
+const RefundOrder = () => {
+  const currency = useSelector((state) => state.currency.currency);
+  const { token, user } = useSelector((state) => state.user);
+  const navigation = useNavigation();
+  const product = {};
+  const { colors } = useTheme();
+  const dispatch = useDispatch();
+  const [orders, setOrders] = useState({});
+  const [dataLoader, setDataLoader] = useState(false);
+  const [refresh, setRefresh] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const orderInfo = useRef(null);
 
-    useEffect(()=>{
+  useEffect(() => {}, [currency]);
 
-    },[currency])
-   
-    
-    return(
-        <TouchableOpacity
+  const getOrders = () => {
+    try {
+      setDataLoader(true);
+      axios
+        .get(`${baseURL}/orders`, {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        .then((response) => {
+          // console.log('response.......',response)
+          if (response?.status === 200) {
+            console.log("data response......0 index", response.data[0]);
+            setOrders(response?.data);
+            setDataLoader(false);
+          }
+        })
+        .catch((error) => console.log(error.response));
+    } catch (error) {
+      console.log(error);
+      setDataLoader(false);
+    } finally {
+    }
+  };
 
-            activeOpacity={.8}
-            onPress={() => onPress && onPress()}
-            
-            style={[
-                styles.productCard,
-                {
-                    backgroundColor:colors.card,
-                    padding:20,
-                    margin:20,
-                }
-            ]}
+  const cancelandDeleteOrder = async () => {
+    console.log(
+      orderInfo.current.id,
+      "orderID...........",
+      orderInfo.current.buyer.id
+    );
+    console.log(
+      `${baseURL}/orders/${orderInfo?.current?.id}`,
+      "orderID........."
+    );
+
+    let body = {
+      order_cancellation_request: {
+        order_id: orderInfo.current.id,
+        creator_id: orderInfo.current.buyer.id,
+        seller_id: 1,
+        reason_by_buyer: "wrong item",
+      },
+    };
+
+    const headers = {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    };
+
+    let requestOptions = {
+      method: "POST",
+      headers: headers,
+      body: JSON.stringify(body),
+    };
+
+    fetch(`${baseURL}/order_cancellation_requests`, requestOptions)
+      .then((response) => response.json())
+      .then((result) => {
+        if (result) {
+          axios
+            .delete(`${baseURL}/orders/${orderInfo?.current?.id}`, {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            })
+            .then((response) => {
+              console.log("response.......", response);
+              setRefresh((pre) => !pre);
+              setIsModalVisible(false);
+            });
+        }
+      })
+      .catch((error) => console.log("error", error));
+  };
+
+  useEffect(() => {
+    getOrders();
+  }, [refresh]);
+
+  const OrderCard = ({ order }) => {
+    return (
+      <View
+        style={{
+          marginVertical: 12,
+          paddingHorizontal: 12,
+          marginHorizontal: 12,
+          paddingBottom: 12,
+          paddingTop: 12,
+          borderRadius: 5,
+          backgroundColor: colors.card,
+          ...GlobalStyleSheet.shadow,
+        }}
+      >
+        <View
+          activeOpacity={0.9}
+          //   onPress={onPress}
+          style={{
+            flexDirection: "row",
+          }}
         >
-            <View>
-                <Image
-                    source={{ uri: image }}
-                    style={{
-                        
-                        width: 120, 
-                        height: 120,
-                        
-                    }}
-                />
-                <View
-                    style={[{
-                        position:'absolute',
-                        top:0,
-                        left:0,
-                        paddingHorizontal:8,
-                        paddingVertical:2,
-                        backgroundColor:COLORS.secondary,
-                    },offer === 'sale' && {
-                        backgroundColor:COLORS.primary,
-                    }]}
-                >
-                    <Text style={[{...FONTS.fontXs,color:COLORS.white},offer === 'sale' && {textTransform:'uppercase'}]}>{offer}</Text>
-                </View>
-                <TouchableOpacity
-                    onPress={() => handleLike(id)}
-                    style={{
-                        position:'absolute',
-                        top:0,
-                        right:0,
-                        padding:5,
-                    }}
-                >
-                    <FontAwesome 
-                        size={16}
-                        color={isLike ? "#F9427B" : COLORS.text}
-                        name={isLike ? "heart" : "heart-o"}
-                    />
-                </TouchableOpacity>
-            </View>
-            <View
-                style={{
-                    paddingHorizontal:10,
-                    paddingVertical:10,
-                }}
+          <View
+            style={{
+              flex: 1,
+              flexDirection: "row",
+              justifyContent: "space-between",
+            }}
+          >
+            <Text
+              numberOfLines={1}
+              style={{
+                ...FONTS.font,
+                ...FONTS.h5,
+                color: colors.primary,
+                marginBottom: 4,
+              }}
             >
-                <Text
-                    style={{
-                        ...FONTS.fontSm,
-                        color:colors.text,
-                        marginBottom:5,
-                    }}
-                >{category}</Text>
-                <Text
-                    numberOfLines={2}
-                    style={{
-                        ...FONTS.h6,
-                        ...FONTS.fontTitle,
-                        color:colors.title,
-                        fontSize:14,
-                    }}
-                >{title}</Text>
-                <View
-                    style={{
-                        flexDirection:'row',
-                        // alignItems:'center',
-                        justifyContent:'space-between',
-                        marginTop:8,
-                        marginBottom:2,
-                    }}
-                >
-                    <Text style={{...FONTS.h5,color:COLORS.upfricaTitle}}>{currency.value}{price}</Text>
-                    {/* <Text style={{
-                        ...FONTS.font,
-                        color:colors.textLight,
-                        textDecorationLine:'line-through',
-                        marginLeft:6,
-                        opacity:.7,
-                    }}>{currency.value}{oldPrice}</Text>
-                     */}
-                    
-                    <TouchableOpacity
-                onPress={() =>{
-                    let tempData =  {id:id,image:image,title:title,quantity:1, price:price,type:description?.body,postage:postage_fee?.cents/100,secondary_postage:secondary_postage_fee?.cents/100, type:type} 
-                    dispatch(addToCart(tempData));
-                  navigation.navigate('DirectBuy', {id : id,image:image,title:title,price:price,isLike:isLike, type:description?.body, postage:postage_fee?.cents/100,secondary_postage:secondary_postage_fee?.cents/100})
+              {order?.buyer?.first_name + " " + order?.buyer?.last_name}
+            </Text>
+            <Pressable
+              onPress={() => {
+                orderInfo.current = order;
+                setIsModalVisible(true);
+              }}
+            >
+              <MaterialCommunityIcons
+                size={20}
+                color={"#850101 "}
+                name="delete"
+              />
+            </Pressable>
+          </View>
+        </View>
+        <Text
+          numberOfLines={1}
+          style={{
+            ...FONTS.font,
+            ...FONTS.h6,
+            color: colors.secondary,
+            marginBottom: 4,
+          }}
+        >
+          {`Order Id: ${order?.id}`}
+        </Text>
+        <Text
+          numberOfLines={1}
+          style={{
+            ...FONTS.font,
+            ...FONTS.h6,
+            color: colors.secondary,
+            marginBottom: 4,
+          }}
+        >
+          {`Product Quantity: ${order?.order_quantity}`}
+        </Text>
+        <View
+          activeOpacity={0.9}
+          //   onPress={onPress}
+          style={{
+            flexDirection: "row",
+          }}
+        >
+          <View
+            style={{
+              flex: 1,
+              flexDirection: "row",
+              justifyContent: "space-between",
+            }}
+          >
+            <Text
+              numberOfLines={1}
+              style={{
+                ...FONTS.font,
+                ...FONTS.fontTitle,
+                color: colors.title,
+                marginBottom: 4,
+              }}
+            >
+              {order?.buyer?.email}
+            </Text>
+          </View>
+        </View>
+        <Text
+          numberOfLines={1}
+          style={{
+            ...FONTS.font,
+            ...FONTS.fontRegular,
+            color: colors.secondary,
+            marginBottom: 4,
+          }}
+        >
+          {`Address:  ${order?.address?.address_data?.address_line_1}, ${order?.address?.address_data?.postcode}, ${order?.address?.address_data?.town}, ${order?.address?.address_data?.country}`}
+        </Text>
+        <Text
+          numberOfLines={1}
+          style={{
+            ...FONTS.font,
+            ...FONTS.fontRegular,
+            color: colors.secondary,
+            marginBottom: 4,
+          }}
+        >
+          {`Mobile no. ${order?.address?.address_data?.phone_number}`}
+        </Text>
+        <View
+          activeOpacity={0.9}
+          //   onPress={onPress}
+          style={{
+            flexDirection: "row",
+          }}
+        >
+          <View
+            style={{
+              flex: 1,
+              flexDirection: "row",
+              justifyContent: "space-between",
+            }}
+          >
+            <Text
+              numberOfLines={1}
+              style={{
+                ...FONTS.font,
+                ...FONTS.h6,
+                color: colors.secondary,
+                marginBottom: 4,
+              }}
+            >
+              {`Total: ${order?.total_fee?.cents} ${order?.buyer?.currency}`}
+            </Text>
+            <Text
+              numberOfLines={1}
+              style={{
+                ...FONTS.font,
+                ...FONTS.h6,
+                color: colors.primary,
+                marginBottom: 4,
+              }}
+            >
+              {`Status: ${order?.status}`}
+            </Text>
+          </View>
+        </View>
+      </View>
+    );
+  };
 
-                }
-                   
-                    
-                        
-                     
-                }
-                style={{
-                  backgroundColor: COLORS.upfricaTitle,
-                  paddingHorizontal: 15,
-                  paddingVertical: 6,
-                //   marginTop: 15,
-                    // marginHorizontal:20,
-                    marginRight:0,
-                }}
-              >
-                <Text
-                  style={{
-                    ...FONTS.fontSm,
-                    color: COLORS.white,
-                  }}
-                >
-                  Cancle Order
-                </Text>
-              </TouchableOpacity>
-                </View>
-            </View>
-        </TouchableOpacity>
-    )
-}
+  return (
+    <SafeAreaView style={{ flex: 1, backgroundColor: colors.card }}>
+      <Header titleLeft leftIcon={"back"} title={"Orders"} />
+      <DeleteModal
+        visibility={isModalVisible}
+        setVisibility={setIsModalVisible}
+        onDelete={cancelandDeleteOrder}
+      />
+      {dataLoader && (
+        <View
+          style={{
+            flex: 1,
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <ActivityIndicator size="large" color="#a435f0" />
+        </View>
+      )}
+
+      {!dataLoader && (
+        <View style={{ flex: 1 }}>
+          <FlatList
+            data={orders}
+            renderItem={({ item, index }) => <OrderCard order={item} />}
+            keyExtractor={(item) => item.id}
+          />
+        </View>
+      )}
+    </SafeAreaView>
+  );
+};
 
 const styles = StyleSheet.create({
-    productCard : {
-        shadowColor: "rgba(0,0,0,.2)",
-        shadowOffset: {
-            width: 0,
-            height: 4,
-        },
-        shadowOpacity: 0.30,
-        shadowRadius: 4.65,
+  productCard: {
+    shadowColor: "rgba(0,0,0,.2)",
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 4.65,
 
-        elevation: 8,
-    }
-})
+    elevation: 8,
+  },
+});
 
 export default RefundOrder;
