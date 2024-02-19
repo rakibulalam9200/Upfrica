@@ -1,6 +1,6 @@
 import React from "react";
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Home from '../Screens/Home/Home';
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Home from "../Screens/Home/Home";
 import Splash from "../Screens/Onboarding/Splash";
 import Onboarding from "../Screens/Onboarding/Onboarding";
 import SignUp from "../Screens/Auth/SignUp";
@@ -51,15 +51,18 @@ import DirectBuy from "../Screens/Cart/DirectBuy";
 import RefundOrder from "../Screens/Orders/RefundOrder";
 import OrdersList from "../Screens/Orders/OrdersList";
 import CancelOrders from "../Screens/Orders/CancelOrders";
+import Seller from "../Screens/SellerScreen/Seller";
 const StackComponent = createNativeStackNavigator();
 
 const StackNavigator = () => {
-
   const theme = useTheme();
 
   return (
     <>
-      <StatusBar backgroundColor={theme.colors.card} barStyle={theme.dark ? "light-content" : "dark-content"} /> 
+      <StatusBar
+        backgroundColor={theme.colors.card}
+        barStyle={theme.dark ? "light-content" : "dark-content"}
+      />
       <StackComponent.Navigator
         initialRouteName={"SignIn"}
         // initialRouteName={"Home"}
@@ -74,20 +77,32 @@ const StackNavigator = () => {
         <StackComponent.Screen name={"Onboarding"} component={Onboarding} />
         <StackComponent.Screen name={"SignUp"} component={SignUp} />
         <StackComponent.Screen name={"SignIn"} component={SignIn} />
-        <StackComponent.Screen name={"DrawerNavigation"} component={DrawerNavigation} />
+        <StackComponent.Screen
+          name={"DrawerNavigation"}
+          component={DrawerNavigation}
+        />
         <StackComponent.Screen name={"Products"} component={Products} />
-        <StackComponent.Screen name={"ProductDetail"} component={ProductDetail} />
+        <StackComponent.Screen
+          name={"ProductDetail"}
+          component={ProductDetail}
+        />
         <StackComponent.Screen name={"Featured"} component={Featured} />
         <StackComponent.Screen name={"Orders"} component={Orders} />
         <StackComponent.Screen name={"Cart"} component={Cart} />
         {/* <StackComponent.Screen name={"Cart"} component={Empty} /> */}
-        <StackComponent.Screen name={"DeliveryTracking"} component={DeliveryTracking} />
+        <StackComponent.Screen
+          name={"DeliveryTracking"}
+          component={DeliveryTracking}
+        />
         <StackComponent.Screen name={"Profile"} component={Profile} />
         <StackComponent.Screen name={"EditProfile"} component={EditProfile} />
         <StackComponent.Screen name={"Coupons"} component={Coupons} />
         <StackComponent.Screen name={"Address"} component={Address} />
         <StackComponent.Screen name={"Payment"} component={Payment} />
-        <StackComponent.Screen name={"AddDeliveryAddress"} component={AddDeliveryAddress} />
+        <StackComponent.Screen
+          name={"AddDeliveryAddress"}
+          component={AddDeliveryAddress}
+        />
         <StackComponent.Screen name={"Filter"} component={Filter} />
         <StackComponent.Screen name={"Items"} component={Items} />
         <StackComponent.Screen name={"Search"} component={Search} />
@@ -98,7 +113,10 @@ const StackNavigator = () => {
         <StackComponent.Screen name={"Buttons"} component={Buttons} />
         <StackComponent.Screen name={"Charts"} component={Charts} />
         <StackComponent.Screen name={"Badges"} component={Badges} />
-        <StackComponent.Screen name={"DividerElements"} component={DividerElements} />
+        <StackComponent.Screen
+          name={"DividerElements"}
+          component={DividerElements}
+        />
         <StackComponent.Screen name={"Inputs"} component={Inputs} />
         <StackComponent.Screen name={"Headers"} component={Headers} />
         <StackComponent.Screen name={"Footers"} component={Footers} />
@@ -117,7 +135,8 @@ const StackNavigator = () => {
         <StackComponent.Screen name={"DirectBuy"} component={DirectBuy} />
         <StackComponent.Screen name={"Refund"} component={RefundOrder} />
         <StackComponent.Screen name={"OrderList"} component={OrdersList} />
-         <StackComponent.Screen name={"CancelOrders"} component={CancelOrders} /> 
+        <StackComponent.Screen name={"CancelOrders"} component={CancelOrders} />
+        <StackComponent.Screen name={"Seller"} component={Seller} />
       </StackComponent.Navigator>
     </>
   );
