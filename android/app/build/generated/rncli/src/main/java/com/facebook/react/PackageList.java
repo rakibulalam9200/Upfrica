@@ -35,6 +35,8 @@ import com.rnmaps.maps.MapsPackage;
 import com.reactnativepagerview.PagerViewPackage;
 // react-native-paystack
 import com.arttitude360.reactnative.rnpaystack.RNPaystackPackage;
+// react-native-paystack-webview
+import com.oluwatobishokunbi.reactnativepaystackwebview.ReactNativePaystackWebviewPackage;
 // react-native-reanimated
 import com.swmansion.reanimated.ReanimatedPackage;
 // react-native-safe-area-context
@@ -102,6 +104,7 @@ public class PackageList {
       new MapsPackage(),
       new PagerViewPackage(),
       new RNPaystackPackage(),
+      new ReactNativePaystackWebviewPackage(),
       new ReanimatedPackage(),
       new SafeAreaContextPackage(),
       new RNScreensPackage(),

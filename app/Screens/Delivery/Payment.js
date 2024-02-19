@@ -2,7 +2,7 @@
 import { PAYSTACK_PUBLIC_KEY } from "@env";
 import { useTheme } from "@react-navigation/native";
 import { CardField, createToken } from "@stripe/stripe-react-native";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import {
   Alert,
   Image,
@@ -14,9 +14,8 @@ import {
   View,
 } from "react-native";
 import Collapsible from "react-native-collapsible";
-import DateTimePickerModal from "react-native-modal-datetime-picker";
-import { TextInput } from "react-native-paper";
 import RNPaystack from "react-native-paystack";
+import { Paystack } from "react-native-paystack-webview";
 import FeatherIcon from "react-native-vector-icons/Feather";
 import { useDispatch } from "react-redux";
 import { resetCart } from "../../../Store/cart";
@@ -32,11 +31,12 @@ import Header from "../../layout/Header";
 // DateTimePickerAndroid.dismiss(mode: AndroidNativeProps['mode'])
 
 const Payment = ({ route, navigation }) => {
-  RNPaystack.init({
-    publicKey: PAYSTACK_PUBLIC_KEY,
-  });
+  // RNPaystack.init({
+  //   publicKey: PAYSTACK_PUBLIC_KEY,
+  // });
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const paystackWebViewRef = useRef();
 
   // Alert.alert(PAYSTACK_PUBLIC_KEY)
   const { total } = route.params;
@@ -101,11 +101,10 @@ const Payment = ({ route, navigation }) => {
         try {
           const resToken = await createToken({ ...cardInfo, type: "Card" });
           console.log(resToken, "response token...");
-          if(resToken){
-            dispatch(resetCart())
+          if (resToken) {
+            dispatch(resetCart());
             setIsLoading(false);
           }
-          
         } catch (error) {
           Alert.alert(error.response);
           setIsLoading(false);
@@ -167,7 +166,7 @@ const Payment = ({ route, navigation }) => {
     })
       .then((response) => {
         navigation.navigate("DeliveryTracking");
-        dispatch(resetCart())
+        dispatch(resetCart());
         setIsLoading(false);
         // console.log("hit here......");
         console.log(response); // do stuff with the token
@@ -179,6 +178,26 @@ const Payment = ({ route, navigation }) => {
         console.log(error.message);
       });
   };
+
+  function Pay() {
+    return (
+      <View style={{ flex: 1 }}>
+        <Paystack
+          paystackKey={publicKey}
+          amount={"25000.00"}
+          billingEmail="rakibul9200@gmail.com"
+          activityIndicatorColor="green"
+          onCancel={(e) => {
+            // handle response here
+          }}
+          onSuccess={(res) => {
+            // handle response here
+          }}
+          autoStart={true}
+        />
+      </View>
+    );
+  }
 
   return (
     <>
@@ -403,7 +422,26 @@ const Payment = ({ route, navigation }) => {
                 collapsed={paymentOption === "Paystack" ? false : true}
               >
                 <View style={{ paddingBottom: 20 }}>
-                  <TextInput
+                  <Paystack
+                    paystackKey={PAYSTACK_PUBLIC_KEY}
+                    billingEmail="rakibul9200@gmail.com"
+                    amount={"25000.00"}
+                    onCancel={(e) => {
+                      // handle response here
+                    }}
+                    onSuccess={(res) => {
+                      // handle response here
+                    }}
+                    ref={paystackWebViewRef}
+                  />
+                  <TouchableOpacity
+                    onPress={() =>
+                      paystackWebViewRef.current.startTransaction()
+                    }
+                  >
+                    <Text>Pay Now</Text>
+                  </TouchableOpacity>
+                  {/* <TextInput
                     style={{ marginHorizontal: 16, marginBottom: 8 }}
                     inputMode="numeric"
                     onChangeText={
@@ -414,9 +452,8 @@ const Payment = ({ route, navigation }) => {
                     label="Card Number"
                     placeholder="Card Number"
                     left={<TextInput.Icon icon="card" />}
-                  />
-
-                  <TouchableOpacity activeOpaticy={1} onPress={showDatePicker}>
+                  /> */}
+                  {/* <TouchableOpacity activeOpaticy={1} onPress={showDatePicker}>
                     <TextInput
                       style={{ marginHorizontal: 16, marginBottom: 8 }}
                       value={date}
@@ -426,36 +463,32 @@ const Payment = ({ route, navigation }) => {
                       placeholder="Date"
                       left={<TextInput.Icon icon="calendar" />} // optional
                     />
-                  </TouchableOpacity>
-
+                  </TouchableOpacity> */}
                   {/* <Button title="Show Date Picker" onPress={showDatePicker} /> */}
-                  <DateTimePickerModal
+                  {/* <DateTimePickerModal
                     isVisible={isDatePickerVisible}
                     mode="date"
                     onConfirm={handleConfirm}
                     onCancel={hideDatePicker}
-                  />
-
-                  <TextInput
+                  /> */}
+                  {/* <TextInput
                     style={{ marginHorizontal: 16, marginBottom: 8 }}
                     inputMode="numeric"
                     onChangeText={
                       (text) => setCVC(text)
-                      // console.log(text.replace(/[^0-9]/, ""))
+                      
                     }
                     mode="outlined"
                     label="CVC"
                     placeholder="CVC"
-                    // left={<TextInput.Icon icon="verfication" />}
-                  />
-
+                    
+                  /> */}
                   {/* <DateTimePickerAndroid/> */}
                   {/* <TouchableOpacity onPress={chargeCardAccess}>
                     <Text style={styles.instructions}>
                       Charge Card with AccessCode
                     </Text>
                   </TouchableOpacity> */}
-
                   {/* <TouchableOpacity onPress={chargeCard}>
                     <Text style={[styles.instructions, { marginTop: 10 }]}>
                       Charge Card without AccessCode

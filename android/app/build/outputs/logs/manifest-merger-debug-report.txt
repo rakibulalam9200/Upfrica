@@ -20,6 +20,7 @@ MERGED from [:react-native-linear-gradient] /home/rakib/RN/Upfrica-master2Sep23/
 MERGED from [:react-native-maps] /home/rakib/RN/Upfrica-master2Sep23/Upfrica-master2/node_modules/react-native-maps/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-pager-view] /home/rakib/RN/Upfrica-master2Sep23/Upfrica-master2/node_modules/react-native-pager-view/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-paystack] /home/rakib/RN/Upfrica-master2Sep23/Upfrica-master2/node_modules/react-native-paystack/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-16:12
+MERGED from [:react-native-paystack-webview] /home/rakib/RN/Upfrica-master2Sep23/Upfrica-master2/node_modules/react-native-paystack-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-reanimated] /home/rakib/RN/Upfrica-master2Sep23/Upfrica-master2/node_modules/react-native-reanimated/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-safe-area-context] /home/rakib/RN/Upfrica-master2Sep23/Upfrica-master2/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-screens] /home/rakib/RN/Upfrica-master2Sep23/Upfrica-master2/node_modules/react-native-screens/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
@@ -381,6 +382,8 @@ MERGED from [:react-native-pager-view] /home/rakib/RN/Upfrica-master2Sep23/Upfri
 MERGED from [:react-native-pager-view] /home/rakib/RN/Upfrica-master2Sep23/Upfrica-master2/node_modules/react-native-pager-view/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-paystack] /home/rakib/RN/Upfrica-master2Sep23/Upfrica-master2/node_modules/react-native-paystack/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-paystack] /home/rakib/RN/Upfrica-master2Sep23/Upfrica-master2/node_modules/react-native-paystack/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-paystack-webview] /home/rakib/RN/Upfrica-master2Sep23/Upfrica-master2/node_modules/react-native-paystack-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-paystack-webview] /home/rakib/RN/Upfrica-master2Sep23/Upfrica-master2/node_modules/react-native-paystack-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-reanimated] /home/rakib/RN/Upfrica-master2Sep23/Upfrica-master2/node_modules/react-native-reanimated/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-reanimated] /home/rakib/RN/Upfrica-master2Sep23/Upfrica-master2/node_modules/react-native-reanimated/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-safe-area-context] /home/rakib/RN/Upfrica-master2Sep23/Upfrica-master2/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
