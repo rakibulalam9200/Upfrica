@@ -1,5 +1,6 @@
 import React from "react";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Home from '../Screens/Home/Home';
 import Splash from "../Screens/Onboarding/Splash";
 import Onboarding from "../Screens/Onboarding/Onboarding";
 import SignUp from "../Screens/Auth/SignUp";
@@ -46,6 +47,8 @@ import Cart from "../Screens/Cart/Cart";
 import { StatusBar } from "react-native";
 import { useTheme } from "@react-navigation/native";
 import Empty from "../Screens/Empty/Empty";
+import DirectBuy from "../Screens/Cart/DirectBuy";
+import RefundOrder from "../Screens/Orders/RefundOrder";
 const StackComponent = createNativeStackNavigator();
 
 const StackNavigator = () => {
@@ -57,12 +60,14 @@ const StackNavigator = () => {
       <StatusBar backgroundColor={theme.colors.card} barStyle={theme.dark ? "light-content" : "dark-content"} /> 
       <StackComponent.Navigator
         initialRouteName={"SignIn"}
+        // initialRouteName={"Home"}
         detachInactiveScreens={true}
         screenOptions={{
           headerShown: false,
           cardStyle: { backgroundColor: "transparent" },
         }}
       >
+        <StackComponent.Screen name={"Home"} component={Home} />
         <StackComponent.Screen name={"Splash"} component={Splash} />
         <StackComponent.Screen name={"Onboarding"} component={Onboarding} />
         <StackComponent.Screen name={"SignUp"} component={SignUp} />
@@ -107,6 +112,8 @@ const StackNavigator = () => {
         <StackComponent.Screen name={"Tabs"} component={Tabs} />
         <StackComponent.Screen name={"Tables"} component={Tables} />
         <StackComponent.Screen name={"Toggles"} component={Toggles} />
+        <StackComponent.Screen name={"DirectBuy"} component={DirectBuy} />
+        <StackComponent.Screen name={"Refund"} component={RefundOrder} />
       </StackComponent.Navigator>
     </>
   );

@@ -4,6 +4,7 @@ import React from "react";
 import { Provider } from "react-redux";
 import Routes from "./app/Navigations/Route";
 import { store } from "./Store/store";
+import PayStack from "./app/Paystack";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Routes />
         </Provider>
       </StripeProvider>
+     
     </>
   );
 }

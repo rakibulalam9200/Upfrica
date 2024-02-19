@@ -1,5 +1,5 @@
 import { useTheme } from "@react-navigation/native";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Image,
   Pressable,
@@ -12,6 +12,7 @@ import FeatherIcon from "react-native-vector-icons/Feather";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  addToCart,
   decrementQuantity,
   incrementQuantity,
   removeItem,
@@ -26,16 +27,31 @@ const CheckoutItem = ({
 }) => {
   const { currency } = useSelector((state) => state.currency);
   const { colors } = useTheme();
-  const { image, title, price, oldPrice, quantity, type, onPress, id } = data;
-  console.log(quantity, "...quantity...");
+  let { image, title, price, oldPrice, quantity=1, type, onPress, id } = data;
+  // const { image, title, price, oldPrice, quantity, onPress, id } = data;
+  const [ productQuantity, setProductQuantity] = useState(1);
+  let directBuy = false;
   const dispatch = useDispatch();
+
+
+
+ 
+
+  // if(!quantity){
+  //   quantity = 1;
+  //   useEffect(()=>{
+  //     dispatch(addToCart(data))
+  //   }, [ ])
+  // }
+  console.log(quantity, "...quantity...");
+
   const { width } = useWindowDimensions();
   const source = {
-    html: `${type.slice(0, 30)}`,
+    html: `${type?.slice(0, 30)}`,
   };
   const removeHtmltags = (data) => {
     const regex = /(<([^>]+)>)/gi;
-    const result = data.replace(regex, "");
+    const result = data?.replace(regex, "");
     return result;
   };
 
@@ -48,8 +64,10 @@ const CheckoutItem = ({
         paddingHorizontal: 12,
         paddingBottom: 12,
         paddingTop: 12,
+        borderRadius:5,
         backgroundColor: colors.card,
         ...GlobalStyleSheet.shadow,
+        
       }}
     >
       <Image
@@ -148,7 +166,11 @@ const CheckoutItem = ({
               }}
             >
               <FeatherIcon size={14} color={colors.title} name="minus" />
-            </TouchableOpacity>
+              </TouchableOpacity>
+
+
+            
+            
             <Text
               style={{
                 ...FONTS.fontSm,

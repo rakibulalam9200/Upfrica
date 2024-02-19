@@ -17,7 +17,7 @@ import Collapsible from "react-native-collapsible";
 import RNPaystack from "react-native-paystack";
 import { Paystack } from "react-native-paystack-webview";
 import FeatherIcon from "react-native-vector-icons/Feather";
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 import { resetCart } from "../../../Store/cart";
 import card from "../../assets/images/icons/card.png";
 import pay from "../../assets/images/icons/pay.png";
@@ -27,6 +27,7 @@ import { GlobalStyleSheet } from "../../constants/StyleSheet";
 import { COLORS, FONTS } from "../../constants/theme";
 import Header from "../../layout/Header";
 
+
 // DateTimePickerAndroid.open(params: AndroidNativeProps)
 // DateTimePickerAndroid.dismiss(mode: AndroidNativeProps['mode'])
 
@@ -35,8 +36,16 @@ const Payment = ({ route, navigation }) => {
   //   publicKey: PAYSTACK_PUBLIC_KEY,
   // });
 
+<<<<<<< HEAD
   const dispatch = useDispatch();
   const paystackWebViewRef = useRef();
+=======
+  const dispatch = useDispatch()
+  // let selector = useSelector();
+  const token = useSelector((state) => state.user.token)
+  const user = useSelector((state) => state.user.user)
+  
+>>>>>>> 070b148c66f3b3050f938253bee34ed421cdeb88
 
   // Alert.alert(PAYSTACK_PUBLIC_KEY)
   const { total } = route.params;
@@ -90,6 +99,73 @@ const Payment = ({ route, navigation }) => {
       setCardInfo(null);
     }
   };
+
+
+
+  const paymentWithPaystack = ()=>{
+    
+    console.log(token);
+    console.log(user);
+
+    var myHeaders = new Headers();
+    myHeaders.append("Accept", "application/json");
+    myHeaders.append("Authorization", `Bearer ${token}`);
+
+    
+    // var requestOptions = {
+    //   method: 'GET',
+    //   headers: myHeaders,
+    //   redirect: 'follow'
+    // };
+    
+    // fetch("https://upfrica-staging.herokuapp.com/api/v1/addresses", requestOptions)
+    //   .then(response => response.text())
+    //   .then(result => console.log(result))
+    //   .catch(error => console.log('error', error));
+ 
+
+
+
+
+  // var raw = {
+  //     order: {
+  //         cart_id: 1,
+  //         buyer_id: 61,
+  //         address_id: 16
+  //     }
+  // };
+
+ 
+
+  // var requestOptions = {
+  //   method: 'POST',
+  //   headers: myHeaders,
+  //   body:JSON.stringify(raw),
+  //   redirect: 'follow'
+  // };
+  
+  // fetch("https://upfrica-staging.herokuapp.com/api/v1/orders", requestOptions)
+  //   .then(response => response.text())
+  //   .then(result => console.log(result))
+  //   .catch(error => console.log('error', error));
+  //  }
+
+
+    var raw = "";
+
+    var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+
+    fetch("https://upfrica-staging.herokuapp.com/api/v1/orders/3/create_paystack_transaction", requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+  }
+
 
   const paymentComplete = async () => {
     // console.log(paymentOption,'payment option')
@@ -210,52 +286,7 @@ const Payment = ({ route, navigation }) => {
         >
           <Header titleLeft leftIcon={"back"} title={"Payment"} />
           <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-            {/* <View style={[GlobalStyleSheet.container]}>
-       
-                            <View style={{flexDirection:'row'}}>
-                                <View style={{
-                                    height:3,
-                                    width:3,
-                                    borderRadius:3,
-                                    backgroundColor:colors.text,
-                                    marginRight:10,
-                                    opacity:.5,
-                                    marginTop:8,
-                                }}/>
-                                <Text style={{...FONTS.font,color:colors.text}}>10% instant Savings on Citi Credit and Debit Cards on a min spend of Rs 3,0000. TCA</Text>
-                            </View>
-                        </View> */}
-            {/* <View
-                            style={{
-                                paddingHorizontal:15,
-                                paddingBottom:10,
-                                paddingTop:15,
-                            }}
-                        >
-                            <Text style={{...FONTS.font,...FONTS.fontTitle,color:COLORS.text}}>Payment Options</Text>
-                        </View>
-                         */}
-            {/* <View style={{
-                            backgroundColor:colors.card,
-                            ...GlobalStyleSheet.shadow,
-                            marginHorizontal:15,
-                            marginBottom:8,
-                        }}>
-                            <TouchableOpacity
-                                onPress={() => setPaymentOption(paymentOption === 'Cash' ? '' : 'Cash')}
-                                style={[styles.list]}
-                            >
-                                <Image
-                                    style={[styles.listImg,{tintColor:colors.textLight}]}
-                                    source={cash}
-                                />
-                                <Text style={[styles.listTitle,{color:colors.title}]}>Cash On Delivery(Cash/UPI)</Text>
-                                <FeatherIcon color={colors.textLight} name={'chevron-down'} size={22} />
-                            </TouchableOpacity>
-                            <Collapsible collapsed={paymentOption === "Cash" ? false : true}>
-                               
-                            </Collapsible>
-                        </View> */}
+        
 
             <View
               style={{
@@ -330,61 +361,7 @@ const Payment = ({ route, navigation }) => {
                       }}
                     />
                   </View>
-                  {/* <View style={{ marginBottom: 15 }}>
-                    <TextInput
-                      style={[
-                        GlobalStyleSheet.formControl,
-                        {
-                          backgroundColor: colors.input,
-                          borderColor: colors.borderColor,
-                          color: colors.title,
-                        },
-                      ]}
-                      placeholder="Card Number"
-                      placeholderTextColor={colors.textLight}
-                    />
-                  </View>  */}
-                  {/* <View style={{marginBottom:15}}>
-                                        <TextInput
-                                            style={[GlobalStyleSheet.formControl,{
-                                                backgroundColor:colors.input,
-                                                borderColor:colors.borderColor,
-                                                color:colors.title,
-                                            }]}
-                                            placeholder='Name on card'
-                                            placeholderTextColor={colors.textLight}
-                                        />
-                                    </View> */}
-                  {/* <View style={[GlobalStyleSheet.row]}>
-                    <View style={[GlobalStyleSheet.col50]}>
-                      <TextInput
-                        style={[
-                          GlobalStyleSheet.formControl,
-                          {
-                            backgroundColor: colors.input,
-                            borderColor: colors.borderColor,
-                            color: colors.title,
-                          },
-                        ]}
-                        placeholder="Valid Thru(MM/YY)"
-                        placeholderTextColor={colors.textLight}
-                      />
-                    </View>
-                    <View style={[GlobalStyleSheet.col50]}>
-                      <TextInput
-                        style={[
-                          GlobalStyleSheet.formControl,
-                          {
-                            backgroundColor: colors.input,
-                            borderColor: colors.borderColor,
-                            color: colors.title,
-                          },
-                        ]}
-                        placeholder="CVV"
-                        placeholderTextColor={colors.textLight}
-                      />
-                    </View>
-                  </View> */}
+                 
                 </View>
               </Collapsible>
             </View>
@@ -481,6 +458,7 @@ const Payment = ({ route, navigation }) => {
                     mode="outlined"
                     label="CVC"
                     placeholder="CVC"
+<<<<<<< HEAD
                     
                   /> */}
                   {/* <DateTimePickerAndroid/> */}
@@ -542,259 +520,32 @@ const Payment = ({ route, navigation }) => {
                       </TouchableOpacity>
                     );
                   })} */}
+=======
+                    // left={<TextInput.Icon icon="verfication" />}
+                  />
+
+                 
+>>>>>>> 070b148c66f3b3050f938253bee34ed421cdeb88
                 </View>
               </Collapsible>
             </View>
 
-            {/* <View style={{
-                            backgroundColor:colors.card,
-                            ...GlobalStyleSheet.shadow,
-                            marginHorizontal:15,
-                            marginBottom:8,
-                        }}>
-                            <TouchableOpacity
-                                onPress={() => setPaymentOption(paymentOption === 'PaytmWallet' ? '' : 'PaytmWallet')}
-                                style={[styles.list]}
-                            >
-                                <Image
-                                    style={[styles.listImg,{tintColor:colors.textLight}]}
-                                    source={wallet}
-                                />
-                                <Text style={[styles.listTitle,{color:colors.title}]}>Paytm/ Wallets</Text>
-                                <FeatherIcon color={colors.textLight} name={'chevron-down'} size={22} />
-                            </TouchableOpacity>
-                            <Collapsible collapsed={paymentOption === "PaytmWallet" ? false : true}>
-                                <View style={{paddingBottom:20}}>
-                                    {PhonePeOption.map((data,index) => {
-                                        return(
-                                            <TouchableOpacity
-                                                onPress={() => setPayActive(data.title)}
-                                                key={index}
-                                                style={[styles.payList,{
-                                                    borderBottomColor:colors.borderColor,
-                                                }, PhonePeOption.length - 1 === index && {
-                                                    borderBottomWidth:0,
-                                                }]}
-                                            >
-                                                <View
-                                                    style={[styles.listRadio,{
-                                                        borderColor:colors.text,
-                                                    }, payActive === data.title && {
-                                                        borderColor:COLORS.primary,
-                                                    }]}
-                                                >
-                                                    {payActive === data.title &&
-                                                        <View style={styles.listRadioCircle}/>
-                                                    }
-                                                </View>
-                                                <View
-                                                    style={[styles.payMedia,{
-                                                        borderColor:colors.borderColor,
-                                                    }]}
-                                                >
-                                                    <Image style={styles.payImg} source={data.image}/>
-                                                </View>
-                                                <Text style={[
-                                                    {
-                                                        ...FONTS.font,
-                                                        color:colors.text
-                                                    },
-                                                    payActive === data.title && {
-                                                        ...FONTS.fontBold,
-                                                        color:colors.title
-                                                    }]}>{data.title}</Text>
-                                            </TouchableOpacity>
-                                        )
-                                    })}
-                                </View>
-                            </Collapsible>
-                        </View> */}
 
-            {/* <View style={{
-                            backgroundColor:colors.card,
-                            ...GlobalStyleSheet.shadow,
-                            marginHorizontal:15,
-                            marginBottom:8,
-                        }}>
-                            <TouchableOpacity
-                                onPress={() => setPaymentOption(paymentOption === 'Netbanking' ? '' : 'Netbanking')}
-                                style={[styles.list]}
-                            >
-                                <Image
-                                    style={[styles.listImg,{tintColor:colors.textLight}]}
-                                    source={bank}
-                                />
-                                <Text style={[styles.listTitle,{color:colors.title}]}>Net Banking</Text>
-                                <FeatherIcon color={colors.textLight} name={'chevron-down'} size={22} />
-                            </TouchableOpacity>
-                            <Collapsible collapsed={paymentOption === "Netbanking" ? false : true}>
-                                <View style={{paddingBottom:20}}>
-                                    {PhonePeOption.map((data,index) => {
-                                        return(
-                                            <TouchableOpacity
-                                                onPress={() => setPayActive(data.title)}
-                                                key={index}
-                                                style={[styles.payList,{
-                                                    borderBottomColor:colors.borderColor,
-                                                }, PhonePeOption.length - 1 === index && {
-                                                    borderBottomWidth:0,
-                                                }]}
-                                            >
-                                                <View
-                                                    style={[styles.listRadio,{
-                                                        borderColor:colors.text,
-                                                    }, payActive === data.title && {
-                                                        borderColor:COLORS.primary,
-                                                    }]}
-                                                >
-                                                    {payActive === data.title &&
-                                                        <View style={styles.listRadioCircle}/>
-                                                    }
-                                                </View>
-                                                <View
-                                                    style={[styles.payMedia,{
-                                                        borderColor:colors.borderColor,
-                                                    }]}
-                                                >
-                                                    <Image style={styles.payImg} source={data.image}/>
-                                                </View>
-                                                <Text style={[
-                                                    {
-                                                        ...FONTS.font,
-                                                        color:colors.text
-                                                    },
-                                                    payActive === data.title && {
-                                                        ...FONTS.fontBold,
-                                                        color:colors.title
-                                                    }]}>{data.title}</Text>
-                                            </TouchableOpacity>
-                                        )
-                                    })}
-                                </View>
-                            </Collapsible>
-                        </View> */}
+            <CustomButton
+                  // onPress={() => navigation.navigate("DeliveryTracking")}
+                  onPress={paymentWithPaystack}
+                  title={"Pay now"}
+                  color={COLORS.upfricaTitle}
+                  isLoading={isLoading}
+                />
 
-            {/* <View style={{
-                            backgroundColor:colors.card,
-                            ...GlobalStyleSheet.shadow,
-                            marginHorizontal:15,
-                            marginBottom:8,
-                        }}>
-                            <TouchableOpacity
-                                onPress={() => setPaymentOption(paymentOption === 'EMI' ? '' : 'EMI')}
-                                style={[styles.list]}
-                            >
-                                <Image
-                                    style={[styles.listImg,{tintColor:colors.textLight}]}
-                                    source={personal}
-                                />
-                                <Text style={[styles.listTitle,{color:colors.title}]}>EMI/ Pay Later</Text>
-                                <FeatherIcon color={colors.textLight} name={'chevron-down'} size={22} />
-                            </TouchableOpacity>
-                            <Collapsible collapsed={paymentOption === "EMI" ? false : true}>
-                                <View style={{paddingBottom:20}}>
-                                    {PhonePeOption.map((data,index) => {
-                                        return(
-                                            <TouchableOpacity
-                                                onPress={() => setPayActive(data.title)}
-                                                key={index}
-                                                style={[styles.payList,{
-                                                    borderBottomColor:colors.borderColor,
-                                                }, PhonePeOption.length - 1 === index && {
-                                                    borderBottomWidth:0,
-                                                }]}
-                                            >
-                                                <View
-                                                    style={[styles.listRadio,{
-                                                        borderColor:colors.text,
-                                                    }, payActive === data.title && {
-                                                        borderColor:COLORS.primary,
-                                                    }]}
-                                                >
-                                                    {payActive === data.title &&
-                                                        <View style={styles.listRadioCircle}/>
-                                                    }
-                                                </View>
-                                                <View
-                                                    style={[styles.payMedia,{
-                                                        borderColor:colors.borderColor,
-                                                    }]}
-                                                >
-                                                    <Image style={styles.payImg} source={data.image}/>
-                                                </View>
-                                                <Text style={[
-                                                    {
-                                                        ...FONTS.font,
-                                                        color:colors.text
-                                                    },
-                                                    payActive === data.title && {
-                                                        ...FONTS.fontBold,
-                                                        color:colors.title
-                                                    }]}>{data.title}</Text>
-                                            </TouchableOpacity>
-                                        )
-                                    })}
-                                </View>
-                            </Collapsible>
-                        </View> */}
+            
 
-            {/* <View style={[GlobalStyleSheet.container]}>
-                            <View
-                                style={{
-                                    paddingHorizontal:15,
-                                    paddingVertical:15,
-                                    backgroundColor:theme.dark ? colors.card : "#eee",
-                                    flexDirection:'row',
-                                    alignItems:'center',
-                                }}
-                            >
-                                <Image
-                                    style={{height:18,width:18,marginRight:12,tintColor:colors.textLight}}
-                                    source={gift}
-                                />
-                                <Text style={[styles.listTitle,{color:colors.title}]}>Have a Gift Card?</Text>
-                                <TouchableOpacity>
-                                    <Text style={{...FONTS.font,color:COLORS.primary,...FONTS.fontBold}}>APPLY</Text>
-                                </TouchableOpacity>
-                            </View>
-                        </View> */}
-            {/* <View style={[GlobalStyleSheet.container,{backgroundColor:colors.card}]}>
-                            <View
-                                style={{
-                                    borderBottomWidth:1,
-                                    borderBottomColor:colors.borderColor,
-                                    paddingBottom:10,
-                                    marginBottom:10,
-                                }}
-                            >
-                                <Text style={{...FONTS.font,...FONTS.fontTitle,color:colors.title}}>Price Details(1 item)</Text>
-                            </View>
-                            <View style={styles.detailList}>
-                                <Text style={{...FONTS.font,color:colors.text}}>Total MRP</Text>
-                                <Text style={{...FONTS.font,color:colors.text}}>1599</Text>
-                            </View>
-                            <View style={styles.detailList}>
-                                <Text style={{...FONTS.font,color:colors.text}}>Discount on MRP</Text>
-                                <Text style={{...FONTS.font,color:COLORS.success}}>-640</Text>
-                            </View>
-                            <View style={styles.detailList}>
-                                <Text style={{...FONTS.font,color:colors.text}}>Coupon Discount</Text>
-                                <Text style={{...FONTS.font,color:COLORS.success}}>-200</Text>
-                            </View>
-                            <View
-                                style={{
-                                    borderTopWidth:1,
-                                    borderTopColor:colors.borderColor,
-                                    paddingTop:8,
-                                    marginTop:10,
-                                    flexDirection:'row',
-                                    justifyContent:'space-between',
-                                }}
-                            >
-                                <Text style={{...FONTS.font,...FONTS.fontTitle,color:colors.title}}>Total Amount</Text>
-                                <Text style={{...FONTS.font,...FONTS.fontTitle,color:colors.title}}>759</Text>
-                            </View>
-                        </View> */}
+            
+
+            
+
+            
           </ScrollView>
           <View
             style={[

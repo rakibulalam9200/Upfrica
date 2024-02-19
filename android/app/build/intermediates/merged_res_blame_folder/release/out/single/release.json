@@ -416,6 +416,10 @@
         "source": "com.app.upfrica.app-react-88:/drawable-mdpi/app_assets_images_small_pic2.jpg"
     },
     {
+        "merged": "com.app.upfrica.app-merged_res-93:/drawable-mdpi_node_modules_reactnativebouncycheckbox_build_dist_check.png.flat",
+        "source": "com.app.upfrica.app-react-88:/drawable-mdpi/node_modules_reactnativebouncycheckbox_build_dist_check.png"
+    },
+    {
         "merged": "com.app.upfrica.app-merged_res-93:/mipmap-xhdpi_ic_launcher_round.png.flat",
         "source": "com.app.upfrica.app-main-94:/mipmap-xhdpi/ic_launcher_round.png"
     },

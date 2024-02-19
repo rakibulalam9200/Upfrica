@@ -11,8 +11,13 @@
       "type": "UNIVERSAL",
       "filters": [],
       "attributes": [],
+<<<<<<< HEAD
       "versionCode": 12,
       "versionName": "1.11",
+=======
+      "versionCode": 15,
+      "versionName": "1.15",
+>>>>>>> 070b148c66f3b3050f938253bee34ed421cdeb88
       "outputFile": "app-universal-debug.apk"
     },
     {
@@ -24,35 +29,14 @@
         }
       ],
       "attributes": [],
+<<<<<<< HEAD
       "versionCode": 12004,
       "versionName": "1.11",
+=======
+      "versionCode": 15004,
+      "versionName": "1.15",
+>>>>>>> 070b148c66f3b3050f938253bee34ed421cdeb88
       "outputFile": "app-x86_64-debug.apk"
-    },
-    {
-      "type": "ONE_OF_MANY",
-      "filters": [
-        {
-          "filterType": "ABI",
-          "value": "arm64-v8a"
-        }
-      ],
-      "attributes": [],
-      "versionCode": 12003,
-      "versionName": "1.11",
-      "outputFile": "app-arm64-v8a-debug.apk"
-    },
-    {
-      "type": "ONE_OF_MANY",
-      "filters": [
-        {
-          "filterType": "ABI",
-          "value": "armeabi-v7a"
-        }
-      ],
-      "attributes": [],
-      "versionCode": 12001,
-      "versionName": "1.11",
-      "outputFile": "app-armeabi-v7a-debug.apk"
     },
     {
       "type": "ONE_OF_MANY",
@@ -63,9 +47,57 @@
         }
       ],
       "attributes": [],
+<<<<<<< HEAD
+      "versionCode": 12003,
+      "versionName": "1.11",
+      "outputFile": "app-arm64-v8a-debug.apk"
+=======
+      "versionCode": 15002,
+      "versionName": "1.15",
+      "outputFile": "app-x86-debug.apk"
+>>>>>>> 070b148c66f3b3050f938253bee34ed421cdeb88
+    },
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+<<<<<<< HEAD
+          "value": "armeabi-v7a"
+        }
+      ],
+      "attributes": [],
+      "versionCode": 12001,
+      "versionName": "1.11",
+      "outputFile": "app-armeabi-v7a-debug.apk"
+=======
+          "value": "arm64-v8a"
+        }
+      ],
+      "attributes": [],
+      "versionCode": 15003,
+      "versionName": "1.15",
+      "outputFile": "app-arm64-v8a-debug.apk"
+>>>>>>> 070b148c66f3b3050f938253bee34ed421cdeb88
+    },
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "x86"
+        }
+      ],
+      "attributes": [],
+<<<<<<< HEAD
       "versionCode": 12002,
       "versionName": "1.11",
       "outputFile": "app-x86-debug.apk"
+=======
+      "versionCode": 15001,
+      "versionName": "1.15",
+      "outputFile": "app-armeabi-v7a-debug.apk"
+>>>>>>> 070b148c66f3b3050f938253bee34ed421cdeb88
     }
   ],
   "elementType": "File"

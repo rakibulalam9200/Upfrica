@@ -4,7 +4,7 @@
             "outputFile": "com.app.upfrica.app-mergeReleaseResources-91:/values-en-rSG/values-en-rSG.xml",
             "map": [
                 {
-                    "source": "/home/rakib/.gradle/caches/transforms-3/2f9cbbfa8a77a097650212debf27fffd/transformed/jetified-play-services-wallet-19.2.0/res/values-en-rSG/values.xml",
+                    "source": "C:\\Users\\srika\\.gradle\\caches\\transforms-3\\2f9cbbfa8a77a097650212debf27fffd\\transformed\\jetified-play-services-wallet-19.2.0\\res\\values-en-rSG\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",

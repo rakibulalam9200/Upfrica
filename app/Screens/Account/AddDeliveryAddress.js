@@ -15,6 +15,7 @@ import {
   TextInput,
   TouchableOpacity,
   View,
+  Linking
 } from "react-native";
 import { useSelector } from "react-redux";
 import CustomButton from "../../components/CustomButton";
@@ -24,16 +25,12 @@ import Header from "../../layout/Header";
 
 const AddDeliveryAddress = ({ route, navigation }) => {
   const { token, user } = useSelector((state) => state.user);
-  console.log("%%%token%%%", token);
-  console.log("%%%user%%%", user);
+  const {  cartId } = useSelector((state) => state.cart);
   const { colors } = useTheme();
   const { total } = route.params;
   let width = Dimensions.get("window").width;
-  console.log(total);
   const [totalPayable, setTotalPayble] = useState(total);
   const [loading, setLoading] = useState(false);
-
-  // address for delivery
   const [defaultAddress, setAddress] = useState("Home");
   const [fullName, setFullName] = useState("");
   const [mobile, setMobile] = useState("");
@@ -45,6 +42,8 @@ const AddDeliveryAddress = ({ route, navigation }) => {
   const [dataLoader, setDataLoader] = useState(false);
   const [addresses, setAddresses] = useState([]);
   const [refresh, setRefresh] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
 
   const saveAddress = async () => {
     let body = {
@@ -86,7 +85,38 @@ const AddDeliveryAddress = ({ route, navigation }) => {
     }
   };
 
+
+  const PaymentProcess = (id)=>{
+
+    const headers = {
+      'Content-Type': 'application/json', 
+      'Authorization': `Bearer ${token}`, 
+    };
+    
+    
+    // var data = {
+    //     order: {
+    //         currency: "USD"
+    //     }};
+        var data = {redirect_uri:"https://google.com"};
+      
+      axios.post(`https://upfrica-staging.herokuapp.com/api/v1/orders/${id}/create_paystack_transaction`, JSON.stringify(data), { headers })
+            .then(response => {
+              console.log(response?.data);
+
+              // Linking.openURL(response?.data?.paystack?.data?.authorization_url );
+              setIsLoading(false);
+
+            })
+            .catch(error => {
+              console.error(error);
+            });
+
+  }
+
   const processToPayment = () => {
+    setIsLoading(true);
+
     if (
       fullName === "" ||
       locality === "" ||
@@ -101,7 +131,29 @@ const AddDeliveryAddress = ({ route, navigation }) => {
       return
     }
 
-    navigation.navigate("Payment", { total: totalPayable })
+    const headers = {
+      'Content-Type': 'application/json', 
+      'Authorization': `Bearer ${token}`, 
+    };
+    
+    console.log(addresses)
+    var data = {
+      order: {
+        cart_id: cartId,
+        buyer_id:user.id ,
+        address_id: addresses[0]?.id,  
+      }};
+     
+      axios.post('https://upfrica-staging.herokuapp.com/api/v1/orders', JSON.stringify(data), { headers })
+            .then(response => {
+              console.log(response?.data);
+              if(response?.data){
+                PaymentProcess(response?.data?.order?.id);
+              }
+            })
+            .catch(error => {
+              console.error(error);
+            });
 
   };
 
@@ -460,20 +512,6 @@ const AddDeliveryAddress = ({ route, navigation }) => {
                       )}
                     </TouchableOpacity>
                   </TouchableOpacity>
-                  {/* <TouchableOpacity
-                                        onPress={() => setAddress('Work')}
-                                        style={[{
-                                            borderWidth:1,
-                                            borderColor:COLORS.upfricaTitle,
-                                            borderRadius:30,
-                                            paddingHorizontal:10,
-                                            paddingVertical:2,
-                                        }, defaultAddress === "Work" && {
-                                            borderColor:COLORS.upfricaTitle,
-                                        }]}
-                                    >
-                                        <Text style={[{...FONTS.font,color:COLORS.upfricaTitle,paddingBottom:2}, defaultAddress === "Work" && {color:COLORS.upfricaTitle}]}>Work</Text>
-                                    </TouchableOpacity> */}
                 </View>
               </View>
               <ScrollView horizontal={true} style={{ width: "100%" }}>
@@ -503,6 +541,8 @@ const AddDeliveryAddress = ({ route, navigation }) => {
               color={COLORS.upfricaTitle}
               // title={"Save Address"}
               title={"Proced to payment"}
+              isLoading={isLoading}
+
             />
           </View>
         </KeyboardAvoidingView>

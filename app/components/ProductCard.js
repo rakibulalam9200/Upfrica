@@ -1,14 +1,18 @@
-import { useTheme } from '@react-navigation/native';
+import { useNavigation, useTheme } from '@react-navigation/native';
 import React, { useEffect } from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { COLORS, FONTS } from '../constants/theme';
+import { addToCart } from '../../Store/cart';
 
-const ProductCard = ({ onPress,id,image,category,title,price,oldPrice,isLike,offer,handleLike}) => {
+const ProductCard = ({ onPress,id,image,category,title,price,oldPrice,isLike,offer,handleLike,description, postage_fee, secondary_postage_fee, type}) => {
     const currency = useSelector(((state)=> state.currency.currency))
+    const navigation = useNavigation();
     const product ={}
     const {colors} = useTheme();
+    const dispatch = useDispatch();
+    console.log(postage_fee, secondary_postage_fee)
 
     useEffect(()=>{
 
@@ -93,19 +97,52 @@ const ProductCard = ({ onPress,id,image,category,title,price,oldPrice,isLike,off
                 <View
                     style={{
                         flexDirection:'row',
-                        alignItems:'center',
+                        // alignItems:'center',
+                        justifyContent:'space-between',
                         marginTop:8,
                         marginBottom:2,
                     }}
                 >
                     <Text style={{...FONTS.h5,color:COLORS.upfricaTitle}}>{currency.value}{price}</Text>
-                    <Text style={{
+                    {/* <Text style={{
                         ...FONTS.font,
                         color:colors.textLight,
                         textDecorationLine:'line-through',
                         marginLeft:6,
                         opacity:.7,
                     }}>{currency.value}{oldPrice}</Text>
+                     */}
+                    
+                    <TouchableOpacity
+                onPress={() =>{
+                    let tempData =  {id:id,image:image,title:title,quantity:1, price:price,type:description?.body,postage:postage_fee?.cents/100,secondary_postage:secondary_postage_fee?.cents/100, type:type} 
+                    dispatch(addToCart(tempData));
+                  navigation.navigate('DirectBuy', {id : id,image:image,title:title,price:price,isLike:isLike, type:description?.body, postage:postage_fee?.cents/100,secondary_postage:secondary_postage_fee?.cents/100})
+
+                }
+                   
+                    
+                        
+                     
+                }
+                style={{
+                  backgroundColor: COLORS.upfricaTitle,
+                  paddingHorizontal: 15,
+                  paddingVertical: 6,
+                //   marginTop: 15,
+                    marginHorizontal:20,
+                    marginRight:0,
+                }}
+              >
+                <Text
+                  style={{
+                    ...FONTS.fontXs,
+                    color: COLORS.white,
+                  }}
+                >
+                  Shop Now
+                </Text>
+              </TouchableOpacity>
                 </View>
             </View>
         </TouchableOpacity>

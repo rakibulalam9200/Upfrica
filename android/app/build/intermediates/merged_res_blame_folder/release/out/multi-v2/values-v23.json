@@ -4,26 +4,7 @@
             "outputFile": "com.app.upfrica.app-mergeReleaseResources-91:/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "/home/rakib/.gradle/caches/transforms-3/7ac1297a65d7e60cab9847fc28b2b130/transformed/cardview-1.0.0/res/values-v23/values-v23.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "4",
-                        "endColumns": "12",
-                        "endOffsets": "200"
-                    },
-                    "to": {
-                        "startLines": "52",
-                        "startColumns": "4",
-                        "startOffsets": "3361",
-                        "endLines": "54",
-                        "endColumns": "12",
-                        "endOffsets": "3506"
-                    }
-                },
-                {
-                    "source": "/home/rakib/.gradle/caches/transforms-3/fd9dc4d0d85fd0495e580b582ff9a3c7/transformed/work-runtime-2.7.1/res/values-v23/values-v23.xml",
+                    "source": "C:\\Users\\srika\\.gradle\\caches\\transforms-3\\fd9dc4d0d85fd0495e580b582ff9a3c7\\transformed\\work-runtime-2.7.1\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -33,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/home/rakib/.gradle/caches/transforms-3/1ebf47d3dd0e5a81935f335e067e5ab1/transformed/appcompat-1.6.1/res/values-v23/values-v23.xml",
+                    "source": "C:\\Users\\srika\\.gradle\\caches\\transforms-3\\1ebf47d3dd0e5a81935f335e067e5ab1\\transformed\\appcompat-1.6.1\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -52,7 +33,26 @@
                     }
                 },
                 {
-                    "source": "/home/rakib/.gradle/caches/transforms-3/1ebb14e68360fe88cda0a975e5823c9a/transformed/material-1.8.0/res/values-v23/values-v23.xml",
+                    "source": "C:\\Users\\srika\\.gradle\\caches\\transforms-3\\7ac1297a65d7e60cab9847fc28b2b130\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "200"
+                    },
+                    "to": {
+                        "startLines": "52",
+                        "startColumns": "4",
+                        "startOffsets": "3361",
+                        "endLines": "54",
+                        "endColumns": "12",
+                        "endOffsets": "3506"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\srika\\.gradle\\caches\\transforms-3\\bc984b4c216b046fb814ced4c0f10e24\\transformed\\material-1.9.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,5,8,13,17,20,23,26,31,34,38",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",

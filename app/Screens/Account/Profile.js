@@ -13,6 +13,8 @@ import german from '../../assets/images/flags/german.png';
 import italian from '../../assets/images/flags/italian.png';
 import spanish from '../../assets/images/flags/spanish.png';
 import { IconButton } from 'react-native-paper';
+import { useSelector } from "react-redux";
+
 import { useTheme } from '@react-navigation/native';
 
 const languagetData = [
@@ -42,6 +44,8 @@ const Profile = ({navigation}) => {
     
     const {colors} = useTheme();
     const RBSheetLanguage = useRef();
+    const { token, user } = useSelector((state) => state.user);
+    console.log(user);
 
     return (
         <>
@@ -133,8 +137,8 @@ const Profile = ({navigation}) => {
                                         flex:1
                                     }}
                                 >
-                                    <Text style={{...FONTS.h6,color:colors.title,marginBottom:2}}>Srikanto Rajbongshi</Text>
-                                    <Text style={{...FONTS.font,color:colors.textLight}}>srikantoraj123@gmail.com</Text>
+                                    <Text style={{...FONTS.h6,color:colors.title,marginBottom:2}}>{user.first_name} {user.last_name}</Text>
+                                    <Text style={{...FONTS.font,color:colors.textLight}}>{user.email}</Text>
                                 </View>
                                 {/* <IconButton
                                     onPress={() => navigation.navigate('EditProfile')}
@@ -197,22 +201,16 @@ const Profile = ({navigation}) => {
                                     <Text style={{...FONTS.font,color:colors.title,flex:1}}>Edit Profile</Text>
                                     <FeatherIcon size={20} color={colors.textLight} name='chevron-right'/>
                                 </TouchableOpacity>
-                                {/* <TouchableOpacity
-                                    onPress={() => navigation.navigate('Address')}
+
+                                <TouchableOpacity
+                                    onPress={() => navigation.navigate('Refund')}
                                     style={[styles.listItem,{borderBottomColor:colors.borderColor}]}
                                 >
-                                    <FeatherIcon style={{marginRight:12}} color={colors.textLight} size={18} name='map-pin'/>
-                                    <Text style={{...FONTS.font,color:colors.title,flex:1}}>Saved Addresses</Text>
+                                    <FeatherIcon style={{marginRight:12}} color={colors.textLight} size={20} name='user'/>
+                                    <Text style={{...FONTS.font,color:colors.title,flex:1}}>Refund order</Text>
                                     <FeatherIcon size={20} color={colors.textLight} name='chevron-right'/>
-                                </TouchableOpacity> */}
-                                {/* <TouchableOpacity
-                                    onPress={() => RBSheetLanguage.current.open()}
-                                    style={[styles.listItem,{borderBottomColor:colors.borderColor}]}
-                                >
-                                    <Ionicons style={{marginRight:12}} color={colors.textLight} size={20} name='ios-language'/>
-                                    <Text style={{...FONTS.font,color:colors.title,flex:1}}>Select Language</Text>
-                                    <FeatherIcon size={20} color={colors.textLight} name='chevron-right'/>
-                                </TouchableOpacity> */}
+                                </TouchableOpacity>
+                               
                                 <TouchableOpacity
                                     style={[styles.listItem,{borderBottomColor:colors.borderColor}]}
                                 >

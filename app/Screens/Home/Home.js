@@ -8,6 +8,7 @@ import {
   Text,
   TouchableOpacity,
   View,
+  ActivityIndicator,
 } from "react-native";
 import DropShadow from "react-native-drop-shadow";
 import DropDownPicker from "react-native-dropdown-picker";
@@ -136,12 +137,14 @@ const Home = ({ navigation }) => {
   const dispatch = useDispatch()
   const [productsData, setProductsData] = useState([]);
   const [open, setOpen] = useState(false);
-  const [value, setValue] = useState("$");
+  const [loading, setLoading] = useState(true);
+  const [value, setValue] = useState("GH₵");
   const [items, setItems] = useState([
-    { label: "USA", value: "$" },
-    { label: "UK", value: "£" },
-    { label: "Nigeria", value: "₦" },
     { label: "Gana", value: "GH₵" },
+    // { label: "USA", value: "$" },
+    { label: "UK", value: "£" },
+    // { label: "Nigeria", value: "₦" },
+    
 
   ]);
 
@@ -149,10 +152,12 @@ const Home = ({ navigation }) => {
     fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => {
+        // data = []
+        setLoading(false)
         setProductsData(data);
         // productsData.push(data); // Assuming the API returns an array of products
         // console.log(productsData);r
-        setPopularProducts(data.slice(0, 4));
+        setPopularProducts(data);
         let tempData = data.reverse();
 
         setTradingProducts(data.reverse()); // This will contain the fetched data
@@ -246,8 +251,8 @@ const Home = ({ navigation }) => {
             />
             <IconButton
               icon={(props) => <FeatherIcon name="search" {...props} />}
-              size={20}
-              iconColor="#a435f0"
+              size={24}
+              iconColor="white"
               onPress={() => navigation.navigate("Search")}
             />
           </View>
@@ -258,7 +263,7 @@ const Home = ({ navigation }) => {
             flexDirection: "row",
             paddingHorizontal: 16,
             alignItems: "center",
-            backgroundColor:"#0D99FF"
+            backgroundColor:"#a435f0"
           }}
         >
         <SimpleLineIcons name="location-pin" size={20} />
@@ -282,22 +287,25 @@ const Home = ({ navigation }) => {
             containerStyle={{
               zIndex: 1001,
               flex: 1,
-              backgroundColor: "#0D99FF",
+              // backgroundColor: "#0D99FF",
+              backgroundColor: "#a435f0",
               
             }}
-            style={{ backgroundColor: "#0D99FF",borderWidth:0,width:120 }}
+            style={{ backgroundColor: "#a435f0",color:'white', borderWidth:0,width:120 }}
             onSelectItem={(item) => {
               dispatch(changeCurrency(item))
             }}
             dropDownContainerStyle={{
-                backgroundColor:"#0D99FF",
-                width:120
+                backgroundColor:"#a435f0",
+                width:120,
+                color:'white',
             }}
           />
         </View>
 
         <ScrollView style={{ flex: 1 }}>
-          <BannerSlider productsData={productsData} />
+          {loading && <ActivityIndicator size="large" color="#a435f0"  style={{marginVertical:80}}/>}
+          {!loading && <BannerSlider productsData={productsData} />}
 
           <View
             style={{
@@ -351,79 +359,8 @@ const Home = ({ navigation }) => {
             </ScrollView>
           </View>
 
-          <View style={GlobalStyleSheet.container}>
-            <View
-              style={{
-                flexDirection: "row",
-                alignItems: "center",
-                marginTop: 5,
-              }}
-            >
-              <Text
-                style={{
-                  ...FONTS.h5,
-                  color: colors.title,
-                  flex: 1,
-                }}
-              >
-                Most Popular
-              </Text>
-              <TouchableOpacity
-                onPress={() =>
-                  navigation.navigate("Items", { tradingProducts })
-                }
-              >
-                <Text style={{ ...FONTS.font, color: COLORS.upfricaTitle }}>
-                  See more
-                </Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-
-          <View style={[GlobalStyleSheet.container, { paddingTop: 0 }]}>
-            <View style={GlobalStyleSheet.row}>
-              {porpularProducts.map((data, index) => {
-                return (
-                  <View
-                    key={index}
-                    style={[GlobalStyleSheet.col50, { marginBottom: 15 }]}
-                  >
-                    {/* <ProductCard
-                                            onPress={() => navigation.navigate('ProductDetail')}
-                                            id={data.id}
-                                            image={data.image}
-                                            category={data.category}
-                                            title={data.title}
-                                            price={data.price}
-                                            oldPrice={data.oldPrice}
-                                            offer={data.offer}
-                                            isLike={data.isLike}
-                                            handleLike={handleLike}
-                                        /> */}
-                    <ProductCard
-                      onPress={() =>
-                        navigation.navigate("ProductDetail", { data })
-                      }
-                      id={data.id}
-                      image={data?.product_images[0]}
-                      category={data?.category ? data?.category : ""}
-                      title={data.title}
-                      price={data.sale_price.cents / 100}
-                      oldPrice={
-                        data?.oldPrice
-                          ? data?.oldPrice
-                          : data.sale_price.cents / 100 + 5
-                      }
-                      offer={data.offer ? "Deal" : "Deal"}
-                      isLike={data?.isLike ? data.isLike : false}
-                      handleLike={handleLike}
-                    />
-                  </View>
-                );
-              })}
-            </View>
-          </View>
-          <View style={[GlobalStyleSheet.container, { paddingTop: 0 }]}>
+  {/* Trending Product list  */}
+  <View style={[GlobalStyleSheet.container, { paddingTop: 20 }]}>
             <View
               style={{
                 flexDirection: "row",
@@ -447,8 +384,12 @@ const Home = ({ navigation }) => {
               </TouchableOpacity>
             </View>
           </View>
-
-          <View
+          {
+            loading && (<View style={{ height:200,flex:1, justifyContent:'center', alignItems:'center'}}>
+                          <ActivityIndicator size="large" color="#a435f0" />
+                        </View>)
+          }
+          {!loading &&(<View
             style={{
               paddingBottom: 50,
             }}
@@ -490,6 +431,9 @@ const Home = ({ navigation }) => {
                       }
                       isLike={data?.isLike ? false : false}
                       handleLike={handleLike2}
+                      postage_fee={data?.postage_fee}
+                      secondary_postage_fee={data?.secondary_postage_fee}
+                      type={data?.description?.body}
                     />
                     {/* {
                                         id : "1",
@@ -504,7 +448,77 @@ const Home = ({ navigation }) => {
                 );
               })}
             </ScrollView>
+          </View>)}
+
+  
+  {/* popular product lists  */}
+
+          <View style={GlobalStyleSheet.container}>
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                marginTop: -20,
+              }}
+            >
+              <Text
+                style={{
+                  ...FONTS.h5,
+                  color: colors.title,
+                  flex: 1,
+                }}
+              >
+                Most Popular
+              </Text>
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate("Items", { tradingProducts })
+                }
+              >
+                <Text style={{ ...FONTS.font, color: COLORS.upfricaTitle }}>
+                  See more
+                </Text>
+              </TouchableOpacity>
+            </View>
           </View>
+
+          <View style={[GlobalStyleSheet.container, { paddingTop: 0 }]}>
+            <View style={GlobalStyleSheet.row}>
+              {porpularProducts.map((data, index) => {
+                return (
+                  <View
+                    key={index}
+                    style={[GlobalStyleSheet.col50, { marginBottom: 15 }]}
+                  >
+                
+                    <ProductCard
+                      onPress={() =>
+                        navigation.navigate("ProductDetail", { data })
+                      }
+                      id={data.id}
+                      image={data?.product_images[0]}
+                      category={data?.category ? data?.category : ""}
+                      title={data.title}
+                      price={data.sale_price.cents / 100}
+                      oldPrice={
+                        data?.oldPrice
+                          ? data?.oldPrice
+                          : data.sale_price.cents / 100 + 5
+                      }
+                      offer={data.offer ? "Deal" : "Deal"}
+                      isLike={data?.isLike ? data.isLike : false}
+                      handleLike={handleLike}
+                      postage_fee={data?.postage_fee}
+                      secondary_postage_fee={data?.secondary_postage_fee}
+                      type={data?.description?.body}
+                      
+                    />
+                  </View>
+                );
+              })}
+            </View>
+          </View>
+
         </ScrollView>
       </View>
     </SafeAreaView>

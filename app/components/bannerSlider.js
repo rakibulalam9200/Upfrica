@@ -118,7 +118,6 @@ const BannerSlider = ({ productsData }) => {
                 onPress={() =>
                   navigation.navigate("ProductDetail", { data: bannerProduct1 })
                 }
-                // onPress={() => navigation.navigate("Items")}
                 style={{
                   backgroundColor: COLORS.upfricaTitle,
                   paddingHorizontal: 15,
