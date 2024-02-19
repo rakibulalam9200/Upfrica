@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.app.upfrica"
-<<<<<<< HEAD
-    android:versionCode="12002"
-    android:versionName="1.11" >
-=======
     android:versionCode="15002"
     android:versionName="1.15" >
->>>>>>> 070b148c66f3b3050f938253bee34ed421cdeb88
 
     <uses-sdk
         android:minSdkVersion="21"

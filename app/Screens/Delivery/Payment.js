@@ -36,16 +36,11 @@ const Payment = ({ route, navigation }) => {
   //   publicKey: PAYSTACK_PUBLIC_KEY,
   // });
 
-<<<<<<< HEAD
-  const dispatch = useDispatch();
-  const paystackWebViewRef = useRef();
-=======
   const dispatch = useDispatch()
   // let selector = useSelector();
   const token = useSelector((state) => state.user.token)
   const user = useSelector((state) => state.user.user)
   
->>>>>>> 070b148c66f3b3050f938253bee34ed421cdeb88
 
   // Alert.alert(PAYSTACK_PUBLIC_KEY)
   const { total } = route.params;
@@ -458,74 +453,10 @@ const Payment = ({ route, navigation }) => {
                     mode="outlined"
                     label="CVC"
                     placeholder="CVC"
-<<<<<<< HEAD
-                    
-                  /> */}
-                  {/* <DateTimePickerAndroid/> */}
-                  {/* <TouchableOpacity onPress={chargeCardAccess}>
-                    <Text style={styles.instructions}>
-                      Charge Card with AccessCode
-                    </Text>
-                  </TouchableOpacity> */}
-                  {/* <TouchableOpacity onPress={chargeCard}>
-                    <Text style={[styles.instructions, { marginTop: 10 }]}>
-                      Charge Card without AccessCode
-                    </Text>
-                  </TouchableOpacity> */}
-                  {/* {PhonePeOption.map((data, index) => {
-                    return (
-                      <TouchableOpacity
-                        onPress={() => setPayActive(data.title)}
-                        key={index}
-                        style={[
-                          styles.payList,
-                          {
-                            borderBottomColor: colors.borderColor,
-                          },
-                          PhonePeOption.length - 1 === index && {
-                            borderBottomWidth: 0,
-                          },
-                        ]}
-                      >
-                        <View
-                          style={[
-                            styles.listRadio,
-                            {
-                              borderColor: colors.text,
-                            },
-                            payActive === data.title && {
-                              borderColor: COLORS.primary,
-                            },
-                          ]}
-                        >
-                          {payActive === data.title && (
-                            <View style={styles.listRadioCircle} />
-                          )}
-                        </View>
-
-                        <Text
-                          style={[
-                            {
-                              ...FONTS.font,
-                              color: colors.text,
-                            },
-                            payActive === data.title && {
-                              ...FONTS.fontBold,
-                              color: colors.title,
-                            },
-                          ]}
-                        >
-                          {data.title}
-                        </Text>
-                      </TouchableOpacity>
-                    );
-                  })} */}
-=======
                     // left={<TextInput.Icon icon="verfication" />}
-                  />
+                  />*/}
 
                  
->>>>>>> 070b148c66f3b3050f938253bee34ed421cdeb88
                 </View>
               </Collapsible>
             </View>
