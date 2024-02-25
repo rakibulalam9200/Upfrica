@@ -1,7 +1,7 @@
 import { useTheme } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import { SafeAreaView, ScrollView, Text, TextInput, View } from "react-native";
-import RNPickerSelect from 'react-native-picker-select';
+// import RNPickerSelect from 'react-native-picker-select';
 import { GlobalStyleSheet } from "../../constants/StyleSheet";
 import Header from "../../layout/Header";
 
@@ -112,10 +112,10 @@ const ProductAddorEdit = () => {
             contentContainerStyle={{ flex: 1, width: "100%" }}
             horizontal
           > */}
-            <RNPickerSelect
+            {/* <RNPickerSelect
               onValueChange={(value) => console.log(value)}
               items={categoriesData}
-            />
+            /> */}
           {/* </ScrollView> */}
         </View>
       </ScrollView>

@@ -242,7 +242,8 @@ const Seller = ({ navigation }) => {
                 <SellerProductCard
                   onPress={() => navigation.navigate("ProductDetail", { data })}
                   id={data.id}
-                  image={data?.product_images[0]}
+                  image={data?.product_images ? data?.product_images[0]:'https://www.upfrica.com/assets/upfrica-com-logo-dark_170x-94d438d62a4c6b2c2c70fe1084c008f4584357ed2847dac5fc38818a0de6459d.webp'}
+
                   category={data?.category ? data?.category : ""}
                   title={data.title}
                   price={data.sale_price.cents / 100}
