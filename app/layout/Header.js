@@ -1,12 +1,13 @@
+import { useNavigation, useTheme } from '@react-navigation/native';
 import React from 'react';
 import { Platform, Text, View } from 'react-native';
-import { COLORS, FONTS } from '../constants/theme';
+import DropShadow from 'react-native-drop-shadow';
+import { IconButton } from 'react-native-paper';
+import AntDesign from "react-native-vector-icons/AntDesign";
 import FeatherIcon from "react-native-vector-icons/Feather";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
-import { useNavigation, useTheme } from '@react-navigation/native';
-import DropShadow from 'react-native-drop-shadow';
-import { IconButton } from 'react-native-paper';
+import { COLORS, FONTS } from '../constants/theme';
 
 const Header = (props) => {
 
@@ -68,6 +69,13 @@ const Header = (props) => {
                     <IconButton 
                         iconColor={props.transparent ? "#fff" : colors.title} 
                         icon={props => <MaterialIcons name="more-vert" {...props} />} 
+                    />
+                }
+                {props.rightIcon == "plus" &&
+                    <IconButton
+                        onPress={() => navigation.navigate('ProductAdd')} 
+                        iconColor={props.transparent ? "#fff" : colors.title} 
+                        icon={props => <AntDesign name="pluscircle" {...props} />} 
                     />
                 }
                 {props.rightIcon == "wishlist" &&

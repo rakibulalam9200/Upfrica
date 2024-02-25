@@ -191,7 +191,7 @@ const Seller = ({ navigation }) => {
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.card }}>
-      <Header titleLeft leftIcon={"back"} title={"Seller"} />
+      <Header titleLeft leftIcon={"back"} title={"Seller"} rightIcon={"plus"}/>
 
       {/* Trending Product list  */}
       <View style={[GlobalStyleSheet.container, { paddingTop: 20 }]}>

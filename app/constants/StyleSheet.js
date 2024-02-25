@@ -1,4 +1,4 @@
-import { COLORS, FONTS, SIZES } from "./theme";
+import { COLORS, FONTS } from "./theme";
 
 export const GlobalStyleSheet = {
     container : {
@@ -6,6 +6,18 @@ export const GlobalStyleSheet = {
     },
     formControl : {
         height : 50,
+        borderWidth : 1,
+        borderColor : COLORS.borderColor,
+        paddingHorizontal : 15,
+    },
+    formControl2 : {
+        height : 100,
+        borderWidth : 1,
+        borderColor : COLORS.borderColor,
+        paddingHorizontal : 15,
+    },
+    formControl3 : {
+        height : 150,
         borderWidth : 1,
         borderColor : COLORS.borderColor,
         paddingHorizontal : 15,

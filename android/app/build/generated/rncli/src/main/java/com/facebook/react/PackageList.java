@@ -19,6 +19,8 @@ import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 import com.reactnativecommunity.checkbox.ReactCheckBoxPackage;
 // @react-native-community/datetimepicker
 import com.reactcommunity.rndatetimepicker.RNDateTimePickerPackage;
+// @react-native-picker/picker
+import com.reactnativecommunity.picker.RNCPickerPackage;
 // @stripe/stripe-react-native
 import com.reactnativestripesdk.StripeSdkPackage;
 // react-native-drop-shadow
@@ -100,6 +102,7 @@ public class PackageList {
       new AsyncStoragePackage(),
       new ReactCheckBoxPackage(),
       new RNDateTimePickerPackage(),
+      new RNCPickerPackage(),
       new StripeSdkPackage(),
       new DropShadowPackage(),
       new RNGestureHandlerPackage(),

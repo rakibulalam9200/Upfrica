@@ -1,57 +1,57 @@
-import React from "react";
+import { useTheme } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Home from "../Screens/Home/Home";
-import Splash from "../Screens/Onboarding/Splash";
-import Onboarding from "../Screens/Onboarding/Onboarding";
-import SignUp from "../Screens/Auth/SignUp";
-import SignIn from "../Screens/Auth/SignIn";
-import Products from "../Screens/Products/Products";
-import DrawerNavigation from "./DrawerNavigation";
-import ProductDetail from "../Screens/Products/ProductDetail";
-import Featured from "../Screens/Featured/Featured";
-import Orders from "../Screens/Orders/Orders";
-import DeliveryTracking from "../Screens/Delivery/DeliveryTracking";
-import Profile from "../Screens/Account/Profile";
-import EditProfile from "../Screens/Account/EditProfile";
-import Coupons from "../Screens/Account/Coupons";
-import Address from "../Screens/Account/Address";
+import React from "react";
+import { StatusBar } from "react-native";
 import AddDeliveryAddress from "../Screens/Account/AddDeliveryAddress";
-import Filter from "../Screens/Filter/Filter";
-import Items from "../Screens/Items/Items";
-import Search from "../Screens/Search/Search";
-import Payment from "../Screens/Delivery/Payment";
-import Components from "../Screens/Components/Components";
+import Address from "../Screens/Account/Address";
+import Coupons from "../Screens/Account/Coupons";
+import EditProfile from "../Screens/Account/EditProfile";
+import Profile from "../Screens/Account/Profile";
+import SignIn from "../Screens/Auth/SignIn";
+import SignUp from "../Screens/Auth/SignUp";
+import Cart from "../Screens/Cart/Cart";
+import DirectBuy from "../Screens/Cart/DirectBuy";
 import AccordionScreen from "../Screens/Components/Accordion";
-import ActionSheet from "../Screens/Components/ActionSheet";
-import Buttons from "../Screens/Components/Buttons";
-import Inputs from "../Screens/Components/Inputs";
 import ActionModals from "../Screens/Components/ActionModals";
-import Charts from "../Screens/Components/Charts";
+import ActionSheet from "../Screens/Components/ActionSheet";
 import Badges from "../Screens/Components/Badges";
+import Buttons from "../Screens/Components/Buttons";
+import Charts from "../Screens/Components/Charts";
+import Components from "../Screens/Components/Components";
 import DividerElements from "../Screens/Components/DividerElements";
-import Headers from "../Screens/Components/Headers";
 import Footers from "../Screens/Components/Footers";
-import TabStyle1 from "../components/Footers/FooterStyle1";
-import TabStyle2 from "../components/Footers/FooterStyle2";
-import TabStyle3 from "../components/Footers/FooterStyle3";
-import TabStyle4 from "../components/Footers/FooterStyle4";
+import Headers from "../Screens/Components/Headers";
+import Inputs from "../Screens/Components/Inputs";
 import ListScreen from "../Screens/Components/Lists";
 import Pricings from "../Screens/Components/Pricings";
 import Snackbars from "../Screens/Components/Snakbars";
 import Socials from "../Screens/Components/Socials";
 import SwipeableScreen from "../Screens/Components/Swipeable";
-import Tabs from "../Screens/Components/Tabs";
 import Tables from "../Screens/Components/Tables";
+import Tabs from "../Screens/Components/Tabs";
 import Toggles from "../Screens/Components/Toggles";
-import Cart from "../Screens/Cart/Cart";
-import { StatusBar } from "react-native";
-import { useTheme } from "@react-navigation/native";
-import Empty from "../Screens/Empty/Empty";
-import DirectBuy from "../Screens/Cart/DirectBuy";
-import RefundOrder from "../Screens/Orders/RefundOrder";
-import OrdersList from "../Screens/Orders/OrdersList";
+import DeliveryTracking from "../Screens/Delivery/DeliveryTracking";
+import Payment from "../Screens/Delivery/Payment";
+import Featured from "../Screens/Featured/Featured";
+import Filter from "../Screens/Filter/Filter";
+import Home from "../Screens/Home/Home";
+import Items from "../Screens/Items/Items";
+import Onboarding from "../Screens/Onboarding/Onboarding";
+import Splash from "../Screens/Onboarding/Splash";
 import CancelOrders from "../Screens/Orders/CancelOrders";
+import Orders from "../Screens/Orders/Orders";
+import OrdersList from "../Screens/Orders/OrdersList";
+import RefundOrder from "../Screens/Orders/RefundOrder";
+import ProductAddorEdit from "../Screens/Products/ProductAddOrEdit";
+import ProductDetail from "../Screens/Products/ProductDetail";
+import Products from "../Screens/Products/Products";
+import Search from "../Screens/Search/Search";
 import Seller from "../Screens/SellerScreen/Seller";
+import TabStyle1 from "../components/Footers/FooterStyle1";
+import TabStyle2 from "../components/Footers/FooterStyle2";
+import TabStyle3 from "../components/Footers/FooterStyle3";
+import TabStyle4 from "../components/Footers/FooterStyle4";
+import DrawerNavigation from "./DrawerNavigation";
 const StackComponent = createNativeStackNavigator();
 
 const StackNavigator = () => {
@@ -82,6 +82,7 @@ const StackNavigator = () => {
           component={DrawerNavigation}
         />
         <StackComponent.Screen name={"Products"} component={Products} />
+        <StackComponent.Screen name={"ProductAdd"} component={ProductAddorEdit} />
         <StackComponent.Screen
           name={"ProductDetail"}
           component={ProductDetail}

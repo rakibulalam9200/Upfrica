@@ -1,6 +1,7 @@
 import { useTheme } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import {
+  ActivityIndicator,
   Image,
   Platform,
   SafeAreaView,
@@ -8,7 +9,6 @@ import {
   Text,
   TouchableOpacity,
   View,
-  ActivityIndicator,
 } from "react-native";
 import DropShadow from "react-native-drop-shadow";
 import DropDownPicker from "react-native-dropdown-picker";

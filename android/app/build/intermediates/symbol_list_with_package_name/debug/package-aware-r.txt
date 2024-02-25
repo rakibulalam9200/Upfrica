@@ -3355,6 +3355,7 @@ drawable ic_arrow_back_black_24
 drawable ic_arrow_back_white
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
+drawable ic_dropdown
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
 drawable ic_m3_chip_check
@@ -3441,6 +3442,7 @@ drawable pay_with_googlepay_button_content
 drawable ps_backspace
 drawable redbox_top_border_background
 drawable rn_edit_text_material
+drawable spinner_dropdown_background
 drawable stripe_3ds2_ic_amex
 drawable stripe_3ds2_ic_arrow
 drawable stripe_3ds2_ic_cartesbancaires
@@ -3852,6 +3854,8 @@ id dragLeft
 id dragRight
 id dragStart
 id dragUp
+id dropdown_background
+id dropdown_icon
 id dropdown_menu
 id easeIn
 id easeInOut
@@ -4581,6 +4585,8 @@ layout redbox_view
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout simple_spinner_dropdown_item
+layout simple_spinner_item
 layout stripe_3ds2_transaction_layout
 layout stripe_activity
 layout stripe_activity_card_scan
