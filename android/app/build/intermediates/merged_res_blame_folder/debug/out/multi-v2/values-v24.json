@@ -4,7 +4,7 @@
             "outputFile": "com.app.upfrica.app-mergeDebugResources-91:/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\srika\\.gradle\\caches\\transforms-3\\1ebf47d3dd0e5a81935f335e067e5ab1\\transformed\\appcompat-1.6.1\\res\\values-v24\\values-v24.xml",
+                    "source": "/home/rakib/.gradle/caches/transforms-3/1ebf47d3dd0e5a81935f335e067e5ab1/transformed/appcompat-1.6.1/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\srika\\.gradle\\caches\\transforms-3\\bc984b4c216b046fb814ced4c0f10e24\\transformed\\material-1.9.0\\res\\values-v24\\values-v24.xml",
+                    "source": "/home/rakib/.gradle/caches/transforms-3/bc984b4c216b046fb814ced4c0f10e24/transformed/material-1.9.0/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,9,12,15",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -33,7 +33,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\srika\\.gradle\\caches\\transforms-3\\28cb6e20fa03579911c48e52dd2adf64\\transformed\\media-1.0.0\\res\\values-v24\\values-v24.xml",
+                    "source": "/home/rakib/.gradle/caches/transforms-3/28cb6e20fa03579911c48e52dd2adf64/transformed/media-1.0.0/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
