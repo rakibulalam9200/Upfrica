@@ -64,8 +64,8 @@ const StackNavigator = () => {
         barStyle={theme.dark ? "light-content" : "dark-content"}
       />
       <StackComponent.Navigator
-        initialRouteName={"SignIn"}
-        // initialRouteName={"Home"}
+        // initialRouteName={"SignIn"}
+        initialRouteName={"Home"}
         detachInactiveScreens={true}
         screenOptions={{
           headerShown: false,

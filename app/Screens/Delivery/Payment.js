@@ -2,7 +2,7 @@
 import { PAYSTACK_PUBLIC_KEY } from "@env";
 import { useTheme } from "@react-navigation/native";
 import { CardField, createToken } from "@stripe/stripe-react-native";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import {
   Alert,
   Image,
@@ -14,10 +14,10 @@ import {
   View,
 } from "react-native";
 import Collapsible from "react-native-collapsible";
-import RNPaystack from "react-native-paystack";
-import { Paystack } from "react-native-paystack-webview";
+// import RNPaystack from "react-native-paystack";
+// import { Paystack } from "react-native-paystack-webview";
 import FeatherIcon from "react-native-vector-icons/Feather";
-import { useDispatch,useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { resetCart } from "../../../Store/cart";
 import card from "../../assets/images/icons/card.png";
 import pay from "../../assets/images/icons/pay.png";
@@ -186,89 +186,89 @@ const Payment = ({ route, navigation }) => {
         setIsLoading(false);
       }
     } else {
-      chargeCard();
+      // chargeCard();
     }
   };
 
-  const chargeCardAccess = () => {
-    console.log("charge card");
-    RNPaystack.chargeCardWithAccessCode({
-      cardNumber: "50606 66666 66666 6666",
-      expiryMonth: "12",
-      expiryYear: "24",
-      cvc: "123",
-      accessCode: "2p3j42th639duy4",
-    })
-      .then((response) => {
-        console.log("hit access here ");
-        console.log(response); // do stuff with the token
-      })
-      .catch((error) => {
-        console.log("error access here ");
-        console.log(error.message);
-      });
-  };
+  // const chargeCardAccess = () => {
+  //   console.log("charge card");
+  //   RNPaystack.chargeCardWithAccessCode({
+  //     cardNumber: "50606 66666 66666 6666",
+  //     expiryMonth: "12",
+  //     expiryYear: "24",
+  //     cvc: "123",
+  //     accessCode: "2p3j42th639duy4",
+  //   })
+  //     .then((response) => {
+  //       console.log("hit access here ");
+  //       console.log(response); // do stuff with the token
+  //     })
+  //     .catch((error) => {
+  //       console.log("error access here ");
+  //       console.log(error.message);
+  //     });
+  // };
 
-  const chargeCard = () => {
-    console.log(
-      "charge card",
-      cardNumber,
-      date.split("/")[0],
-      date.split("/")[1],
-      CVC,
-      total
-    );
-    setIsLoading(true);
-    RNPaystack.chargeCard({
-      cardNumber: cardNumber,
-      expiryMonth: date.split("/")[0],
-      expiryYear: date.split("/")[1],
-      cvc: CVC,
-      amountInKobo: +total,
-      email: "rakibul9200@gmail.com",
-      currency: "GHS",
-      // cardNumber: "4084084084084081",
-      // expiryMonth: "09",
-      // expiryYear: "24",
-      // cvc: "408",
-      // email: "rakibul9200@gmail.com",
-      //  amountInKobo: 150000,
-      // currency: 'GHS'
-    })
-      .then((response) => {
-        navigation.navigate("DeliveryTracking");
-        dispatch(resetCart());
-        setIsLoading(false);
-        // console.log("hit here......");
-        console.log(response); // do stuff with the token
-      })
-      .catch((error) => {
-        Alert.alert(error.message);
-        setIsLoading(false);
-        // console.log("hit error here......");
-        console.log(error.message);
-      });
-  };
+  // const chargeCard = () => {
+  //   console.log(
+  //     "charge card",
+  //     cardNumber,
+  //     date.split("/")[0],
+  //     date.split("/")[1],
+  //     CVC,
+  //     total
+  //   );
+  //   setIsLoading(true);
+  //   RNPaystack.chargeCard({
+  //     cardNumber: cardNumber,
+  //     expiryMonth: date.split("/")[0],
+  //     expiryYear: date.split("/")[1],
+  //     cvc: CVC,
+  //     amountInKobo: +total,
+  //     email: "rakibul9200@gmail.com",
+  //     currency: "GHS",
+  //     // cardNumber: "4084084084084081",
+  //     // expiryMonth: "09",
+  //     // expiryYear: "24",
+  //     // cvc: "408",
+  //     // email: "rakibul9200@gmail.com",
+  //     //  amountInKobo: 150000,
+  //     // currency: 'GHS'
+  //   })
+  //     .then((response) => {
+  //       navigation.navigate("DeliveryTracking");
+  //       dispatch(resetCart());
+  //       setIsLoading(false);
+  //       // console.log("hit here......");
+  //       console.log(response); // do stuff with the token
+  //     })
+  //     .catch((error) => {
+  //       Alert.alert(error.message);
+  //       setIsLoading(false);
+  //       // console.log("hit error here......");
+  //       console.log(error.message);
+  //     });
+  // };
 
-  function Pay() {
-    return (
-      <View style={{ flex: 1 }}>
-        <Paystack
-          paystackKey={publicKey}
-          amount={"25000.00"}
-          billingEmail="rakibul9200@gmail.com"
-          activityIndicatorColor="green"
-          onCancel={(e) => {
-            // handle response here
-          }}
-          onSuccess={(res) => {
-            // handle response here
-          }}
-          autoStart={true}
-        />
-      </View>
-    );
-  }
+  // function Pay() {
+  //   return (
+  //     <View style={{ flex: 1 }}>
+  //       <Paystack
+  //         paystackKey={publicKey}
+  //         amount={"25000.00"}
+  //         billingEmail="rakibul9200@gmail.com"
+  //         activityIndicatorColor="green"
+  //         onCancel={(e) => {
+  //           // handle response here
+  //         }}
+  //         onSuccess={(res) => {
+  //           // handle response here
+  //         }}
+  //         autoStart={true}
+  //       />
+  //     </View>
+  //   );
+  // }
 
   return (
     <>

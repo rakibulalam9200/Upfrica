@@ -133,8 +133,8 @@ const tradingData = [];
 // ]
 
 const Home = ({ navigation }) => {
-  const currency = useSelector(((state)=> state?.currency?.currency))
-  const dispatch = useDispatch()
+  const currency = useSelector((state) => state?.currency?.currency);
+  const dispatch = useDispatch();
   const [productsData, setProductsData] = useState([]);
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -144,23 +144,22 @@ const Home = ({ navigation }) => {
     // { label: "USA", value: "$" },
     { label: "UK", value: "£" },
     // { label: "Nigeria", value: "₦" },
-    
-
   ]);
 
   function productList() {
     fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => {
+        console.log(data, "data............");
         // data = []
-        setLoading(false)
-        setProductsData(data);
+        setLoading(false);
+        setProductsData(data?.products);
         // productsData.push(data); // Assuming the API returns an array of products
         // console.log(productsData);r
-        setPopularProducts(data);
-        let tempData = data.reverse();
+        setPopularProducts(data?.products);
+        // let tempData = data.reverse();
 
-        setTradingProducts(data.reverse()); // This will contain the fetched data
+        setTradingProducts(data?.products.reverse()); // This will contain the fetched data
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -198,9 +197,7 @@ const Home = ({ navigation }) => {
     setTradingProducts(temp);
   };
 
-  useEffect(() => {
-
-  }, [])
+  useEffect(() => {}, []);
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.card }}>
@@ -263,15 +260,15 @@ const Home = ({ navigation }) => {
             flexDirection: "row",
             paddingHorizontal: 16,
             alignItems: "center",
-            backgroundColor:"#a435f0"
+            backgroundColor: "#a435f0",
           }}
         >
-        <SimpleLineIcons name="location-pin" size={20} />
+          <SimpleLineIcons name="location-pin" size={20} />
           <Text
             style={{
               ...FONTS.h5,
               color: colors.title,
-              marginHorizontal:8,
+              marginHorizontal: 8,
             }}
           >
             Deliver to
@@ -289,22 +286,32 @@ const Home = ({ navigation }) => {
               flex: 1,
               // backgroundColor: "#0D99FF",
               backgroundColor: "#a435f0",
-              
             }}
-            style={{ backgroundColor: "#a435f0",color:'white', borderWidth:0,width:120 }}
+            style={{
+              backgroundColor: "#a435f0",
+              color: "white",
+              borderWidth: 0,
+              width: 120,
+            }}
             onSelectItem={(item) => {
-              dispatch(changeCurrency(item))
+              dispatch(changeCurrency(item));
             }}
             dropDownContainerStyle={{
-                backgroundColor:"#a435f0",
-                width:120,
-                color:'white',
+              backgroundColor: "#a435f0",
+              width: 120,
+              color: "white",
             }}
           />
         </View>
 
         <ScrollView style={{ flex: 1 }}>
-          {loading && <ActivityIndicator size="large" color="#a435f0"  style={{marginVertical:80}}/>}
+          {loading && (
+            <ActivityIndicator
+              size="large"
+              color="#a435f0"
+              style={{ marginVertical: 80 }}
+            />
+          )}
           {!loading && <BannerSlider productsData={productsData} />}
 
           <View
@@ -359,8 +366,8 @@ const Home = ({ navigation }) => {
             </ScrollView>
           </View>
 
-  {/* Trending Product list  */}
-  <View style={[GlobalStyleSheet.container, { paddingTop: 20 }]}>
+          {/* Trending Product list  */}
+          <View style={[GlobalStyleSheet.container, { paddingTop: 20 }]}>
             <View
               style={{
                 flexDirection: "row",
@@ -384,59 +391,70 @@ const Home = ({ navigation }) => {
               </TouchableOpacity>
             </View>
           </View>
-          {
-            loading && (<View style={{ height:200,flex:1, justifyContent:'center', alignItems:'center'}}>
-                          <ActivityIndicator size="large" color="#a435f0" />
-                        </View>)
-          }
-          {!loading &&(<View
-            style={{
-              paddingBottom: 50,
-            }}
-          >
-            <ScrollView
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              contentContainerStyle={{
-                paddingLeft: 15,
+          {loading && (
+            <View
+              style={{
+                height: 200,
+                flex: 1,
+                justifyContent: "center",
+                alignItems: "center",
               }}
             >
-              {tradingProducts.map((data, index) => {
-                return (
-                  <View
-                    key={index}
-                    style={{
-                      width: 150,
-                      marginRight: 15,
-                    }}
-                  >
-                    <ProductBox
-                      onPress={() =>
-                        navigation.navigate("ProductDetail", { data })
-                      }
-                      id={data.id}
-                      image={data?.product_images ? data?.product_images[0]:'https://www.upfrica.com/assets/upfrica-com-logo-dark_170x-94d438d62a4c6b2c2c70fe1084c008f4584357ed2847dac5fc38818a0de6459d.webp'}
-
-                      category={data?.category ? data?.category : ""}
-                      title={data.title}
-                      price={data.sale_price.cents / 100}
-                      rating={
-                        data?.rating
-                          ? data?.rating
-                          : Math.floor(Math.random() * (5 - 3 + 3)) + 2
-                      }
-                      review={
-                        data?.review
-                          ? data?.review
-                          : Math.floor(Math.random() * (500 - 300 + 300)) + 1
-                      }
-                      isLike={data?.isLike ? false : false}
-                      handleLike={handleLike2}
-                      postage_fee={data?.postage_fee}
-                      secondary_postage_fee={data?.secondary_postage_fee}
-                      type={data?.description?.body}
-                    />
-                    {/* {
+              <ActivityIndicator size="large" color="#a435f0" />
+            </View>
+          )}
+          {!loading && (
+            <View
+              style={{
+                paddingBottom: 50,
+              }}
+            >
+              <ScrollView
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                contentContainerStyle={{
+                  paddingLeft: 15,
+                }}
+              >
+                {tradingProducts.map((data, index) => {
+                  return (
+                    <View
+                      key={index}
+                      style={{
+                        width: 150,
+                        marginRight: 15,
+                      }}
+                    >
+                      <ProductBox
+                        onPress={() =>
+                          navigation.navigate("ProductDetail", { data })
+                        }
+                        id={data.id}
+                        image={
+                          data?.product_images
+                            ? data?.product_images[0]
+                            : "https://www.upfrica.com/assets/upfrica-com-logo-dark_170x-94d438d62a4c6b2c2c70fe1084c008f4584357ed2847dac5fc38818a0de6459d.webp"
+                        }
+                        category={data?.category ? data?.category : ""}
+                        title={data.title}
+                        price={data.sale_price.cents / 100}
+                        rating={
+                          data?.rating
+                            ? data?.rating
+                            : Math.floor(Math.random() * (5 - 3 + 3)) + 2
+                        }
+                        review={
+                          data?.review
+                            ? data?.review
+                            : Math.floor(Math.random() * (500 - 300 + 300)) + 1
+                        }
+                        isLike={data?.isLike ? false : false}
+                        handleLike={handleLike2}
+                        postage_fee={data?.postage_fee}
+                        secondary_postage_fee={data?.secondary_postage_fee}
+                        type={data?.description?.body}
+                      />
+                      {/* {
                                         id : "1",
                                         image : IMAGES.tradingProduct1,
                                         title : "Men Black Grey Allover Printed Round Neck T-Shirt",
@@ -445,14 +463,14 @@ const Home = ({ navigation }) => {
                                         rating : "4.5",
                                         review : "2547",
                                       } */}
-                  </View>
-                );
-              })}
-            </ScrollView>
-          </View>)}
+                    </View>
+                  );
+                })}
+              </ScrollView>
+            </View>
+          )}
 
-  
-  {/* popular product lists  */}
+          {/* popular product lists  */}
 
           <View style={GlobalStyleSheet.container}>
             <View
@@ -491,13 +509,16 @@ const Home = ({ navigation }) => {
                     key={index}
                     style={[GlobalStyleSheet.col50, { marginBottom: 15 }]}
                   >
-                
                     <ProductCard
                       onPress={() =>
                         navigation.navigate("ProductDetail", { data })
                       }
                       id={data.id}
-                      image={data?.product_images ? data?.product_images[0]:'https://www.upfrica.com/assets/upfrica-com-logo-dark_170x-94d438d62a4c6b2c2c70fe1084c008f4584357ed2847dac5fc38818a0de6459d.webp'}
+                      image={
+                        data?.product_images
+                          ? data?.product_images[0]
+                          : "https://www.upfrica.com/assets/upfrica-com-logo-dark_170x-94d438d62a4c6b2c2c70fe1084c008f4584357ed2847dac5fc38818a0de6459d.webp"
+                      }
                       category={data?.category ? data?.category : ""}
                       title={data.title}
                       price={data.sale_price.cents / 100}
@@ -512,14 +533,12 @@ const Home = ({ navigation }) => {
                       postage_fee={data?.postage_fee}
                       secondary_postage_fee={data?.secondary_postage_fee}
                       type={data?.description?.body}
-                      
                     />
                   </View>
                 );
               })}
             </View>
           </View>
-
         </ScrollView>
       </View>
     </SafeAreaView>

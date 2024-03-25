@@ -13,7 +13,7 @@ const BannerSlider = ({ productsData }) => {
   const [bannerProduct4, setBannerProduct4] = useState({});
   const [bannerProduct5, setBannerProduct5] = useState({});
   let count = 0;
-  // console.log(productsData[0]?.homepageitems,"home page items")
+  console.log(productsData[0]?.homepageitems,"home page items")
   let first_bannder_product = productsData?.find(
     (p) => p.homepageitems.homepage_pos_1 == "1"
   );

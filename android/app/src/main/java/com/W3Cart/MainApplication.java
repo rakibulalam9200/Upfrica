@@ -9,7 +9,7 @@ import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint;
 import com.facebook.react.defaults.DefaultReactNativeHost;
 import com.facebook.soloader.SoLoader;
 import java.util.List;
-import com.arttitude360.reactnative.rnpaystack.RNPaystackPackage;
+// import com.arttitude360.reactnative.rnpaystack.RNPaystackPackage;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -27,7 +27,7 @@ public class MainApplication extends Application implements ReactApplication {
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage());
           // new RNPaystackPackage()
-          new RNPaystackPackage();
+          // new RNPaystackPackage();
           return packages;
         }
 
