@@ -1,11 +1,10 @@
-import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Categories from '../Screens/Categories/Categories';
+import React from 'react';
 import Profile from '../Screens/Account/Profile';
-import CustomBottomNavigation from './CustomBottomNavigation';
-import Home from '../Screens/Home/Home';
-import Wishlist from '../Screens/Wishlist/Wishlist';
+import Categories from '../Screens/Categories/Categories';
 import Empty from '../Screens/Empty/Empty';
+import Home from '../Screens/Home/Home';
+import CustomBottomNavigation from './CustomBottomNavigation';
 
 const Tab = createBottomTabNavigator();
 

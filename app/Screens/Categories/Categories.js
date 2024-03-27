@@ -42,8 +42,8 @@ const Categories = ({ navigation }) => {
     fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.length, "data.......");
-        setCategoriesData(data); // This will contain the fetched data
+        console.log(data, "data.......");
+        setCategoriesData(data?.categories); // This will contain the fetched data
       })
       .catch((error) => {
         console.error("Error fetching data:", error);

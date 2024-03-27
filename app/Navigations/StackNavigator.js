@@ -65,7 +65,7 @@ const StackNavigator = () => {
       />
       <StackComponent.Navigator
         // initialRouteName={"SignIn"}
-        initialRouteName={"Home"}
+        initialRouteName={"DrawerNavigation"}
         detachInactiveScreens={true}
         screenOptions={{
           headerShown: false,
