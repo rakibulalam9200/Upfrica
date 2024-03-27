@@ -13,15 +13,13 @@ import {
 } from "react-native";
 import FeatherIcon from "react-native-vector-icons/Feather";
 import { useDispatch, useSelector } from "react-redux";
+import { setCartId } from "../../../Store/cart";
 import CheckoutItem from "../../components/CheckoutItem";
 import CustomButton from "../../components/CustomButton";
 import Divider from "../../components/Dividers/Divider";
 import { GlobalStyleSheet } from "../../constants/StyleSheet";
 import { COLORS, FONTS } from "../../constants/theme";
 import Header from "../../layout/Header";
-import { setCartId } from "../../../Store/cart";
-import { baseURL } from "@env";
-import axios from "axios";
 // import { cartItemList } from "../../../Store/cart";
 
 const Cart = ({ route, navigation }) => {
@@ -105,6 +103,10 @@ const Cart = ({ route, navigation }) => {
 
 
   const cartItems = async () => {
+    if(!token){
+      navigation.navigate("SignIn")
+      return;
+    }
     setIsLoading(true);
 
     if(!cart.length)  return;
@@ -176,7 +178,7 @@ const Cart = ({ route, navigation }) => {
         }}
       >
         <Header
-          backAction={() => navigation.navigate("Home")}
+          backAction={() => navigation.goBack()}
           title={"Cart"}
           leftIcon={"back"}
           rightIcon={"more"}

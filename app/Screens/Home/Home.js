@@ -373,6 +373,7 @@ const Home = ({ navigation }) => {
                 flexDirection: "row",
                 alignItems: "center",
                 marginTop: 5,
+                marginBottom:10,
               }}
             >
               <Text
@@ -478,6 +479,7 @@ const Home = ({ navigation }) => {
                 flexDirection: "row",
                 alignItems: "center",
                 marginTop: -20,
+                marginBottom:10,
               }}
             >
               <Text

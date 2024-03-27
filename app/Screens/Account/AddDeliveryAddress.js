@@ -15,7 +15,6 @@ import {
   TextInput,
   TouchableOpacity,
   View,
-  Linking
 } from "react-native";
 import { useSelector } from "react-redux";
 import CustomButton from "../../components/CustomButton";
@@ -25,7 +24,7 @@ import Header from "../../layout/Header";
 
 const AddDeliveryAddress = ({ route, navigation }) => {
   const { token, user } = useSelector((state) => state.user);
-  const {  cartId } = useSelector((state) => state.cart);
+  const { cartId } = useSelector((state) => state.cart);
   const { colors } = useTheme();
   const { total } = route.params;
   let width = Dimensions.get("window").width;
@@ -43,7 +42,6 @@ const AddDeliveryAddress = ({ route, navigation }) => {
   const [addresses, setAddresses] = useState([]);
   const [refresh, setRefresh] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
 
   const saveAddress = async () => {
     let body = {
@@ -68,55 +66,53 @@ const AddDeliveryAddress = ({ route, navigation }) => {
       let response = await axios.post(`${baseURL}/addresses`, body, {
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
         },
       });
       if (response) {
         console.log("0000000000", response.data);
         Alert.alert("Address saved successfully.");
         setRefresh((pre) => !pre);
-        resetAddress()
+        resetAddress();
       }
     } catch (error) {
-       Alert.alert(error?.response?.data?.error);
+      Alert.alert(error?.response?.data?.error);
       console.log(error.response, "errror...");
     } finally {
       setLoading(false);
     }
   };
 
-
-  const PaymentProcess = (id)=>{
-
+  const PaymentProcess = (id) => {
     const headers = {
-      'Content-Type': 'application/json', 
-      'Authorization': `Bearer ${token}`, 
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
     };
-    
-    
+
     // var data = {
     //     order: {
     //         currency: "USD"
     //     }};
-        var data = {redirect_uri:"https://google.com"};
-      
-      axios.post(`https://upfrica-staging.herokuapp.com/api/v1/orders/${id}/create_paystack_transaction`, JSON.stringify(data), { headers })
-            .then(response => {
-              console.log(response?.data);
+    var data = { redirect_uri: "https://google.com" };
 
-              // Linking.openURL(response?.data?.paystack?.data?.authorization_url );
-              setIsLoading(false);
+    axios
+      .post(
+        `https://upfrica-staging.herokuapp.com/api/v1/orders/${id}/create_paystack_transaction`,
+        JSON.stringify(data),
+        { headers }
+      )
+      .then((response) => {
+        console.log(response?.data);
 
-            })
-            .catch(error => {
-              console.error(error);
-            });
-
-  }
+        // Linking.openURL(response?.data?.paystack?.data?.authorization_url );
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
 
   const processToPayment = () => {
-    setIsLoading(true);
-
     if (
       fullName === "" ||
       locality === "" ||
@@ -128,33 +124,39 @@ const AddDeliveryAddress = ({ route, navigation }) => {
       Alert.alert(
         "Name, Mobile No, Post Code, Locality, Address, Country Should not be blank!"
       );
-      return
+      return;
     }
+    setIsLoading(true);
 
     const headers = {
-      'Content-Type': 'application/json', 
-      'Authorization': `Bearer ${token}`, 
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
     };
-    
-    console.log(addresses)
+
+    console.log(addresses);
     var data = {
       order: {
         cart_id: cartId,
-        buyer_id:user.id ,
-        address_id: addresses[0]?.id,  
-      }};
-     
-      axios.post('https://upfrica-staging.herokuapp.com/api/v1/orders', JSON.stringify(data), { headers })
-            .then(response => {
-              console.log(response?.data);
-              if(response?.data){
-                PaymentProcess(response?.data?.order?.id);
-              }
-            })
-            .catch(error => {
-              console.error(error);
-            });
+        buyer_id: user.id,
+        address_id: addresses[0]?.id,
+      },
+    };
 
+    axios
+      .post(
+        "https://upfrica-staging.herokuapp.com/api/v1/orders",
+        JSON.stringify(data),
+        { headers }
+      )
+      .then((response) => {
+        console.log(response?.data);
+        if (response?.data) {
+          PaymentProcess(response?.data?.order?.id);
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   const getAddresses = () => {
@@ -186,26 +188,26 @@ const AddDeliveryAddress = ({ route, navigation }) => {
   }, [refresh]);
 
   const filledDatatoAddress = (item) => {
-    console.log(item,'item...')
+    console.log(item, "item...");
 
-    setFullName(item.full_name)
-    setMobile(item?.address_data?.phone_number)
-    setFullAddress(item?.address_data?.address_line_1)
-    setCity(item?.address_data?.city)
-    setLocality(item?.address_data?.town)
-    setCountry(item?.address_data?.country)
-    setPostCode(item?.address_data?.postcode)
+    setFullName(item.full_name);
+    setMobile(item?.address_data?.phone_number);
+    setFullAddress(item?.address_data?.address_line_1);
+    setCity(item?.address_data?.city);
+    setLocality(item?.address_data?.town);
+    setCountry(item?.address_data?.country);
+    setPostCode(item?.address_data?.postcode);
   };
 
   const resetAddress = () => {
-    setFullName("")
-    setMobile("")
-    setFullAddress("")
-    setCity("")
-    setLocality("")
-    setCountry("")
-    setPostCode("")
-  }
+    setFullName("");
+    setMobile("");
+    setFullAddress("");
+    setCity("");
+    setLocality("");
+    setCountry("");
+    setPostCode("");
+  };
 
   const renderAddresses = ({ item }) => {
     return (
@@ -224,29 +226,29 @@ const AddDeliveryAddress = ({ route, navigation }) => {
       >
         <View style={{ flex: 1, flexDirection: "row", gap: 8 }}>
           <Text style={{ fontWeight: "700", color: "black" }}>Name: </Text>
-          <Text style={{flex:1}}>{item?.full_name}</Text>
+          <Text style={{ flex: 1 }}>{item?.full_name}</Text>
         </View>
         <View style={{ flex: 1, flexDirection: "row", gap: 8 }}>
           <Text style={{ fontWeight: "700", color: "black" }}>Address: </Text>
-          <Text style={{flex:1}}>{item?.address_data?.address_line_1}</Text>
+          <Text style={{ flex: 1 }}>{item?.address_data?.address_line_1}</Text>
         </View>
         <View style={{ flex: 1, flexDirection: "row", gap: 8 }}>
           <Text style={{ fontWeight: "700", color: "black" }}>Post Code: </Text>
-          <Text style={{flex:1}}>{item?.address_data?.postcode}</Text>
+          <Text style={{ flex: 1 }}>{item?.address_data?.postcode}</Text>
         </View>
         <View style={{ flex: 1, flexDirection: "row", gap: 8 }}>
           <Text style={{ fontWeight: "700", color: "black" }}>Mobile No: </Text>
-          <Text style={{flex:1}}>{item?.address_data?.phone_number}</Text>
+          <Text style={{ flex: 1 }}>{item?.address_data?.phone_number}</Text>
         </View>
         <View style={{ flex: 1, flexDirection: "row", gap: 8 }}>
           <Text style={{ fontWeight: "700", color: "black" }}>
             Locality/Town:{" "}
           </Text>
-          <Text style={{flex:1}}>{item?.address_data?.town}</Text>
+          <Text style={{ flex: 1 }}>{item?.address_data?.town}</Text>
         </View>
         <View style={{ flex: 1, flexDirection: "row", gap: 8 }}>
           <Text style={{ fontWeight: "700", color: "black" }}>Country: </Text>
-          <Text style={{flex:1}}>{item?.address_data?.country}</Text>
+          <Text style={{ flex: 1 }}>{item?.address_data?.country}</Text>
         </View>
       </TouchableOpacity>
     );
@@ -326,7 +328,6 @@ const AddDeliveryAddress = ({ route, navigation }) => {
                     value={mobile}
                     onChangeText={(text) => setMobile(text)}
                     keyboardType="phone-pad"
-
                   />
                 </View>
                 <View
@@ -542,7 +543,6 @@ const AddDeliveryAddress = ({ route, navigation }) => {
               // title={"Save Address"}
               title={"Proced to payment"}
               isLoading={isLoading}
-
             />
           </View>
         </KeyboardAvoidingView>
