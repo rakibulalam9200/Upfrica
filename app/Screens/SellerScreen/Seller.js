@@ -143,13 +143,13 @@ const Seller = ({ navigation }) => {
       .then((data) => {
         // data = []
         setLoading(false);
-        setProductsData(data);
+        setProductsData(data?.products);
         // productsData.push(data); // Assuming the API returns an array of products
         // console.log(productsData);r
-        setPopularProducts(data);
-        let tempData = data.reverse();
+        setPopularProducts(data?.products);
+        let tempData = data?.products?.reverse();
 
-        setTradingProducts(data.reverse()); // This will contain the fetched data
+        setTradingProducts(data?.products?.reverse()); // This will contain the fetched data
       })
       .catch((error) => {
         console.error("Error fetching data:", error);

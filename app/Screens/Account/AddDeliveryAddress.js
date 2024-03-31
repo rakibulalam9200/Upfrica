@@ -18,6 +18,7 @@ import {
 } from "react-native";
 import { useSelector } from "react-redux";
 import CustomButton from "../../components/CustomButton";
+import PaymentOptionModal from "../../components/Modal/PaymentOptionModal";
 import { GlobalStyleSheet } from "../../constants/StyleSheet";
 import { COLORS, FONTS } from "../../constants/theme";
 import Header from "../../layout/Header";
@@ -26,10 +27,9 @@ const AddDeliveryAddress = ({ route, navigation }) => {
   const { token, user } = useSelector((state) => state.user);
   const { cartId } = useSelector((state) => state.cart);
   const { colors } = useTheme();
-  const { total } = route.params;
-  console.log(total,'totoal...........')
+  // const { total } = route.params;
   let width = Dimensions.get("window").width;
-  const [totalPayable, setTotalPayble] = useState(total);
+  // const [totalPayable, setTotalPayble] = useState(total);
   const [loading, setLoading] = useState(false);
   const [defaultAddress, setAddress] = useState("Home");
   const [fullName, setFullName] = useState("");
@@ -43,6 +43,7 @@ const AddDeliveryAddress = ({ route, navigation }) => {
   const [addresses, setAddresses] = useState([]);
   const [refresh, setRefresh] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [showPaymentOptionModal, setShowPaymentOptionModal] = useState(false);
 
   const saveAddress = async () => {
     let body = {
@@ -98,7 +99,7 @@ const AddDeliveryAddress = ({ route, navigation }) => {
       )
       .then((response) => {
         console.log(response?.data);
-        navigation.navigate("Payment", { total: total });
+        // navigation.navigate("Payment", { total: total });
         // Linking.openURL(response?.data?.paystack?.data?.authorization_url );
         setIsLoading(false);
       })
@@ -128,7 +129,7 @@ const AddDeliveryAddress = ({ route, navigation }) => {
       Authorization: `Bearer ${token}`,
     };
 
-    console.log(addresses);
+    // console.log(addresses);
     var data = {
       order: {
         cart_id: cartId,
@@ -136,7 +137,7 @@ const AddDeliveryAddress = ({ route, navigation }) => {
         address_id: addresses[0]?.id,
       },
     };
-
+    console.log(data, "data........");
     axios
       .post(
         "https://upfrica-staging.herokuapp.com/api/v1/orders",
@@ -146,11 +147,14 @@ const AddDeliveryAddress = ({ route, navigation }) => {
       .then((response) => {
         console.log(response?.data);
         if (response?.data) {
-          PaymentProcess(response?.data?.order?.id);
+          setIsLoading(false);
+          setShowPaymentOptionModal(true);
+          // PaymentProcess(response?.data?.order?.id);
         }
       })
       .catch((error) => {
         console.error(error);
+        setIsLoading(false);
       });
   };
 
@@ -262,6 +266,10 @@ const AddDeliveryAddress = ({ route, navigation }) => {
           backgroundColor: colors.background,
         }}
       >
+        <PaymentOptionModal
+          openModal={showPaymentOptionModal}
+          setOpenModal={setShowPaymentOptionModal}
+        />
         <Header titleLeft leftIcon={"back"} title={"Add delivery address"} />
         <KeyboardAvoidingView
           style={{ flex: 1 }}
@@ -528,16 +536,35 @@ const AddDeliveryAddress = ({ route, navigation }) => {
               </ScrollView>
             </ScrollView>
           </View>
-          <View style={GlobalStyleSheet.container}>
+          <View
+            style={{
+              paddingHorizontal: 16,
+              flexDirection: "row",
+              gap: 8,
+              marginBottom: 8,
+            }}
+          >
             <CustomButton
-              onPress={
-                () => processToPayment()
-                // navigation.navigate("Payment", { total: totalPayable })
-              }
+              // onPress={
+              //   () => processToPayment()
+              //   navigation.navigate("Payment", { total: totalPayable })
+              // }
+              color={COLORS.label}
+              // title={"Save Address"}
+              title={"Pay with PayStack"}
+              style={{ width: "51%" }}
+              // isLoading={isLoading}
+            />
+            <CustomButton
+              style={{ width: "48%" }}
+              // onPress={
+              //   () => processToPayment()
+              //   navigation.navigate("Payment", { total: totalPayable })
+              // }
               color={COLORS.upfricaTitle}
               // title={"Save Address"}
-              title={"Proced to payment"}
-              isLoading={isLoading}
+              title={"Pay with Card"}
+              // isLoading={isLoading}
             />
           </View>
         </KeyboardAvoidingView>

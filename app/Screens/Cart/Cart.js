@@ -42,6 +42,7 @@ const Cart = ({ route, navigation }) => {
   }
 
   useEffect(() => {
+    console.log(cart, "cart data...........");
     setCartData(cart);
   }, [cart]);
 
@@ -57,6 +58,7 @@ const Cart = ({ route, navigation }) => {
       cart?.map((item) => {
         total = total + parseInt(item.quantity) * parseFloat(item.price);
       });
+      console.log("total price......", total);
       return total;
     }
   };
@@ -64,9 +66,11 @@ const Cart = ({ route, navigation }) => {
   const handlePostageFee = (cart) => {
     if (cart?.length > 0) {
       let total = 0;
-      cart?.map((item) => {
-        total = total + parseInt(item.postage) * parseInt(item.quantity);
+      cart?.forEach((item) => {
+        total = total + item.postage * item.quantity;
+        console.log("total", total);
       });
+      setPostageFee(total.toFixed(2));
       return total;
     }
   };
@@ -76,8 +80,10 @@ const Cart = ({ route, navigation }) => {
       let total = 0;
       cart?.map((item) => {
         total =
-          total + parseInt(item.secondary_postage) * parseInt(item.quantity);
+          total + item.secondary_postage *item.quantity;
       });
+      console.log("2nd PostageFee price......", total);
+      setSndPostageFee(total.toFixed(2));
       return total;
     }
   };

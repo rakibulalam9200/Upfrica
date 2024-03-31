@@ -3,7 +3,7 @@ import { useTheme } from "@react-navigation/native";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Alert, SafeAreaView, ScrollView, Text, TextInput, View } from "react-native";
-import RNPickerSelect from "react-native-picker-select";
+// import RNPickerSelect from "react-native-picker-select";
 import { useSelector } from "react-redux";
 import CustomButton from "../../components/CustomButton";
 import { GlobalStyleSheet } from "../../constants/StyleSheet";
@@ -14,7 +14,6 @@ const ProductAddorEdit = (props) => {
   const theme = useTheme();
   const { colors } = theme;
   const { token, user } = useSelector((state) => state?.user);
-  console.log(user?.id, "-------user-------");
   const apiUrl = "https://upfrica-staging.herokuapp.com/api/v1/categories";
   const [isLoading, setIsLoading] = useState(false);
   const [categoriesData, setCategoriesData] = useState([]);
@@ -178,10 +177,10 @@ const ProductAddorEdit = (props) => {
             contentContainerStyle={{ flex: 1, width: "100%" }}
             horizontal
           > */}
-          <RNPickerSelect
+          {/* <RNPickerSelect
             onValueChange={(value) => setCategoryId(value)}
             items={categoriesData}
-          />
+          /> */}
           {/* </ScrollView> */}
         </View>
         <View style={GlobalStyleSheet.inputGroup}>
@@ -303,10 +302,10 @@ const ProductAddorEdit = (props) => {
           <Text style={[GlobalStyleSheet.label, { color: colors.title }]}>
             Select Currency
           </Text>
-          <RNPickerSelect
+          {/* <RNPickerSelect
             onValueChange={(value) => setCurrency(value)}
             items={allcurrency}
-          />
+          /> */}
         </View>
       </ScrollView>
       <View style={{ paddingHorizontal: 16, marginBottom: 16 }}>

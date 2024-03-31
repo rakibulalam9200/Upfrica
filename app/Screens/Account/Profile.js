@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import RBSheet from "react-native-raw-bottom-sheet";
 import FeatherIcon from "react-native-vector-icons/Feather";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import UnitedStates from "../../assets/images/flags/UnitedStates.png";
 import german from "../../assets/images/flags/german.png";
 import india from "../../assets/images/flags/india.png";
@@ -21,6 +21,7 @@ import { FONTS, IMAGES } from "../../constants/theme";
 import Header from "../../layout/Header";
 
 import { useTheme } from "@react-navigation/native";
+import { storeToken } from "../../../Store/user";
 
 const languagetData = [
   {
@@ -47,6 +48,7 @@ const languagetData = [
 
 const Profile = ({ navigation }) => {
   const { colors } = useTheme();
+  const dispatch = useDispatch()
   const RBSheetLanguage = useRef();
   const { token, user } = useSelector((state) => state.user);
   console.log(user);
@@ -357,7 +359,10 @@ const Profile = ({ navigation }) => {
                     />
                   </TouchableOpacity>
                   <TouchableOpacity
-                    onPress={() => navigation.navigate("SignIn")}
+                    onPress={() => {
+                      dispatch(storeToken(""))
+                      navigation.navigate("Home")
+                    }}
                     style={[
                       styles.listItem,
                       { borderBottomColor: colors.borderColor },

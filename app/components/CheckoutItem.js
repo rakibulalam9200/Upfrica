@@ -1,5 +1,5 @@
 import { useTheme } from "@react-navigation/native";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   Image,
   Pressable,
@@ -12,10 +12,9 @@ import FeatherIcon from "react-native-vector-icons/Feather";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  addToCart,
   decrementQuantity,
   incrementQuantity,
-  removeItem,
+  removeItem
 } from "../../Store/cart";
 import { GlobalStyleSheet } from "../constants/StyleSheet";
 import { COLORS, FONTS } from "../constants/theme";
@@ -27,15 +26,11 @@ const CheckoutItem = ({
 }) => {
   const { currency } = useSelector((state) => state.currency);
   const { colors } = useTheme();
-  let { image, title, price, oldPrice, quantity=1, type, onPress, id } = data;
+  let { image, title, price, oldPrice, quantity = 1, type, onPress, id } = data;
   // const { image, title, price, oldPrice, quantity, onPress, id } = data;
-  const [ productQuantity, setProductQuantity] = useState(1);
+  const [productQuantity, setProductQuantity] = useState(1);
   let directBuy = false;
   const dispatch = useDispatch();
-
-
-
- 
 
   // if(!quantity){
   //   quantity = 1;
@@ -64,10 +59,9 @@ const CheckoutItem = ({
         paddingHorizontal: 12,
         paddingBottom: 12,
         paddingTop: 12,
-        borderRadius:5,
+        borderRadius: 5,
         backgroundColor: colors.card,
         ...GlobalStyleSheet.shadow,
-        
       }}
     >
       <Image
@@ -95,7 +89,7 @@ const CheckoutItem = ({
               marginBottom: 4,
             }}
           >
-            {title}
+            {title.slice(0,25)+"..."}
           </Text>
           <Pressable onPress={() => dispatch(removeItem(id))}>
             <MaterialCommunityIcons
@@ -129,7 +123,8 @@ const CheckoutItem = ({
             }}
           >
             <Text style={{ ...FONTS.h6, color: COLORS.upfricaTitle }}>
-              {currency.value}{price}
+              {currency.value}
+              {price}
             </Text>
             <Text
               style={{
@@ -166,11 +161,8 @@ const CheckoutItem = ({
               }}
             >
               <FeatherIcon size={14} color={colors.title} name="minus" />
-              </TouchableOpacity>
+            </TouchableOpacity>
 
-
-            
-            
             <Text
               style={{
                 ...FONTS.fontSm,

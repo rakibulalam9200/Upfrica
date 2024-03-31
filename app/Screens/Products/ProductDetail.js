@@ -19,7 +19,6 @@ import { COLORS, FONTS } from "../../constants/theme";
 import Header from "../../layout/Header";
 // import { useSelector } from "react-redux";
 
-
 const productImg1 = require("../../assets/images/product/detail/pic1.png");
 const productImg2 = require("../../assets/images/product/detail/pic2.png");
 const productImg3 = require("../../assets/images/product/detail/pic3.png");
@@ -53,13 +52,12 @@ const productSmImg4 = require("../../assets/images/product/detail/small/pic4.png
 // ]
 
 const ProductDetail = ({ route, navigation }) => {
-  const currency = useSelector(((state)=> state?.currency?.currency))
+  const currency = useSelector((state) => state?.currency?.currency);
   const { width } = useWindowDimensions();
   const dispatch = useDispatch();
   const [details, setDetails] = useState({});
   const [ProductImages, setImages] = useState([]);
   const { token, user } = useSelector((state) => state.user);
-
 
   const { data } = route.params;
   console.log(data?.description?.body);
@@ -110,8 +108,8 @@ const ProductDetail = ({ route, navigation }) => {
     html: `${data?.description?.body}`,
   };
 
-  const Cart = () =>{
-    console.log("cart clicked!!!")
+  const Cart = () => {
+    console.log("cart clicked!!!");
     var myHeaders = new Headers();
     myHeaders.append("Accept", "application/json");
     myHeaders.append("Authorization", `Bearer ${token}`);
@@ -130,19 +128,19 @@ const ProductDetail = ({ route, navigation }) => {
     //   .catch(error => console.log('error', error));
 
     var requestOptions = {
-      method: 'GET',
+      method: "GET",
       headers: myHeaders,
-      redirect: 'follow'
+      redirect: "follow",
     };
-    
-    fetch("https://upfrica-staging.herokuapp.com/api/v1/carts?page=1", requestOptions)
-      .then(response => response.json())
-      .then(result => console.log(result[0]?.cart_items[0]))
-      .catch(error => console.log('error', error));
-      }
 
-
-
+    fetch(
+      "https://upfrica-staging.herokuapp.com/api/v1/carts?page=1",
+      requestOptions
+    )
+      .then((response) => response.json())
+      .then((result) => console.log(result[0]?.cart_items[0]))
+      .catch((error) => console.log("error", error));
+  };
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.card }}>
@@ -250,7 +248,8 @@ const ProductDetail = ({ route, navigation }) => {
                 flex: 1,
               }}
             >
-              {currency.value}{details?.sale_price?.cents / 100}
+              {currency.value}
+              {details?.sale_price?.cents / 100}
             </Text>
             <View
               style={{
@@ -299,7 +298,8 @@ const ProductDetail = ({ route, navigation }) => {
               }}
             >
               <Text style={{ color: COLORS.upfricaTitle }}>
-              {currency.value}{details?.postage_fee?.cents / 100}
+                {currency.value}
+                {details?.postage_fee?.cents / 100}
               </Text>
             </View>
           </View>
@@ -326,7 +326,8 @@ const ProductDetail = ({ route, navigation }) => {
               }}
             >
               <Text style={{ color: COLORS.upfricaTitle }}>
-              {currency.value}{details?.secondary_postage_fee?.cents / 100}
+                {currency.value}
+                {details?.secondary_postage_fee?.cents / 100}
               </Text>
             </View>
           </View>
@@ -503,8 +504,16 @@ const ProductDetail = ({ route, navigation }) => {
         </View>
         <CustomButton
           onPress={() => {
-           
-           let tempData =  {id:data.id,image:data?.product_images[0],title:data?.title,quantity:1, price:data?.sale_price?.cents/100,type:data?.description?.body,postage:data?.postage_fee?.cents/100,secondary_postage:data?.secondary_postage_fee?.cents/100} 
+            let tempData = {
+              id: data.id,
+              image: data?.product_images[0],
+              title: data?.title,
+              quantity: 1,
+              price: data?.sale_price?.cents / 100,
+              type: data?.description?.body,
+              postage: data?.postage_fee?.cents / 100,
+              secondary_postage: data?.secondary_postage_fee?.cents / 100,
+            };
             dispatch(addToCart(tempData));
             navigation.navigate("Cart", { data });
           }}
