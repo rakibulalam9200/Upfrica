@@ -2,8 +2,15 @@ import { baseURL } from "@env";
 import { useTheme } from "@react-navigation/native";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Alert, SafeAreaView, ScrollView, Text, TextInput, View } from "react-native";
-// import RNPickerSelect from "react-native-picker-select";
+import {
+  Alert,
+  SafeAreaView,
+  ScrollView,
+  Text,
+  TextInput,
+  View,
+} from "react-native";
+import RNPickerSelect from "react-native-picker-select";
 import { useSelector } from "react-redux";
 import CustomButton from "../../components/CustomButton";
 import { GlobalStyleSheet } from "../../constants/StyleSheet";
@@ -39,8 +46,8 @@ const ProductAddorEdit = (props) => {
       .then((data) => {
         console.log(data, "data.......");
         let categories = [];
-        data &&
-          data?.map((category, index) => {
+        data?.categories &&
+          data?.categories?.map((category, index) => {
             categories.push({ label: category?.name, value: category?.id });
           });
         setCategoriesData(categories); // This will contain the fetched data
@@ -74,7 +81,7 @@ const ProductAddorEdit = (props) => {
 
     const headers = {
       "Content-Type": "application/json",
-      'Authorization': `Bearer ${token}`, 
+      Authorization: `Bearer ${token}`,
     };
 
     try {
@@ -82,7 +89,12 @@ const ProductAddorEdit = (props) => {
         headers: headers,
       });
       if (response) {
-        console.log(response?.message,response?.product,"----------", "response....");
+        console.log(
+          response?.message,
+          response?.product,
+          "----------",
+          "response...."
+        );
         props.navigation.navigate("Seller");
       }
     } catch (error) {
@@ -177,10 +189,14 @@ const ProductAddorEdit = (props) => {
             contentContainerStyle={{ flex: 1, width: "100%" }}
             horizontal
           > */}
-          {/* <RNPickerSelect
+          <RNPickerSelect
+            placeholder={{
+              label: "Select a Category...",
+              value: null,
+            }}
             onValueChange={(value) => setCategoryId(value)}
             items={categoriesData}
-          /> */}
+          />
           {/* </ScrollView> */}
         </View>
         <View style={GlobalStyleSheet.inputGroup}>
@@ -302,10 +318,14 @@ const ProductAddorEdit = (props) => {
           <Text style={[GlobalStyleSheet.label, { color: colors.title }]}>
             Select Currency
           </Text>
-          {/* <RNPickerSelect
+          <RNPickerSelect
+            placeholder={{
+              label: "Select a Carrency...",
+              value: null,
+            }}
             onValueChange={(value) => setCurrency(value)}
             items={allcurrency}
-          /> */}
+          />
         </View>
       </ScrollView>
       <View style={{ paddingHorizontal: 16, marginBottom: 16 }}>
