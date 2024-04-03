@@ -1,0 +1,478 @@
+[
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_node_modules_reactnativedropdownpicker_src_themes_light_icons_tick.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/node_modules_reactnativedropdownpicker_src_themes_light_icons_tick.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_bag.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_bag.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_menu.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_menu.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "com.app.upfrica.app-main-92:/mipmap-mdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_product_pic2.jpg.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_product_pic2.jpg"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_messenger.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_messenger.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_featured_pic3.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_featured_pic3.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-xhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-xhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_accordion.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_accordion.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_category_pic5.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_category_pic5.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.app.upfrica.app-main-92:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_trading_pic1.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_trading_pic1.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_chart.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_chart.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_badge.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_badge.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_product_pic3.jpg.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_product_pic3.jpg"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_node_modules_reactnativedropdownpicker_src_themes_light_icons_arrowup.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/node_modules_reactnativedropdownpicker_src_themes_light_icons_arrowup.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_node_modules_reactnativedropdownpicker_src_themes_dark_icons_arrowdown.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/node_modules_reactnativedropdownpicker_src_themes_dark_icons_arrowdown.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-hdpi_node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-hdpi/node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_small_pic4.jpg.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_small_pic4.jpg"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_toggle.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_toggle.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable_rn_edit_text_material.xml.flat",
+        "source": "com.app.upfrica.app-main-92:/drawable/rn_edit_text_material.xml"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_featured_pic2.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_featured_pic2.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-xxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-xxhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_node_modules_reactnativedropdownpicker_src_themes_dark_icons_close.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/node_modules_reactnativedropdownpicker_src_themes_dark_icons_close.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_search.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_search.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_flags_italian.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_flags_italian.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_addition.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_addition.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_node_modules_reactnativedropdownpicker_src_themes_dark_icons_tick.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/node_modules_reactnativedropdownpicker_src_themes_dark_icons_tick.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_modal.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_modal.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_google.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_google.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.app.upfrica.app-main-92:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_flags_german.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_flags_german.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_onboarding_bg.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_onboarding_bg.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_product_pic8.jpg.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_product_pic8.jpg"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.app.upfrica.app-main-92:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_small_pic3.jpg.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_small_pic3.jpg"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "com.app.upfrica.app-main-92:/mipmap-hdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_node_modules_reactnative_libraries_newappscreen_components_logo.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/node_modules_reactnative_libraries_newappscreen_components_logo.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_banner_pic3.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_banner_pic3.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_user3.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_user3.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_facebook.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_facebook.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_table.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_table.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_product_pic5.jpg.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_product_pic5.jpg"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_collage.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_collage.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_node_modules_reactnativedropdownpicker_src_themes_dark_icons_arrowup.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/node_modules_reactnativedropdownpicker_src_themes_dark_icons_arrowup.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_popular_pic1.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_popular_pic1.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_divider.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_divider.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.app.upfrica.app-main-92:/mipmap-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_clock.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_clock.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.app.upfrica.app-main-92:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_home3.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_home3.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-hdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-hdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_pricing.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_pricing.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.app.upfrica.app-main-92:/mipmap-xhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_logowhite.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_logowhite.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.app.upfrica.app-main-92:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_node_modules_reactnativebouncycheckbox_build_dist_check.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/node_modules_reactnativebouncycheckbox_build_dist_check.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_trading_pic2.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_trading_pic2.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_user.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_user.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_category.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_category.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_exchange.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_exchange.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_user2.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_user2.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.app.upfrica.app-main-92:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_category_pic2.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_category_pic2.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-xxxhdpi_node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-xxxhdpi/node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_home2.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_home2.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_card.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_card.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-xxhdpi_node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-xxhdpi/node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.app.upfrica.app-main-92:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-xxxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-xxxhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_small_pic2.jpg.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_small_pic2.jpg"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_moon.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_moon.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_popular_pic4.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_popular_pic4.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_flags_spanish.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_flags_spanish.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_node_modules_reactnativedropdownpicker_src_themes_light_icons_arrowdown.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/node_modules_reactnativedropdownpicker_src_themes_light_icons_arrowdown.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_product_pic6.jpg.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_product_pic6.jpg"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_heart.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_heart.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_category_pic3.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_category_pic3.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_pay.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_pay.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_bottomsheet.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_bottomsheet.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_popular_pic3.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_popular_pic3.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_home.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_home.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_small_pic1.jpg.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_small_pic1.jpg"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_product_pic7.jpg.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_product_pic7.jpg"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_share.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_share.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_wallet.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_wallet.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_logo.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_logo.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.app.upfrica.app-main-92:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_list.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_list.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_tabs.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_tabs.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_thumbsup.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_thumbsup.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_blog.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_blog.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_product_pic4.jpg.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_product_pic4.jpg"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_input.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_input.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_user.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_user.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_popular_pic2.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_popular_pic2.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.app.upfrica.app-main-92:/mipmap-xxxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_featured_pic4.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_featured_pic4.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_background_bg1.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_background_bg1.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.app.upfrica.app-main-92:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.app.upfrica.app-main-92:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_node_modules_reactnavigation_elements_src_assets_backiconmask.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/node_modules_reactnavigation_elements_src_assets_backiconmask.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_node_modules_reactnativedropdownpicker_src_themes_light_icons_close.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/node_modules_reactnativedropdownpicker_src_themes_light_icons_close.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_featured_pic1.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_featured_pic1.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_product_pic1.jpg.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_product_pic1.jpg"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.app.upfrica.app-main-92:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.app.upfrica.app-main-92:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_node_modules_reactnativepaper_src_assets_backchevron.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/node_modules_reactnativepaper_src_assets_backchevron.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_banner_pic2.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_banner_pic2.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.app.upfrica.app-main-92:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_flags_unitedstates.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_flags_unitedstates.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_category_pic1.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_category_pic1.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_sun.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_sun.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_icons_phonepe.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_icons_phonepe.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_flags_india.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_flags_india.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-mdpi_app_assets_images_category_pic4.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-mdpi/app_assets_images_category_pic4.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable-xhdpi_node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png.flat",
+        "source": "com.app.upfrica.app-react-86:/drawable-xhdpi/node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png"
+    }
+]

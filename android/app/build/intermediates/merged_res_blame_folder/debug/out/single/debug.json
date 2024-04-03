@@ -1,0 +1,78 @@
+[
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.app.upfrica.app-main-93:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "com.app.upfrica.app-main-93:/mipmap-mdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.app.upfrica.app-main-93:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.app.upfrica.app-main-93:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.app.upfrica.app-main-93:/mipmap-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.app.upfrica.app-main-93:/mipmap-xxxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.app.upfrica.app-main-93:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.app.upfrica.app-main-93:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.app.upfrica.app-main-93:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.app.upfrica.app-main-93:/mipmap-xhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.app.upfrica.app-main-93:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.app.upfrica.app-main-93:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.app.upfrica.app-main-93:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "com.app.upfrica.app-main-93:/mipmap-hdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.app.upfrica.app-main-93:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.app.upfrica.app-main-93:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/drawable_rn_edit_text_material.xml.flat",
+        "source": "com.app.upfrica.app-main-93:/drawable/rn_edit_text_material.xml"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.app.upfrica.app-main-93:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.app.upfrica.app-merged_res-91:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.app.upfrica.app-main-93:/mipmap-mdpi/ic_launcher_round.png"
+    }
+]
