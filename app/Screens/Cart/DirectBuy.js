@@ -62,7 +62,13 @@ const DirectBuy = ({ route, navigation }) => {
       requestOptions
     )
       .then((response) => response.json())
-      .then((result) => result && setAddressId(result))
+      .then((result) => {
+        console.log(result)
+
+        result && setAddressId(result?.addresses)
+        setAddresses(result?.addresses)
+      }
+      )
       .catch((error) => console.log("error", error));
   }, []);
 
@@ -494,7 +500,7 @@ const DirectBuy = ({ route, navigation }) => {
                         </Text>
                       </View>
                     );
-                  }) :<></>}
+                  }) : <></>}
               </View>
             </ScrollView>
           </View>

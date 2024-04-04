@@ -11,7 +11,10 @@ import {
   TextInput,
   TouchableOpacity,
   View,
+  Button,
+  Pressable
 } from "react-native";
+import Modal from "react-native-modal";
 import { Checkbox } from "react-native-paper";
 import FeatherIcon from "react-native-vector-icons/Feather";
 import CustomButton from "../../components/CustomButton";
@@ -22,7 +25,7 @@ import { hasEmailErrors, hasPasswordErrors, hasPolicyErrors, hasUserNameErrors, 
 const SignUp = (props) => {
   const theme = useTheme();
   const { colors } = theme;
-
+  const [isModalVisible, setModalVisible] = useState(false);
   const [isFocused, setisFocused] = useState(false);
   const [isFocused2, setisFocused2] = useState(false);
   const [isFocused3, setisFocused3] = useState(false);
@@ -49,7 +52,7 @@ const SignUp = (props) => {
     firstName: "",
     lastName: "",
     password: "",
-    rePassword:"",
+    rePassword: "",
     username: "",
     policy: "",
   });
@@ -58,9 +61,9 @@ const SignUp = (props) => {
 
     if (
       hasEmailErrors(email, setErrorMessages) ||
-      hasUserNameErrors(username,setErrorMessages) ||
+      hasUserNameErrors(username, setErrorMessages) ||
       hasfNameErrors(firstName, setErrorMessages) ||
-      haslNameErrors(lastName,setErrorMessages)
+      haslNameErrors(lastName, setErrorMessages)
     ) {
       scrollViewRef.current?.scrollTo({
         y: 0,
@@ -69,15 +72,15 @@ const SignUp = (props) => {
       return
     }
 
-    if(
-      hasPasswordErrors(password,rePassword,setErrorMessages)
-      ){
+    if (
+      hasPasswordErrors(password, rePassword, setErrorMessages)
+    ) {
       return
     }
     // console.log(hasPolicyErrors(policy,setErrorMessages),"check policy...")
-    if(
-      hasPolicyErrors(policy,setErrorMessages)
-      ){
+    if (
+      hasPolicyErrors(policy, setErrorMessages)
+    ) {
       return
     }
     setIsLoading(true);
@@ -103,7 +106,7 @@ const SignUp = (props) => {
       let response = await axios.post(`${baseURL}/users.json`, body);
       if (response?.data?.api_token) {
         console.log(response?.data?.api_token, "response....");
-        props.navigation.navigate("SignIn");
+        setModalVisible(true)
       }
     } catch (error) {
       Alert.alert(error?.response?.data?.error);
@@ -164,7 +167,7 @@ const SignUp = (props) => {
               placeholder="Email Address"
               placeholderTextColor={colors.textLight}
             />
-            {errorMessages?.email !== '' ? <Text style={{color:'red'}}>{errorMessages?.email}</Text>:<></>}
+            {errorMessages?.email !== '' ? <Text style={{ color: 'red' }}>{errorMessages?.email}</Text> : <></>}
           </View>
           <View style={GlobalStyleSheet.inputGroup}>
             <Text style={[GlobalStyleSheet.label, { color: colors.title }]}>
@@ -187,7 +190,7 @@ const SignUp = (props) => {
               placeholder="First Name"
               placeholderTextColor={colors.textLight}
             />
-             {errorMessages?.firstName !== '' ? <Text style={{color:'red'}}>{errorMessages?.firstName}</Text>:<></>}
+            {errorMessages?.firstName !== '' ? <Text style={{ color: 'red' }}>{errorMessages?.firstName}</Text> : <></>}
           </View>
           <View style={GlobalStyleSheet.inputGroup}>
             <Text style={[GlobalStyleSheet.label, { color: colors.title }]}>
@@ -210,7 +213,7 @@ const SignUp = (props) => {
               placeholder="Last Name"
               placeholderTextColor={colors.textLight}
             />
-            {errorMessages?.lastName !== '' ? <Text style={{color:'red'}}>{errorMessages?.lastName}</Text>:<></>}
+            {errorMessages?.lastName !== '' ? <Text style={{ color: 'red' }}>{errorMessages?.lastName}</Text> : <></>}
           </View>
           <View style={GlobalStyleSheet.inputGroup}>
             <Text style={[GlobalStyleSheet.label, { color: colors.title }]}>
@@ -233,7 +236,7 @@ const SignUp = (props) => {
               placeholder="No Space, No Special Character"
               placeholderTextColor={colors.textLight}
             />
-            {errorMessages?.username !== '' ? <Text style={{color:'red'}}>{errorMessages?.username}</Text>:<></>}
+            {errorMessages?.username !== '' ? <Text style={{ color: 'red' }}>{errorMessages?.username}</Text> : <></>}
           </View>
           <View style={GlobalStyleSheet.inputGroup}>
             <Text style={[GlobalStyleSheet.label, { color: colors.title }]}>
@@ -277,7 +280,7 @@ const SignUp = (props) => {
                 placeholder="Password"
                 placeholderTextColor={colors.textLight}
               />
-               {errorMessages?.password !== '' ? <Text style={{color:'red'}}>{errorMessages?.password}</Text>:<></>}
+              {errorMessages?.password !== '' ? <Text style={{ color: 'red' }}>{errorMessages?.password}</Text> : <></>}
             </View>
           </View>
           <View style={GlobalStyleSheet.inputGroup}>
@@ -330,7 +333,7 @@ const SignUp = (props) => {
             }}
           >
             <Checkbox.Item
-              onPress={() => setPolicy((pre)=> !pre)}
+              onPress={() => setPolicy((pre) => !pre)}
               position="leading"
               label="I agree to all Term, Privacy Policy and fees"
               color={COLORS.upfricaTitle}
@@ -346,7 +349,7 @@ const SignUp = (props) => {
                 textAlign: "left",
               }}
             />
-             {errorMessages?.policy !== '' ? <Text style={{color:'red'}}>{errorMessages?.policy}</Text>:<></>}
+            {errorMessages?.policy !== '' ? <Text style={{ color: 'red' }}>{errorMessages?.policy}</Text> : <></>}
           </View>
           <CustomButton
             onPress={handleSignUp}
@@ -365,7 +368,7 @@ const SignUp = (props) => {
             </Text>
             <TouchableOpacity
               onPress={() => props.navigation.navigate("SignIn")}
-              // onPress={handleSignUp}
+            // onPress={handleSignUp}
             >
               <Text style={{ ...FONTS.font, color: COLORS.upfricaTitle }}>
                 Sign In
@@ -455,6 +458,43 @@ const SignUp = (props) => {
           </View>
         </View>
       </ScrollView>
+
+      {/* <Modal isVisible={isModalVisible}>
+        <View style={{ height: '80%', backgroundColor: 'rgba(255,255,255,.8)' }}>
+          <Text>A verification Link has sent to your account. Please verify! </Text>
+
+          <Button title="Back to Login" onPress={() => { setModalVisible(false), props.navigation.navigate("SignIn"); }} />
+        </View>
+      </Modal> */}
+
+      <Modal isVisible={isModalVisible} >
+        <View style={{ height: 200, backgroundColor: 'white', borderRadius: 8, paddingHorizontal: 10 }}>
+          <View style={{ height: 200, justifyContent: 'space-around' }}>
+            <View style={{ flexDirection: 'column', justifyContent: 'center' }}>
+              <Pressable onPress={() => setModalVisible(false)}>
+                <Text style={{ textAlign: 'right', margin: 20, marginVertical: 0, fontWeight: 'bold', }}>X</Text>
+              </Pressable>
+              <Text style={[{ textAlign: 'center', marginTop: 0, fontSize: 20, color: '#292929' }]}>{'Account Creation Successful'}</Text>
+            </View>
+            <Text style={{ textAlign: 'center', fontFamily: 'Mulish-Regular', fontSize: 16 }}>{'An email verification link has sent to your account! Please verify for successful transaction.'}</Text>
+
+            <Pressable onPress={() => { setModalVisible(false), props.navigation.navigate("SignIn"); }} style={[{
+              backgroundColor: COLORS.upfricaTitle,
+              borderRadius: 8,
+              margin: 16,
+              marginTop: 0
+            }, { marginTop: 10 }]}>
+              <Text style={{
+                textAlign: 'center',
+                fontFamily: 'Mulish-Bold',
+                color: 'white',
+                fontSize: 18, paddingVertical: 12
+              }} >Back to Login</Text>
+            </Pressable>
+
+          </View>
+        </View>
+      </Modal>
     </SafeAreaView>
   );
 };

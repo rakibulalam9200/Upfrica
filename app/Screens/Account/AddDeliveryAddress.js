@@ -8,7 +8,9 @@ import {
   Dimensions,
   FlatList,
   KeyboardAvoidingView,
+  Linking,
   Platform,
+  Pressable,
   SafeAreaView,
   ScrollView,
   Text,
@@ -22,6 +24,8 @@ import PaymentOptionModal from "../../components/Modal/PaymentOptionModal";
 import { GlobalStyleSheet } from "../../constants/StyleSheet";
 import { COLORS, FONTS } from "../../constants/theme";
 import Header from "../../layout/Header";
+import { FinancialConnections } from "@stripe/stripe-react-native";
+import BouncyCheckbox from "react-native-bouncy-checkbox";
 
 const AddDeliveryAddress = ({ route, navigation }) => {
   const { token, user } = useSelector((state) => state.user);
@@ -44,6 +48,9 @@ const AddDeliveryAddress = ({ route, navigation }) => {
   const [refresh, setRefresh] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [showPaymentOptionModal, setShowPaymentOptionModal] = useState(false);
+  const [addressId, setAddressId] = useState(null)
+  const [saturday, setSaturday] = useState(false)
+  const [sunday, setSunday] = useState(true)
 
   const saveAddress = async () => {
     let body = {
@@ -56,6 +63,8 @@ const AddDeliveryAddress = ({ route, navigation }) => {
         postcode: postcode,
         phone_number: mobile,
         address_line_1: fullAddress,
+        sunday_delivery: sunday,
+        saturday_delivery: saturday
       },
     };
 
@@ -79,18 +88,65 @@ const AddDeliveryAddress = ({ route, navigation }) => {
     }
   };
 
+  const linkingUri = 'upfrica://';
+
+  useEffect(() => {
+    const handleOpenURL = ({ url }) => {
+      console.log("Opened via URL: ", url);
+
+      // Here, you can parse the URL to determine the action
+      // For example, navigate to a specific part of your app or display a message
+    };
+
+    const extractTokenFromUrl = (url) => {
+      const tokenParam = url.match(/token=([^&]+)/);
+      return tokenParam ? tokenParam[1] : null;
+    };
+
+    const handleDeepLink = (event) => {
+      console.log("Incoming URL:", event.url);
+      // Parse the URL and extract the token parameter
+
+      const token = extractTokenFromUrl(event.url);
+      if (token) {
+        console.log("Extracted Token:", token);
+        // Here you can set the token in your app's state or do other actions
+      }
+
+    };
+
+    // Listen for incoming links
+    Linking.addEventListener('url', handleOpenURL);
+    Linking.addEventListener('url', handleDeepLink);
+
+    // Check if the app was opened by a deep link
+    Linking.getInitialURL().then((url) => {
+      if (url) {
+        handleOpenURL({ url });
+      }
+    });
+
+    // Cleanup
+    return () => {
+      Linking.removeAllListeners('url')
+    };
+
+  }, []);
+
+  const browserController = (url) => {
+    // Linking.openURL(response?.data?.paystack?.data?.authorization_url);
+    // Linking.openURL(url);
+    // let url = "https://checkout.stripe.com/c/pay/cs_test_a1El9Ohz6shwO90zMYxGN2sIFgebFNzdD47B4rWIbb9B7OQRnaNRhZszYX#fidkdWxOYHwnPyd1blpxYHZxWjA0SWA9fDxNNlZoQFJENktIdDN1UUN1bUpvQzJ9PW5DVmIxTHBSfE0xYHJ%2FUn1xNT02TE0zQXJAMjN3bkxRdVdWMzE3d2BHUWxmXH9raGFTbnZ3MU90bnNnNTVfUm1XYlRjaicpJ2N3amhWYHdzYHcnP3F3cGApJ2lkfGpwcVF8dWAnPyd2bGtiaWBabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl"
+    Linking.openURL(url).catch(err => console.error("Failed to open URL:", err));
+
+  }
+
   const PaymentProcess = (id) => {
     const headers = {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     };
-
-    // var data = {
-    //     order: {
-    //         currency: "USD"
-    //     }};
-    var data = { redirect_uri: "https://google.com" };
-
+    var data = { redirect_uri: linkingUri };
     axios
       .post(
         `https://upfrica-staging.herokuapp.com/api/v1/orders/${id}/create_paystack_transaction`,
@@ -99,9 +155,9 @@ const AddDeliveryAddress = ({ route, navigation }) => {
       )
       .then((response) => {
         console.log(response?.data);
-        // navigation.navigate("Payment", { total: total });
-        // Linking.openURL(response?.data?.paystack?.data?.authorization_url );
+        browserController(response?.data?.paystack?.data?.authorization_url);
         setIsLoading(false);
+        setLoading(FinancialConnections)
       })
       .catch((error) => {
         console.error(error);
@@ -109,21 +165,10 @@ const AddDeliveryAddress = ({ route, navigation }) => {
   };
 
   const processToPayment = () => {
-    if (
-      fullName === "" ||
-      locality === "" ||
-      postcode === "" ||
-      country === "" ||
-      mobile === "" ||
-      fullAddress === ""
-    ) {
-      Alert.alert(
-        "Name, Mobile No, Post Code, Locality, Address, Country Should not be blank!"
-      );
-      return;
-    }
+    if (!addressId) return;
+  
     setIsLoading(true);
-
+    setLoading(true)
     const headers = {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
@@ -134,10 +179,9 @@ const AddDeliveryAddress = ({ route, navigation }) => {
       order: {
         cart_id: cartId,
         buyer_id: user.id,
-        address_id: addresses[0]?.id,
+        address_id: addressId,
       },
     };
-    console.log(data, "data........");
     axios
       .post(
         "https://upfrica-staging.herokuapp.com/api/v1/orders",
@@ -145,11 +189,12 @@ const AddDeliveryAddress = ({ route, navigation }) => {
         { headers }
       )
       .then((response) => {
-        console.log(response?.data);
+        // console.log(response?.data);
         if (response?.data) {
-          setIsLoading(false);
-          setShowPaymentOptionModal(true);
-          // PaymentProcess(response?.data?.order?.id);
+          // setIsLoading(false);
+          // setShowPaymentOptionModal(true);
+          PaymentProcess(response?.data?.order?.id);
+
         }
       })
       .catch((error) => {
@@ -170,7 +215,7 @@ const AddDeliveryAddress = ({ route, navigation }) => {
         })
         .then((response) => {
           if (response?.status === 200) {
-            console.log(response.data);
+            console.log(response.data?.addresses);
             setAddresses(response?.data?.addresses);
           }
         })
@@ -206,51 +251,104 @@ const AddDeliveryAddress = ({ route, navigation }) => {
     setLocality("");
     setCountry("");
     setPostCode("");
+    setSaturday(false)
+    setSunday(false)
   };
 
-  const renderAddresses = ({ item }) => {
-    return (
-      <TouchableOpacity
+  const renderAddresses = ({ item, index }) => {
+
+
+
+
+    return (<View
+      style={{
+        paddingHorizontal: 12,
+        paddingBottom: 12,
+        paddingTop: 12,
+        borderRadius: 5,
+        backgroundColor: colors.card,
+        ...GlobalStyleSheet.shadow,
+        marginBottom: 15,
+      }}
+      activeOpacity={0.9}
+    ><View style={{ flexDirection: "row" }}>
+        <BouncyCheckbox
+          size={20}
+          fillColor={COLORS.upfricaTitle}
+          unfillColor="#FFFFFF"
+          iconStyle={{ borderColor: "red" }}
+          innerIconStyle={{ borderWidth: 2 }}
+          textStyle={{ fontFamily: "JosefinSans-Regular" }}
+          onPress={(isChecked) => {
+            if (isChecked) setAddressId(item?.id);
+          }}
+        />
+        <Text
+          style={{
+            ...FONTS.font,
+            ...FONTS.fontTitle,
+            color: colors.title,
+            fontSize: 16,
+            paddingBottom: 3,
+          }}
+        >
+          Address {index + 1} :
+        </Text>
+      </View>
+
+      <View style={{ flexDirection: "row" }}>
+        <Text
+          style={{
+            ...FONTS.font,
+            ...FONTS.fontTitle,
+            color: colors.title,
+            marginRight: 10,
+          }}
+        >
+          {item?.address_data?.town},
+        </Text>
+        <Text
+          style={{
+            ...FONTS.font,
+            ...FONTS.fontTitle,
+            color: colors.title,
+          }}
+        >
+          {item?.address_data?.country}
+        </Text>
+      </View>
+      <View style={{ flexDirection: "row" }}>
+        <Text
+          style={{
+            ...FONTS.font,
+            ...FONTS.fontTitle,
+            color: colors.title,
+            marginRight: 3,
+          }}
+        >
+          {item?.address_data?.postcode},
+        </Text>
+
+        <Text
+          style={{
+            ...FONTS.font,
+            ...FONTS.fontTitle,
+            color: colors.title,
+          }}
+        >
+          {item?.address_data?.address_line_1}
+        </Text>
+      </View>
+      <Text
         style={{
-          borderWidth: 1,
-          padding: 8,
-          marginVertical: 8,
-          flex: 1,
-          backgroundColor: "lightblue",
-          borderRadius: 8,
-          width: width - 32,
-          // alignSelf: "stretch"
+          ...FONTS.font,
+          ...FONTS.fontTitle,
+          color: colors.title,
         }}
-        onPress={() => filledDatatoAddress(item)}
       >
-        <View style={{ flex: 1, flexDirection: "row", gap: 8 }}>
-          <Text style={{ fontWeight: "700", color: "black" }}>Name: </Text>
-          <Text style={{ flex: 1 }}>{item?.full_name}</Text>
-        </View>
-        <View style={{ flex: 1, flexDirection: "row", gap: 8 }}>
-          <Text style={{ fontWeight: "700", color: "black" }}>Address: </Text>
-          <Text style={{ flex: 1 }}>{item?.address_data?.address_line_1}</Text>
-        </View>
-        <View style={{ flex: 1, flexDirection: "row", gap: 8 }}>
-          <Text style={{ fontWeight: "700", color: "black" }}>Post Code: </Text>
-          <Text style={{ flex: 1 }}>{item?.address_data?.postcode}</Text>
-        </View>
-        <View style={{ flex: 1, flexDirection: "row", gap: 8 }}>
-          <Text style={{ fontWeight: "700", color: "black" }}>Mobile No: </Text>
-          <Text style={{ flex: 1 }}>{item?.address_data?.phone_number}</Text>
-        </View>
-        <View style={{ flex: 1, flexDirection: "row", gap: 8 }}>
-          <Text style={{ fontWeight: "700", color: "black" }}>
-            Locality/Town:{" "}
-          </Text>
-          <Text style={{ flex: 1 }}>{item?.address_data?.town}</Text>
-        </View>
-        <View style={{ flex: 1, flexDirection: "row", gap: 8 }}>
-          <Text style={{ fontWeight: "700", color: "black" }}>Country: </Text>
-          <Text style={{ flex: 1 }}>{item?.address_data?.country}</Text>
-        </View>
-      </TouchableOpacity>
-    );
+        Contact: {item?.address_data?.phone_number}
+      </Text>
+    </View >)
   };
 
   return (
@@ -275,9 +373,32 @@ const AddDeliveryAddress = ({ route, navigation }) => {
           style={{ flex: 1 }}
           behavior={Platform.OS === "ios" ? "padding" : "height"}
         >
+
+
           <View style={{ flex: 1 }}>
-            <ScrollView estedScrollEnabled={true} style={{ width: "100%" }}>
+            <ScrollView style={{ width: "100%", flex: 8 }}>
+              <Text style={{ ...FONTS.h4, color: COLORS.upfricaTitle, ...{ padding: 10, paddingLeft: 16 } }}>Your Addresses: </Text>
+              {!dataLoader ? (
+                <FlatList
+                  data={addresses}
+                  renderItem={renderAddresses}
+                  keyExtractor={(item) => item.id}
+                  contentContainerStyle={{
+                    paddingHorizontal: 16,
+                    width: "100%",
+
+                  }}
+                />
+
+              ) : (
+                <ActivityIndicator size={"small"} color={"blue"} />
+              )}
+            </ScrollView>
+            <ScrollView estedScrollEnabled={true} style={{ width: "100%", borderColor: COLORS.upfricaTitle, borderTopWidth: 2, flex: 9 }}>
+
               <View style={GlobalStyleSheet.container}>
+                <Text style={{ ...FONTS.h4, color: COLORS.upfricaTitle, ...{ paddingVertical: 10 } }}>Add new address: </Text>
+
                 <View
                   style={{
                     borderBottomWidth: 1,
@@ -407,6 +528,7 @@ const AddDeliveryAddress = ({ route, navigation }) => {
                     value={locality}
                     onChangeText={(text) => setLocality(text)}
                   />
+
                 </View>
                 <View style={[GlobalStyleSheet.row]}>
                   <View style={[GlobalStyleSheet.col50]}>
@@ -435,6 +557,7 @@ const AddDeliveryAddress = ({ route, navigation }) => {
                       />
                     </View>
                   </View>
+
                   <View style={[GlobalStyleSheet.col50]}>
                     <View style={GlobalStyleSheet.inputGroup}>
                       <Text
@@ -462,15 +585,101 @@ const AddDeliveryAddress = ({ route, navigation }) => {
                     </View>
                   </View>
                 </View>
+                <View style={GlobalStyleSheet.inputGroup}>
+                  <Text
+                    style={[GlobalStyleSheet.label, { color: colors.title }]}
+                  >
+                    Do we need additional instructions to find this address?
+                  </Text>
+                  <TextInput
+                    style={[
+                      GlobalStyleSheet.formControl,
+                      {
+                        backgroundColor: colors.input,
+                        color: colors.title,
+                        borderColor: colors.borderColor,
+                        height:80,
+                      },
+                    ]}
+                    placeholder="Additional info."
+                    placeholderTextColor={colors.textLight}
+                    value={locality}
+                    onChangeText={(text) => setLocality(text)}
+                  />
+
+                </View>
                 <View
                   style={{
                     borderBottomWidth: 1,
                     borderBottomColor: colors.borderColor,
                     paddingBottom: 10,
                     marginBottom: 20,
+                    // marginTop: 20
                   }}
                 >
                   <Text style={{ ...FONTS.h6, color: colors.title }}>
+                    Weekend delivery: I can receive packages on
+                  </Text>
+                </View>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                  <View style={{ flexDirection: "row" }}>
+                    <BouncyCheckbox
+                      size={20}
+                      fillColor={COLORS.upfricaTitle}
+                      unfillColor="#FFFFFF"
+                      iconStyle={{ borderColor: "red" }}
+                      innerIconStyle={{ borderWidth: 2 }}
+                      textStyle={{ fontFamily: "JosefinSans-Regular" }}
+                      onPress={(isChecked) => {
+                        if (isChecked) setSaturday(true);
+                      }}
+                    />
+                    <Text
+                      style={{
+                        ...FONTS.font,
+                        ...FONTS.fontTitle,
+                        color: colors.title,
+                        fontSize: 16,
+                        paddingBottom: 3,
+                      }}
+                    >
+                      Saturdays
+                    </Text>
+                  </View>
+                  <View style={{ flexDirection: "row" }}>
+                    <BouncyCheckbox
+                      size={20}
+                      fillColor={COLORS.upfricaTitle}
+                      unfillColor="#FFFFFF"
+                      iconStyle={{ borderColor: "red" }}
+                      innerIconStyle={{ borderWidth: 2 }}
+                      textStyle={{ fontFamily: "JosefinSans-Regular" }}
+                      onPress={(isChecked) => {
+                        if (isChecked) setSunday(true);
+                      }}
+                    />
+                    <Text
+                      style={{
+                        ...FONTS.font,
+                        ...FONTS.fontTitle,
+                        color: colors.title,
+                        fontSize: 16,
+                        paddingBottom: 3,
+                      }}
+                    >
+                      Sundays
+                    </Text>
+                  </View>
+                </View>
+                <View
+                  style={{
+                    borderBottomWidth: 1,
+                    borderBottomColor: colors.borderColor,
+                    paddingBottom: 20,
+                    marginBottom: 10,
+                  }}
+                >
+                  <Text style={{ ...FONTS.h6, color: colors.title, ...{ paddingTop: 20 } }}>
                     Save Address for Future Use
                   </Text>
                 </View>
@@ -518,43 +727,46 @@ const AddDeliveryAddress = ({ route, navigation }) => {
                   </TouchableOpacity>
                 </View>
               </View>
-              <ScrollView horizontal={true} style={{ width: "100%" }}>
-                {!dataLoader ? (
-                  <FlatList
-                    data={addresses}
-                    renderItem={renderAddresses}
-                    keyExtractor={(item) => item.id}
-                    contentContainerStyle={{
-                      paddingHorizontal: 16,
-                      width: "100%",
-                      flex: 1,
-                    }}
-                  />
-                ) : (
-                  <ActivityIndicator size={"small"} color={"blue"} />
-                )}
-              </ScrollView>
+
             </ScrollView>
           </View>
           <View
             style={{
+            //  paddingTop:10,
               paddingHorizontal: 16,
               flexDirection: "row",
               gap: 8,
               marginBottom: 8,
+              backgroundColor: 'white',
+              borderTopColor: COLORS.upfricaTitle,
             }}
           >
-            <CustomButton
-              // onPress={
-              //   () => processToPayment()
-              //   navigation.navigate("Payment", { total: totalPayable })
-              // }
-              color={COLORS.label}
-              // title={"Save Address"}
-              title={"Pay with PayStack"}
-              style={{ width: "51%" }}
-              // isLoading={isLoading}
-            />
+            <Pressable style={{ width: "51%" }}>
+              {isLoading && <View style={{
+                height: 50,
+                borderRadius: 5,
+                backgroundColor: COLORS.upfricaTitle,
+                alignItems: 'center',
+                paddingHorizontal: 20,
+                justifyContent: 'center',
+                shadowColor: COLORS.upfricaTitle,
+                shadowOffset: {
+                  width: 0,
+                  height: 5,
+                },
+                shadowOpacity: 0.34,
+                shadowRadius: 6.27,
+                elevation: 8,
+              }}><ActivityIndicator size={'large'} color={'white'} /></View>}
+              {!isLoading && <CustomButton
+                // onPress={() => browserController()}
+                onPress={processToPayment}
+                color={COLORS.upfricaTitle}
+                title={"Pay with PayStack"}
+
+              />}
+
+            </Pressable>
             <CustomButton
               style={{ width: "48%" }}
               // onPress={
@@ -563,8 +775,8 @@ const AddDeliveryAddress = ({ route, navigation }) => {
               // }
               color={COLORS.upfricaTitle}
               // title={"Save Address"}
-              title={"Pay with Card"}
-              // isLoading={isLoading}
+              title={"Pay with Stripe"}
+            // isLoading={isLoading}
             />
           </View>
         </KeyboardAvoidingView>

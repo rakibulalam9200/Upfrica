@@ -125,10 +125,10 @@ const CustomBottomNavigation = ({ state, descriptors, navigation }) => {
                                         source={
                                             label === 'Home' ? home :
                                             label === 'Categories' ? category :
+                                            label === 'Cart' ? bag :
                                             label === 'Account' ? user : home
                                         }
                                     />
-                                    {/* <Text style={{...FONTS.fontSm,color:colors.title,opacity:isFocused ? 1 : .6}}>{label}</Text> */}
                                     <Text style={{...FONTS.fontSm,color:isFocused ?COLORS.upfricaTitle :colors.title,opacity:isFocused ? 1 : .6}}>{label}</Text>
                                 </TouchableOpacity>
                             </View>
