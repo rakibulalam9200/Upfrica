@@ -1,14 +1,13 @@
 import { useNavigation, useTheme } from "@react-navigation/native";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
-  Button,
+  Alert,
   Image,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
 } from "react-native";
-import Modal from "react-native-modal";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../Store/cart";
 import { COLORS, FONTS } from "../constants/theme";
@@ -32,11 +31,14 @@ const SellerProductCard = ({
   type,
 }) => {
   const currency = useSelector((state) => state.currency.currency);
+  const { token } = useSelector((state) => state.user);
+  console.log(token, "token............");
   const navigation = useNavigation();
   const product = {};
   const { colors } = useTheme();
   const dispatch = useDispatch();
-  console.log(postage_fee, secondary_postage_fee);
+  // console.log(postage_fee, secondary_postage_fee);
+  const productId = useRef();
 
   const [isModalVisible, setModalVisible] = useState(false);
   const toggleModal = () => {
@@ -44,6 +46,31 @@ const SellerProductCard = ({
   };
 
   useEffect(() => {}, [currency]);
+
+  const onDelete = async () => {
+    let deleteMethod = {
+      method: "DELETE", // Method itself
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+        Authorization: `Bearer ${token}`,
+      },
+    };
+
+    let url = `https://upfrica-staging.herokuapp.com/api/v1/products/${productId?.current}`;
+
+    fetch(url, deleteMethod)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data) {
+          Alert.alert(data?.message);
+          setRefresh((pre) => !pre);
+        }
+      }) // Manipulate the data retrieved back, if we want to do something with it
+      .catch((err) => console.log(err))
+      .finally(() => {
+        toggleModal();
+      });
+  };
 
   return (
     <TouchableOpacity
@@ -61,6 +88,7 @@ const SellerProductCard = ({
         setVisibility={setModalVisible}
         confirmationMessage={"Are you sure want to Delete?"}
         isDelete={true}
+        onDelete={onDelete}
       />
       {/* <View style={{ flex: 1 , height:200}}>
           <Text>Are you sure you want to delete this item?</Text>
@@ -205,20 +233,21 @@ const SellerProductCard = ({
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => {
-              let tempData = {
-                id: id,
-                image: image,
-                title: title,
-                quantity: 1,
-                price: price,
-                type: description?.body,
-                postage: postage_fee?.cents / 100,
-                secondary_postage: secondary_postage_fee?.cents / 100,
-                type: type,
-              };
+              // let tempData = {
+              //   id: id,
+              //   image: image,
+              //   title: title,
+              //   quantity: 1,
+              //   price: price,
+              //   type: description?.body,
+              //   postage: postage_fee?.cents / 100,
+              //   secondary_postage: secondary_postage_fee?.cents / 100,
+              //   type: type,
+              // };
               // dispatch(addToCart(tempData));
               //   navigation.navigate('DirectBuy', {id : id,image:image,title:title,price:price,isLike:isLike, type:description?.body, postage:postage_fee?.cents/100,secondary_postage:secondary_postage_fee?.cents/100})} }
               toggleModal();
+              productId.current = id;
             }}
             style={{
               //   backgroundColor: COLORS.upfricaTitle,

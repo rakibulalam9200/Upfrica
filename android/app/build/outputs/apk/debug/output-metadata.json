@@ -33,13 +33,13 @@
       "filters": [
         {
           "filterType": "ABI",
-          "value": "x86_64"
+          "value": "arm64-v8a"
         }
       ],
       "attributes": [],
-      "versionCode": 17004,
+      "versionCode": 17003,
       "versionName": "1.16",
-      "outputFile": "app-x86_64-debug.apk"
+      "outputFile": "app-arm64-v8a-debug.apk"
     },
     {
       "type": "ONE_OF_MANY",
@@ -59,13 +59,13 @@
       "filters": [
         {
           "filterType": "ABI",
-          "value": "arm64-v8a"
+          "value": "x86_64"
         }
       ],
       "attributes": [],
-      "versionCode": 17003,
+      "versionCode": 17004,
       "versionName": "1.16",
-      "outputFile": "app-arm64-v8a-debug.apk"
+      "outputFile": "app-x86_64-debug.apk"
     }
   ],
   "elementType": "File"
