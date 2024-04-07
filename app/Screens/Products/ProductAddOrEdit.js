@@ -4,13 +4,17 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import {
   Alert,
+  Image,
   SafeAreaView,
   ScrollView,
   Text,
   TextInput,
+  TouchableOpacity,
   View,
 } from "react-native";
+import DocumentPicker, { types } from "react-native-document-picker";
 import RNPickerSelect from "react-native-picker-select";
+import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import { useSelector } from "react-redux";
 import CustomButton from "../../components/CustomButton";
 import { GlobalStyleSheet } from "../../constants/StyleSheet";
@@ -41,7 +45,8 @@ const ProductAddorEdit = ({ navigation, route }) => {
   const [postAgeFee, setPostAgeFee] = useState(0);
   const [sndPostAgeFee, setSndPostAgeFee] = useState(0);
   const [selctedCategoryId, setSelectCategoryId] = useState(-1);
-  const [productImages,setProductImages] = useState([])
+  const [productImages, setProductImages] = useState([]);
+  const [refresh, setRefresh] = useState(false);
 
   let fetchedProductData = () => {
     if (id) {
@@ -79,8 +84,8 @@ const ProductAddorEdit = ({ navigation, route }) => {
           if (data?.price?.currency_iso) {
             setCurrency(data?.price?.currency_iso);
           }
-          if(data?.product_images){
-            setProductImages(data?.product_images)
+          if (data?.product_images) {
+            setProductImages(data?.product_images);
           }
         })
         .catch((error) => {
@@ -106,6 +111,59 @@ const ProductAddorEdit = ({ navigation, route }) => {
         console.error("Error fetching data:", error);
       });
   }
+
+  const pickDocument = async () => {
+    try {
+      let result = await DocumentPicker.pick({
+        allowMultiSelection: false,
+        type: [types.images],
+        copyTo: "cachesDirectory",
+      });
+
+      if (result) {
+        console.log(result, "result.........");
+        const data = new FormData();
+        data.append("product[product_image]", {
+          name: result[0].name,
+          type: result[0].type,
+          uri: result[0].fileCopyUri,
+        });
+
+        console.log(
+          data,
+          "data.........",
+          `${apiUrl}/products/${id}/upload_image`
+        );
+
+        // setLoading(true);
+        fetch(`${apiUrl}/products/${id}/upload_image`, {
+          method: "POST",
+          body: data,
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "multipart/form-data;",
+          },
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+          })
+          .then((data) => {
+            console.log(data, "data..........");
+            // setLoading(false);
+            setRefresh((pre) => !pre);
+          })
+          .catch((error) => {
+            console.error("Fetch error:", error);
+            // setLoading(false);
+          });
+      }
+    } catch (err) {
+      console.warn(err);
+    }
+  };
 
   const saveOrEditProduct = async () => {
     console.log(categoryId, "category ID");
@@ -177,7 +235,7 @@ const ProductAddorEdit = ({ navigation, route }) => {
     if (id) {
       fetchedProductData();
     }
-  }, [id]);
+  }, [id, refresh]);
 
   useEffect(() => {
     if (id) {
@@ -412,6 +470,38 @@ const ProductAddorEdit = ({ navigation, route }) => {
             items={allcurrency}
             value={currency}
           />
+        </View>
+        <View
+          style={{
+            flex: 1,
+            flexDirection: "row",
+            marginHorizontal: 10,
+            justifyContent: "space-between",
+            marginBottom: 16,
+          }}
+        >
+          <Text style={{ fontSize: 20, color: "black" }}>
+            Upload Product Images:{" "}
+          </Text>
+          <TouchableOpacity onPress={pickDocument}>
+            <FontAwesome5 name="cloud-upload-alt" size={28} color={"black"} />
+          </TouchableOpacity>
+        </View>
+        <View style={GlobalStyleSheet.row}>
+          {productImages &&
+            productImages.map((item, index) => {
+              return (
+                <View
+                  key={index}
+                  style={[GlobalStyleSheet.col50, { marginBottom: 15 }]}
+                >
+                  <Image
+                    style={{ height: 150, width: 170 }}
+                    source={{ uri: item }}
+                  />
+                </View>
+              );
+            })}
         </View>
       </ScrollView>
       <View style={{ paddingHorizontal: 16, marginBottom: 16 }}>

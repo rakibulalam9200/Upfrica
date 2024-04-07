@@ -23,6 +23,8 @@ import com.reactcommunity.rndatetimepicker.RNDateTimePickerPackage;
 import com.reactnativecommunity.picker.RNCPickerPackage;
 // @stripe/stripe-react-native
 import com.reactnativestripesdk.StripeSdkPackage;
+// react-native-document-picker
+import com.reactnativedocumentpicker.RNDocumentPickerPackage;
 // react-native-drop-shadow
 import com.dropShadow.DropShadowPackage;
 // react-native-gesture-handler
@@ -100,6 +102,7 @@ public class PackageList {
       new RNDateTimePickerPackage(),
       new RNCPickerPackage(),
       new StripeSdkPackage(),
+      new RNDocumentPickerPackage(),
       new DropShadowPackage(),
       new RNGestureHandlerPackage(),
       new ImagePickerPackage(),
