@@ -15,8 +15,10 @@ import {
 import DocumentPicker, { types } from "react-native-document-picker";
 import RNPickerSelect from "react-native-picker-select";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { useSelector } from "react-redux";
 import CustomButton from "../../components/CustomButton";
+import DeleteConfirmationModal from "../../components/Modal/DeleteModal";
 import { GlobalStyleSheet } from "../../constants/StyleSheet";
 import { COLORS } from "../../constants/theme";
 import Header from "../../layout/Header";
@@ -47,6 +49,37 @@ const ProductAddorEdit = ({ navigation, route }) => {
   const [selctedCategoryId, setSelectCategoryId] = useState(-1);
   const [productImages, setProductImages] = useState([]);
   const [refresh, setRefresh] = useState(false);
+  const [isModalVisible, setModalVisible] = useState(false);
+  const toggleModal = () => {
+    setModalVisible(!isModalVisible);
+  };
+
+  const onDelete = async () => {
+    let deleteMethod = {
+      method: "DELETE", // Method itself
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+        Authorization: `Bearer ${token}`,
+      },
+    };
+
+    let url = `${apiUrl}/products/${id}/delete_images`;
+
+    fetch(url, deleteMethod)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data) {
+          setRefresh((pre) => !pre);
+          setProductImages([]);
+          Alert.alert(data?.message);
+        }
+      }) // Manipulate the data retrieved back, if we want to do something with it
+      .catch((err) => console.log(err))
+      .finally(() => {
+        toggleModal();
+        setRefresh((pre) => !pre);
+      });
+  };
 
   let fetchedProductData = () => {
     if (id) {
@@ -250,8 +283,17 @@ const ProductAddorEdit = ({ navigation, route }) => {
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.background }}>
       <Header
         titleLeft
-        leftIcon={"back"}
+        leftIcon={"sellerBack"}
         title={id ? "Product Update" : "Product Create"}
+      />
+      <DeleteConfirmationModal
+        visibility={isModalVisible}
+        setVisibility={setModalVisible}
+        confirmationMessage={
+          "Do you want to Delete all the images for the product?"
+        }
+        isDelete={true}
+        onDelete={onDelete}
       />
       <ScrollView style={{ paddingHorizontal: 16, marginVertical: 20 }}>
         <View style={GlobalStyleSheet.inputGroup}>
@@ -483,9 +525,18 @@ const ProductAddorEdit = ({ navigation, route }) => {
           <Text style={{ fontSize: 20, color: "black" }}>
             Upload Product Images:{" "}
           </Text>
-          <TouchableOpacity onPress={pickDocument}>
-            <FontAwesome5 name="cloud-upload-alt" size={28} color={"black"} />
-          </TouchableOpacity>
+          <View style={{ flexDirection: "row", alignItems: "center", gap: 15 }}>
+            <TouchableOpacity onPress={pickDocument}>
+              <FontAwesome5 name="cloud-upload-alt" size={28} color={"black"} />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={toggleModal}>
+              <MaterialCommunityIcons
+                name={"delete"}
+                size={28}
+                color={"black"}
+              />
+            </TouchableOpacity>
+          </View>
         </View>
         <View style={GlobalStyleSheet.row}>
           {productImages &&
