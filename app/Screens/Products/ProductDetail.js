@@ -64,7 +64,7 @@ const ProductDetail = ({ route, navigation }) => {
   useEffect(() => {
     setDetails(data);
     // setImages(data.product_images)
-    let images = data.product_images.map((item) => {
+    let images = data?.product_images?.map((item) => {
       return { id: 1, image: item, smallImage: item };
     });
     setImages(images);
@@ -154,7 +154,7 @@ const ProductDetail = ({ route, navigation }) => {
       <ScrollView contentContainerStyle={{ paddingBottom: 30 }}>
         <ScrollView>
           <View>
-            <Image
+            {ProductImages && ProductImages[currentSlide]?.image  && <Image
               // source={ProductImages[currentSlide].image}
               source={{ uri: ProductImages[currentSlide]?.image }}
               style={{
@@ -162,7 +162,7 @@ const ProductDetail = ({ route, navigation }) => {
                 height: undefined,
                 aspectRatio: 1 / 1,
               }}
-            />
+            />}
             <View
               style={{
                 flexDirection: "row",
@@ -171,7 +171,7 @@ const ProductDetail = ({ route, navigation }) => {
                 left: 20,
               }}
             >
-              {ProductImages.map((data, index) => {
+              {ProductImages?.map((data, index) => {
                 return (
                   <TouchableOpacity
                     onPress={() => setCurrentSlide(index)}
@@ -353,7 +353,7 @@ const ProductDetail = ({ route, navigation }) => {
                 flexDirection: "row",
               }}
             >
-              {productSizes.map((data, index) => {
+              {productSizes?.map((data, index) => {
                 return (
                   <TouchableOpacity
                     onPress={() => setActiveSize(data)}
