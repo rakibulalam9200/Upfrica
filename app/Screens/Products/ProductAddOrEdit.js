@@ -90,12 +90,10 @@ const ProductAddorEdit = (props) => {
       });
       if (response) {
         console.log(
-          response?.message,
-          response?.product,
-          "----------",
+          response,
           "response...."
         );
-        props.navigation.navigate("Seller");
+        props.navigation.navigate("Seller", { refetch: Math.random() });
       }
     } catch (error) {
       Alert.alert(error?.response?.data?.error);

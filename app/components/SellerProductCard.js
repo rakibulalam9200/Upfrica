@@ -29,6 +29,8 @@ const SellerProductCard = ({
   postage_fee,
   secondary_postage_fee,
   type,
+  refresh,
+  setRefresh
 }) => {
   const currency = useSelector((state) => state.currency.currency);
   const { token } = useSelector((state) => state.user);

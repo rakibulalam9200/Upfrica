@@ -85,10 +85,12 @@ const apiUrl =
 
 const tradingData = [];
 
-const Seller = ({ navigation, params }) => {
+const Seller = ({ navigation, route }) => {
   const currency = useSelector((state) => state?.currency?.currency);
   const { user } = useSelector((state) => state?.user);
   const dispatch = useDispatch();
+  let refetch = route.params ? route.params.refetch : null;
+
   const [productsData, setProductsData] = useState([]);
   const [open, setOpen] = useState(false);
   const [refresh, setRefresh] = useState(false);
@@ -122,7 +124,7 @@ const Seller = ({ navigation, params }) => {
 
   useEffect(() => {
     productList();
-  }, [refresh]);
+  }, [refresh, refetch]);
 
   const theme = useTheme();
   const { colors } = theme;
