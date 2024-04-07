@@ -90,7 +90,6 @@ const Seller = ({ navigation, route }) => {
   const { user } = useSelector((state) => state?.user);
   const dispatch = useDispatch();
   let refetch = route.params ? route.params.refetch : null;
-
   const [productsData, setProductsData] = useState([]);
   const [open, setOpen] = useState(false);
   const [refresh, setRefresh] = useState(false);

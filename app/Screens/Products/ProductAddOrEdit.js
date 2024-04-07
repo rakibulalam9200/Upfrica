@@ -17,11 +17,12 @@ import { GlobalStyleSheet } from "../../constants/StyleSheet";
 import { COLORS } from "../../constants/theme";
 import Header from "../../layout/Header";
 
-const ProductAddorEdit = (props) => {
+const ProductAddorEdit = ({ navigation, route }) => {
   const theme = useTheme();
   const { colors } = theme;
   const { token, user } = useSelector((state) => state?.user);
-  const apiUrl = "https://upfrica-staging.herokuapp.com/api/v1/categories";
+  const apiUrl = "https://upfrica-staging.herokuapp.com/api/v1";
+  const id = route?.params ? route?.params?.id : null;
   const [isLoading, setIsLoading] = useState(false);
   const [categoriesData, setCategoriesData] = useState([]);
   const [title, setTitle] = useState("");
@@ -36,21 +37,70 @@ const ProductAddorEdit = (props) => {
     { label: "GHS", value: "GHS" },
     { label: "EURO", value: "EURO" },
   ]);
-  const [currency, setCurrency] = useState("USD");
+  const [currency, setCurrency] = useState("");
   const [postAgeFee, setPostAgeFee] = useState(0);
   const [sndPostAgeFee, setSndPostAgeFee] = useState(0);
+  const [selctedCategoryId, setSelectCategoryId] = useState(-1);
+  const [productImages,setProductImages] = []
+
+  let fetchedProductData = () => {
+    if (id) {
+      fetch(`${apiUrl}/products/${id}`)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("single product.......", data?.category_id);
+          if (data?.title) {
+            setTitle(data?.title);
+          }
+          if (data?.slug) {
+            setSlug(data?.slug);
+          }
+          if (data?.description?.body) {
+            setDescription(data?.description?.body);
+          }
+          if (data?.product_quantity) {
+            setProductQuantity(data?.product_quantity.toString());
+          }
+          if (data?.price?.cents) {
+            setPrice(data?.price?.cents.toString());
+          }
+          if (data?.sale_price?.cents) {
+            setSalesPrice(data?.sale_price?.cents.toString());
+          }
+          if (data?.postage_fee?.cents) {
+            setPostAgeFee(data?.postage_fee?.cents.toString());
+          }
+          if (data?.secondary_postage_fee?.cents) {
+            setSndPostAgeFee(data?.secondary_postage_fee?.cents.toString());
+          }
+          if (data?.category_id) {
+            setSelectCategoryId(data?.category_id);
+          }
+          if (data?.price?.currency_iso) {
+            setCurrency(data?.price?.currency_iso);
+          }
+          if(data?.product_images){
+
+          }
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+        });
+    }
+  };
 
   function fetchedCategoriesList() {
-    fetch(apiUrl)
+    fetch(`${apiUrl}/categories`)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data, "data.......");
         let categories = [];
         data?.categories &&
           data?.categories?.map((category, index) => {
+            console.log(category);
             categories.push({ label: category?.name, value: category?.id });
           });
-        setCategoriesData(categories); // This will contain the fetched data
+        setCategoriesData(categories);
+        // This will contain the fetched data
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -59,7 +109,7 @@ const ProductAddorEdit = (props) => {
 
   const saveOrEditProduct = async () => {
     console.log(categoryId, "category ID");
-    setIsLoading(true);
+
     let product = {
       title: title,
       slug: slug,
@@ -67,11 +117,11 @@ const ProductAddorEdit = (props) => {
       condition_id: 1,
       category_id: categoryId,
       description: description,
-      product_quantity: productQuantity,
-      price_cents: price,
-      sale_price_cents: salesPrice,
-      postage_fee_cents: postAgeFee,
-      secondary_postage_fee_cents: sndPostAgeFee,
+      product_quantity: +productQuantity,
+      price_cents: +price,
+      sale_price_cents: +salesPrice,
+      postage_fee_cents: +postAgeFee,
+      secondary_postage_fee_cents: +sndPostAgeFee,
       price_currency: currency,
     };
 
@@ -84,31 +134,67 @@ const ProductAddorEdit = (props) => {
       Authorization: `Bearer ${token}`,
     };
 
-    try {
-      let response = await axios.post(`${baseURL}/products`, body, {
-        headers: headers,
-      });
-      if (response) {
-        console.log(
-          response,
-          "response...."
-        );
-        props.navigation.navigate("Seller", { refetch: Math.random() });
+    if (id) {
+      setIsLoading(true);
+      try {
+        let response = await axios.patch(`${baseURL}/products/${id}`, body, {
+          headers: headers,
+        });
+        if (response) {
+          console.log(response, "response....");
+          navigation.navigate("Seller", { refetch: Math.random() });
+        }
+      } catch (error) {
+        Alert.alert(error?.response?.data?.error);
+        console.log(error?.response?.data, "errror...");
+      } finally {
+        setIsLoading(false);
       }
-    } catch (error) {
-      Alert.alert(error?.response?.data?.error);
-      console.log(error?.response?.data, "errror...");
-    } finally {
-      setIsLoading(false);
+    } else {
+      setIsLoading(true);
+      try {
+        let response = await axios.post(`${baseURL}/products`, body, {
+          headers: headers,
+        });
+        if (response) {
+          console.log(response, "response....");
+          navigation.navigate("Seller", { refetch: Math.random() });
+        }
+      } catch (error) {
+        Alert.alert(error?.response?.data?.error);
+        console.log(error?.response?.data, "errror...");
+      } finally {
+        setIsLoading(false);
+      }
     }
   };
 
   useEffect(() => {
     fetchedCategoriesList();
   }, []);
+
+  useEffect(() => {
+    if (id) {
+      fetchedProductData();
+    }
+  }, [id]);
+
+  useEffect(() => {
+    if (id) {
+      console.log(selctedCategoryId);
+      const selectedCategory = categoriesData?.find(
+        (item) => item?.value === selctedCategoryId
+      );
+      if (selectedCategory) setCategoryId(selectedCategory?.value);
+    }
+  }, [selctedCategoryId, id, categoriesData]);
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.background }}>
-      <Header titleLeft leftIcon={"back"} title={"Product Create"} />
+      <Header
+        titleLeft
+        leftIcon={"back"}
+        title={id ? "Product Update" : "Product Create"}
+      />
       <ScrollView style={{ paddingHorizontal: 16, marginVertical: 20 }}>
         <View style={GlobalStyleSheet.inputGroup}>
           <Text style={[GlobalStyleSheet.label, { color: colors.title }]}>
@@ -194,6 +280,7 @@ const ProductAddorEdit = (props) => {
             }}
             onValueChange={(value) => setCategoryId(value)}
             items={categoriesData}
+            value={categoryId}
           />
           {/* </ScrollView> */}
         </View>
@@ -323,6 +410,7 @@ const ProductAddorEdit = (props) => {
             }}
             onValueChange={(value) => setCurrency(value)}
             items={allcurrency}
+            value={currency}
           />
         </View>
       </ScrollView>
@@ -330,7 +418,7 @@ const ProductAddorEdit = (props) => {
         <CustomButton
           onPress={saveOrEditProduct}
           color={COLORS.upfricaTitle}
-          title="Save Product"
+          title={id ? "Update Product" : "Save Product"}
           isLoading={isLoading}
         />
       </View>

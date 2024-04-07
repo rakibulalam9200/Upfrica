@@ -9,7 +9,6 @@ import {
   View,
 } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../../Store/cart";
 import { COLORS, FONTS } from "../constants/theme";
 import DeleteConfirmationModal from "./Modal/DeleteModal";
 // import { Button } from 'react-native-paper';
@@ -30,7 +29,7 @@ const SellerProductCard = ({
   secondary_postage_fee,
   type,
   refresh,
-  setRefresh
+  setRefresh,
 }) => {
   const currency = useSelector((state) => state.currency.currency);
   const { token } = useSelector((state) => state.user);
@@ -190,28 +189,7 @@ const SellerProductCard = ({
 
           <TouchableOpacity
             onPress={() => {
-              let tempData = {
-                id: id,
-                image: image,
-                title: title,
-                quantity: 1,
-                price: price,
-                type: description?.body,
-                postage: postage_fee?.cents / 100,
-                secondary_postage: secondary_postage_fee?.cents / 100,
-                type: type,
-              };
-              dispatch(addToCart(tempData));
-              navigation.navigate("DirectBuy", {
-                id: id,
-                image: image,
-                title: title,
-                price: price,
-                isLike: isLike,
-                type: description?.body,
-                postage: postage_fee?.cents / 100,
-                secondary_postage: secondary_postage_fee?.cents / 100,
-              });
+              navigation.navigate("ProductAdd", { id: id });
             }}
             style={{
               //   backgroundColor: COLORS.upfricaTitle,
