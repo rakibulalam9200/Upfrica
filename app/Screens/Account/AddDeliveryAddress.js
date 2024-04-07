@@ -88,7 +88,7 @@ const AddDeliveryAddress = ({ route, navigation }) => {
     }
   };
 
-  const linkingUri = 'upfrica://';
+  const linkingUri = 'upfrica-staging.herokuapp.com/api/upfrica_app';
 
   useEffect(() => {
     const handleOpenURL = ({ url }) => {
@@ -106,7 +106,7 @@ const AddDeliveryAddress = ({ route, navigation }) => {
     const handleDeepLink = (event) => {
       console.log("Incoming URL:", event.url);
       // Parse the URL and extract the token parameter
-
+      navigation.navigate('OrderList')
       const token = extractTokenFromUrl(event.url);
       if (token) {
         console.log("Extracted Token:", token);
@@ -127,9 +127,9 @@ const AddDeliveryAddress = ({ route, navigation }) => {
     });
 
     // Cleanup
-    return () => {
-      Linking.removeAllListeners('url')
-    };
+    // return () => {
+    //   Linking.removeAllListeners('url')
+    // };
 
   }, []);
 
@@ -166,7 +166,7 @@ const AddDeliveryAddress = ({ route, navigation }) => {
 
   const processToPayment = () => {
     if (!addressId) return;
-  
+
     setIsLoading(true);
     setLoading(true)
     const headers = {
@@ -598,7 +598,7 @@ const AddDeliveryAddress = ({ route, navigation }) => {
                         backgroundColor: colors.input,
                         color: colors.title,
                         borderColor: colors.borderColor,
-                        height:80,
+                        height: 80,
                       },
                     ]}
                     placeholder="Additional info."
@@ -732,7 +732,7 @@ const AddDeliveryAddress = ({ route, navigation }) => {
           </View>
           <View
             style={{
-            //  paddingTop:10,
+              //  paddingTop:10,
               paddingHorizontal: 16,
               flexDirection: "row",
               gap: 8,
