@@ -4,7 +4,7 @@
             "outputFile": "com.app.upfrica.app-mergeDebugResources-89:/values-watch-v21/values-watch-v21.xml",
             "map": [
                 {
-                    "source": "/Users/srikantorajbongshi/.gradle/caches/transforms-3/1ebf47d3dd0e5a81935f335e067e5ab1/transformed/appcompat-1.6.1/res/values-watch-v21/values-watch-v21.xml",
+                    "source": "/home/rakib/.gradle/caches/transforms-3/1ebf47d3dd0e5a81935f335e067e5ab1/transformed/appcompat-1.6.1/res/values-watch-v21/values-watch-v21.xml",
                     "from": {
                         "startLines": "2,6,10",
                         "startColumns": "4,4,4",

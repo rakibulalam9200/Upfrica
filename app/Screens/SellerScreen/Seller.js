@@ -79,55 +79,20 @@ const filterTabs = ["All", "Popular", "Trending", "Shops", "Deal"];
 //     },
 // ]
 // Assuming you have a JavaScript environment with support for the Fetch API
-const apiUrl = "https://upfrica-staging.herokuapp.com/api/v1/products";
+const apiUrl =
+  "https://upfrica-staging.herokuapp.com/api/v1/products?per_page=50&page=3";
 // const productsData = [];
 
 const tradingData = [];
 
-// const tradingData = [
-//     {
-//         id : "1",
-//         image : IMAGES.tradingProduct1,
-//         title : "Men Black Grey Allover Printed Round Neck T-Shirt",
-//         price : "$25.15",
-//         isLike : false,
-//         rating : "4.5",
-//         review : "2547",
-//     },
-//     {
-//         id : "2",
-//         image : IMAGES.tradingProduct2,
-//         title : "Men Black Grey Allover Printed Round Neck T-Shirt",
-//         price : "$25.15",
-//         isLike : false,
-//         rating : "4.5",
-//         review : "2547",
-//     },
-//     {
-//         id : "3",
-//         image : IMAGES.tradingProduct1,
-//         title : "Men Black Grey Allover Printed Round Neck T-Shirt",
-//         price : "$25.15",
-//         isLike : false,
-//         rating : "4.5",
-//         review : "2547",
-//     },
-//     {
-//         id : "4",
-//         image : IMAGES.tradingProduct2,
-//         title : "Men Black Grey Allover Printed Round Neck T-Shirt",
-//         price : "$25.15",
-//         isLike : false,
-//         rating : "4.5",
-//         review : "2547",
-//     },
-// ]
-
-const Seller = ({ navigation }) => {
+const Seller = ({ navigation, route }) => {
   const currency = useSelector((state) => state?.currency?.currency);
+  const { user } = useSelector((state) => state?.user);
   const dispatch = useDispatch();
+  let refetch = route.params ? route.params.refetch : null;
   const [productsData, setProductsData] = useState([]);
   const [open, setOpen] = useState(false);
+  const [refresh, setRefresh] = useState(false);
   const [loading, setLoading] = useState(true);
   const [value, setValue] = useState("GH₵");
   const [items, setItems] = useState([
@@ -138,27 +103,27 @@ const Seller = ({ navigation }) => {
   ]);
 
   function productList() {
+    setLoading(true);
     fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => {
-        // data = []
-        setLoading(false);
-        setProductsData(data?.products);
-        // productsData.push(data); // Assuming the API returns an array of products
-        // console.log(productsData);r
-        setPopularProducts(data?.products);
-        let tempData = data?.products?.reverse();
-
-        setTradingProducts(data?.products?.reverse()); // This will contain the fetched data
+        const filteredProducts = data?.products?.filter(
+          (product) => product?.user_id === user?.id
+        );
+        setProductsData(filteredProducts);
+        setPopularProducts(filteredProducts);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   }
 
   useEffect(() => {
     productList();
-  }, []);
+  }, [refresh, refetch]);
 
   const theme = useTheme();
   const { colors } = theme;
@@ -191,7 +156,7 @@ const Seller = ({ navigation }) => {
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.card }}>
-      <Header titleLeft leftIcon={"back"} title={"Seller"} rightIcon={"plus"}/>
+      <Header titleLeft leftIcon={"back"} title={"Seller"} rightIcon={"plus"} />
 
       {/* Trending Product list  */}
       <View style={[GlobalStyleSheet.container, { paddingTop: 20 }]}>
@@ -242,8 +207,11 @@ const Seller = ({ navigation }) => {
                 <SellerProductCard
                   onPress={() => navigation.navigate("ProductDetail", { data })}
                   id={data.id}
-                  image={data?.product_images ? data?.product_images[0]:'https://www.upfrica.com/assets/upfrica-com-logo-dark_170x-94d438d62a4c6b2c2c70fe1084c008f4584357ed2847dac5fc38818a0de6459d.webp'}
-
+                  image={
+                    data?.product_images
+                      ? data?.product_images[0]
+                      : "https://www.upfrica.com/assets/upfrica-com-logo-dark_170x-94d438d62a4c6b2c2c70fe1084c008f4584357ed2847dac5fc38818a0de6459d.webp"
+                  }
                   category={data?.category ? data?.category : ""}
                   title={data.title}
                   price={data.sale_price.cents / 100}
@@ -258,6 +226,8 @@ const Seller = ({ navigation }) => {
                   postage_fee={data?.postage_fee}
                   secondary_postage_fee={data?.secondary_postage_fee}
                   type={data?.description?.body}
+                  refresh={refresh}
+                  setRefresh={setRefresh}
                 />
               </View>
             );

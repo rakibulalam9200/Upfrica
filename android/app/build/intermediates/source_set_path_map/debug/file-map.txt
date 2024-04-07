@@ -1,113 +1,113 @@
-com.app.upfrica.app-jetified-animation-1.4.0-0 /Users/srikantorajbongshi/.gradle/caches/transforms-3/007ff5b43541149741f8a49a05ff146a/transformed/jetified-animation-1.4.0/res
-com.app.upfrica.app-jetified-link-20.29.2-1 /Users/srikantorajbongshi/.gradle/caches/transforms-3/057ebfdb47d014f7781d3d0a8902e5a2/transformed/jetified-link-20.29.2/res
-com.app.upfrica.app-jetified-react-android-0.71.8-debug-2 /Users/srikantorajbongshi/.gradle/caches/transforms-3/065ec53aec35c6822e50d60161b0331c/transformed/jetified-react-android-0.71.8-debug/res
-com.app.upfrica.app-jetified-ui-unit-1.4.3-3 /Users/srikantorajbongshi/.gradle/caches/transforms-3/091eeaf0205c3c62fafe652753fcc9df/transformed/jetified-ui-unit-1.4.3/res
-com.app.upfrica.app-jetified-security-crypto-1.1.0-alpha05-4 /Users/srikantorajbongshi/.gradle/caches/transforms-3/0a8621c9f338a1d221aba7647268f0b9/transformed/jetified-security-crypto-1.1.0-alpha05/res
-com.app.upfrica.app-jetified-stripe-ui-core-20.29.2-5 /Users/srikantorajbongshi/.gradle/caches/transforms-3/0a8f9ed7d5dbdde033eaf48af6ad1940/transformed/jetified-stripe-ui-core-20.29.2/res
-com.app.upfrica.app-jetified-activity-ktx-1.7.2-6 /Users/srikantorajbongshi/.gradle/caches/transforms-3/1068baf3ec8bbc0fc9b7b8916eb3032f/transformed/jetified-activity-ktx-1.7.2/res
-com.app.upfrica.app-recyclerview-1.2.1-7 /Users/srikantorajbongshi/.gradle/caches/transforms-3/11bb7c61b361b601a55c05d42a1a8823/transformed/recyclerview-1.2.1/res
-com.app.upfrica.app-jetified-paymentsheet-20.29.2-8 /Users/srikantorajbongshi/.gradle/caches/transforms-3/13e53d367064c93b0f1699c409f85ad0/transformed/jetified-paymentsheet-20.29.2/res
-com.app.upfrica.app-jetified-customview-poolingcontainer-1.0.0-9 /Users/srikantorajbongshi/.gradle/caches/transforms-3/14afae8db4145619f66c8510501758a8/transformed/jetified-customview-poolingcontainer-1.0.0/res
-com.app.upfrica.app-jetified-payments-model-20.29.2-10 /Users/srikantorajbongshi/.gradle/caches/transforms-3/16d63857dafe430af515f27f5d4d89d1/transformed/jetified-payments-model-20.29.2/res
-com.app.upfrica.app-jetified-activity-1.7.2-11 /Users/srikantorajbongshi/.gradle/caches/transforms-3/18ab3ca2c99134fe765fa4ff49bf2827/transformed/jetified-activity-1.7.2/res
-com.app.upfrica.app-jetified-savedstate-1.2.1-12 /Users/srikantorajbongshi/.gradle/caches/transforms-3/1d0bcafc0cb66b47774a81747ee3cdea/transformed/jetified-savedstate-1.2.1/res
-com.app.upfrica.app-appcompat-1.6.1-13 /Users/srikantorajbongshi/.gradle/caches/transforms-3/1ebf47d3dd0e5a81935f335e067e5ab1/transformed/appcompat-1.6.1/res
-com.app.upfrica.app-drawerlayout-1.1.1-14 /Users/srikantorajbongshi/.gradle/caches/transforms-3/1fb8749a9f1d1f20bb9969b1ae0f8e30/transformed/drawerlayout-1.1.1/res
-com.app.upfrica.app-jetified-lifecycle-viewmodel-ktx-2.6.1-15 /Users/srikantorajbongshi/.gradle/caches/transforms-3/22084144741f8823cd038e7a6c5a2ed2/transformed/jetified-lifecycle-viewmodel-ktx-2.6.1/res
-com.app.upfrica.app-transition-1.2.0-16 /Users/srikantorajbongshi/.gradle/caches/transforms-3/27f149f98e8a196934f0a0c01a838aff/transformed/transition-1.2.0/res
-com.app.upfrica.app-media-1.0.0-17 /Users/srikantorajbongshi/.gradle/caches/transforms-3/28cb6e20fa03579911c48e52dd2adf64/transformed/media-1.0.0/res
-com.app.upfrica.app-jetified-play-services-wallet-19.2.0-18 /Users/srikantorajbongshi/.gradle/caches/transforms-3/2f9cbbfa8a77a097650212debf27fffd/transformed/jetified-play-services-wallet-19.2.0/res
-com.app.upfrica.app-jetified-payments-core-20.29.2-19 /Users/srikantorajbongshi/.gradle/caches/transforms-3/35a6336b7baed2749fa5ecaa987d97d9/transformed/jetified-payments-core-20.29.2/res
-com.app.upfrica.app-jetified-ui-util-1.4.3-20 /Users/srikantorajbongshi/.gradle/caches/transforms-3/3a3bc916bc8f0b2260b80f03b0b3197e/transformed/jetified-ui-util-1.4.3/res
-com.app.upfrica.app-jetified-lifecycle-livedata-core-ktx-2.6.1-21 /Users/srikantorajbongshi/.gradle/caches/transforms-3/3b0080f2abb507c11ab484c5df06bf68/transformed/jetified-lifecycle-livedata-core-ktx-2.6.1/res
-com.app.upfrica.app-jetified-material-1.4.3-22 /Users/srikantorajbongshi/.gradle/caches/transforms-3/3b85de5409cf47f5d58d3f93bb529db7/transformed/jetified-material-1.4.3/res
-com.app.upfrica.app-jetified-profileinstaller-1.3.0-23 /Users/srikantorajbongshi/.gradle/caches/transforms-3/3f77bce1e92d339a15ec489a7ca00ff2/transformed/jetified-profileinstaller-1.3.0/res
-com.app.upfrica.app-coordinatorlayout-1.2.0-24 /Users/srikantorajbongshi/.gradle/caches/transforms-3/406d929e20c23da27f998fdee54ae835/transformed/coordinatorlayout-1.2.0/res
-com.app.upfrica.app-jetified-activity-compose-1.7.2-25 /Users/srikantorajbongshi/.gradle/caches/transforms-3/41fa5e8d5ebd28d1d383785690b026fc/transformed/jetified-activity-compose-1.7.2/res
-com.app.upfrica.app-jetified-play-services-base-18.2.0-26 /Users/srikantorajbongshi/.gradle/caches/transforms-3/4565451810fe46382ba7dd69845cbf3c/transformed/jetified-play-services-base-18.2.0/res
-com.app.upfrica.app-jetified-runtime-saveable-1.4.3-27 /Users/srikantorajbongshi/.gradle/caches/transforms-3/4a9f54e591b31ea9561d5c3eb8199af2/transformed/jetified-runtime-saveable-1.4.3/res
-com.app.upfrica.app-jetified-ui-viewbinding-1.4.3-28 /Users/srikantorajbongshi/.gradle/caches/transforms-3/4b9066c9657fe5191d3397a5e9decd04/transformed/jetified-ui-viewbinding-1.4.3/res
-com.app.upfrica.app-jetified-viewpager2-1.0.0-29 /Users/srikantorajbongshi/.gradle/caches/transforms-3/4c9158d8e99590720e6250d25b3c2568/transformed/jetified-viewpager2-1.0.0/res
-com.app.upfrica.app-jetified-ui-text-1.4.3-30 /Users/srikantorajbongshi/.gradle/caches/transforms-3/4e9d676f85c7f494ba1949461fd8510b/transformed/jetified-ui-text-1.4.3/res
-com.app.upfrica.app-core-1.9.0-31 /Users/srikantorajbongshi/.gradle/caches/transforms-3/559d20c2360c0b466f043196b5e9f81d/transformed/core-1.9.0/res
-com.app.upfrica.app-jetified-stripe-3ds2-android-6.1.7-32 /Users/srikantorajbongshi/.gradle/caches/transforms-3/5ba3801dd24b38f85a46bc64a082b0e3/transformed/jetified-stripe-3ds2-android-6.1.7/res
-com.app.upfrica.app-jetified-appcompat-resources-1.6.1-33 /Users/srikantorajbongshi/.gradle/caches/transforms-3/5c13c32454e1c2bc0b953fcca3620f03/transformed/jetified-appcompat-resources-1.6.1/res
-com.app.upfrica.app-jetified-runtime-livedata-1.4.3-34 /Users/srikantorajbongshi/.gradle/caches/transforms-3/5dfa7e52da0b4d67e9e587e78b3df7eb/transformed/jetified-runtime-livedata-1.4.3/res
-com.app.upfrica.app-jetified-savedstate-ktx-1.2.1-35 /Users/srikantorajbongshi/.gradle/caches/transforms-3/656f29c2efedd749807ae3a1ee9f18d3/transformed/jetified-savedstate-ktx-1.2.1/res
-com.app.upfrica.app-core-runtime-2.2.0-36 /Users/srikantorajbongshi/.gradle/caches/transforms-3/67d409b2581c7bde48ce0c7a606fa007/transformed/core-runtime-2.2.0/res
-com.app.upfrica.app-jetified-flipper-0.125.0-37 /Users/srikantorajbongshi/.gradle/caches/transforms-3/7791fe77b8ab9730d0e25ce55c6aa090/transformed/jetified-flipper-0.125.0/res
-com.app.upfrica.app-jetified-financial-connections-20.29.2-38 /Users/srikantorajbongshi/.gradle/caches/transforms-3/794a944da27277ee6864b0aeba47d052/transformed/jetified-financial-connections-20.29.2/res
-com.app.upfrica.app-cardview-1.0.0-39 /Users/srikantorajbongshi/.gradle/caches/transforms-3/7ac1297a65d7e60cab9847fc28b2b130/transformed/cardview-1.0.0/res
-com.app.upfrica.app-jetified-lifecycle-process-2.6.1-40 /Users/srikantorajbongshi/.gradle/caches/transforms-3/7b0cffc2621151ec9a68fd8e27f3fca4/transformed/jetified-lifecycle-process-2.6.1/res
-com.app.upfrica.app-jetified-play-services-maps-18.2.0-41 /Users/srikantorajbongshi/.gradle/caches/transforms-3/7eff580d6dc24d1308cfc2e86492fe64/transformed/jetified-play-services-maps-18.2.0/res
-com.app.upfrica.app-jetified-android-maps-utils-3.8.2-42 /Users/srikantorajbongshi/.gradle/caches/transforms-3/82ac9b070673308d52c58a0fd3106e5f/transformed/jetified-android-maps-utils-3.8.2/res
-com.app.upfrica.app-lifecycle-livedata-core-2.6.1-43 /Users/srikantorajbongshi/.gradle/caches/transforms-3/88c0ceb23ae6d738c537bfa652183d0a/transformed/lifecycle-livedata-core-2.6.1/res
-com.app.upfrica.app-navigation-common-ktx-2.5.3-44 /Users/srikantorajbongshi/.gradle/caches/transforms-3/896ad4f65a09d51f50a16dec41769f3f/transformed/navigation-common-ktx-2.5.3/res
-com.app.upfrica.app-jetified-autofill-1.1.0-45 /Users/srikantorajbongshi/.gradle/caches/transforms-3/8a384341752d328d6389029a8be9e815/transformed/jetified-autofill-1.1.0/res
-com.app.upfrica.app-jetified-navigation-compose-2.5.3-46 /Users/srikantorajbongshi/.gradle/caches/transforms-3/90f1f994ad84bd759d1cf874d3ede13d/transformed/jetified-navigation-compose-2.5.3/res
-com.app.upfrica.app-jetified-material-icons-core-1.4.3-47 /Users/srikantorajbongshi/.gradle/caches/transforms-3/9838ea6e94b88b90aa9d1fd6f2e5f3c4/transformed/jetified-material-icons-core-1.4.3/res
-com.app.upfrica.app-jetified-emoji2-views-helper-1.3.0-48 /Users/srikantorajbongshi/.gradle/caches/transforms-3/983d5b34b99e16cf4bba0beb62cfbf90/transformed/jetified-emoji2-views-helper-1.3.0/res
-com.app.upfrica.app-jetified-material-ripple-1.4.3-49 /Users/srikantorajbongshi/.gradle/caches/transforms-3/9c9aa9389cf2fc5b4f8374aaaa8551f9/transformed/jetified-material-ripple-1.4.3/res
-com.app.upfrica.app-browser-1.5.0-50 /Users/srikantorajbongshi/.gradle/caches/transforms-3/9ccb3f8235bf3df2f63e28f976342894/transformed/browser-1.5.0/res
-com.app.upfrica.app-jetified-ui-geometry-1.4.3-51 /Users/srikantorajbongshi/.gradle/caches/transforms-3/9e4c7ca01f8714d6102ab58a294d4fa4/transformed/jetified-ui-geometry-1.4.3/res
-com.app.upfrica.app-swiperefreshlayout-1.1.0-52 /Users/srikantorajbongshi/.gradle/caches/transforms-3/9f3f2c3188f38327ba24fabea0cd84f7/transformed/swiperefreshlayout-1.1.0/res
-com.app.upfrica.app-lifecycle-runtime-2.6.1-53 /Users/srikantorajbongshi/.gradle/caches/transforms-3/a3facd931739086fe204aaa52c9a043b/transformed/lifecycle-runtime-2.6.1/res
-com.app.upfrica.app-jetified-emoji2-1.3.0-54 /Users/srikantorajbongshi/.gradle/caches/transforms-3/a47f469aa0ea642ca72aa7466ed434cc/transformed/jetified-emoji2-1.3.0/res
-com.app.upfrica.app-jetified-startup-runtime-1.1.1-55 /Users/srikantorajbongshi/.gradle/caches/transforms-3/a4c840c160268a1ca6a325e3c4345dc9/transformed/jetified-startup-runtime-1.1.1/res
-com.app.upfrica.app-jetified-foundation-1.4.3-56 /Users/srikantorajbongshi/.gradle/caches/transforms-3/a55db8dccc1bf0856323d95cac277d17/transformed/jetified-foundation-1.4.3/res
-com.app.upfrica.app-jetified-runtime-1.4.3-57 /Users/srikantorajbongshi/.gradle/caches/transforms-3/a7185864142ad7ff54f01dad7846ef40/transformed/jetified-runtime-1.4.3/res
-com.app.upfrica.app-jetified-lifecycle-livedata-ktx-2.6.1-58 /Users/srikantorajbongshi/.gradle/caches/transforms-3/a795d9283f0e9ebe855faf783b978d3a/transformed/jetified-lifecycle-livedata-ktx-2.6.1/res
-com.app.upfrica.app-constraintlayout-2.1.4-59 /Users/srikantorajbongshi/.gradle/caches/transforms-3/a9d092006cca51774bf83ff42f1c27ac/transformed/constraintlayout-2.1.4/res
-com.app.upfrica.app-jetified-foundation-layout-1.4.3-60 /Users/srikantorajbongshi/.gradle/caches/transforms-3/aff306b6a6aa042b5b808675754764f3/transformed/jetified-foundation-layout-1.4.3/res
-com.app.upfrica.app-jetified-lifecycle-viewmodel-savedstate-2.6.1-61 /Users/srikantorajbongshi/.gradle/caches/transforms-3/b4230bbb173cb94d5f30e58c810272dd/transformed/jetified-lifecycle-viewmodel-savedstate-2.6.1/res
-com.app.upfrica.app-jetified-lifecycle-runtime-ktx-2.6.1-62 /Users/srikantorajbongshi/.gradle/caches/transforms-3/b438e84c850fe76d8144b255138a3ef3/transformed/jetified-lifecycle-runtime-ktx-2.6.1/res
-com.app.upfrica.app-jetified-core-ktx-1.9.0-63 /Users/srikantorajbongshi/.gradle/caches/transforms-3/b5f1973cef353c523a488d373817cf76/transformed/jetified-core-ktx-1.9.0/res
-com.app.upfrica.app-jetified-animation-core-1.4.0-64 /Users/srikantorajbongshi/.gradle/caches/transforms-3/b78c2317da9ca7d6fabc58e71a311cc5/transformed/jetified-animation-core-1.4.0/res
-com.app.upfrica.app-navigation-common-2.5.3-65 /Users/srikantorajbongshi/.gradle/caches/transforms-3/ba8f1745ce3bd7f19867755813e7a259/transformed/navigation-common-2.5.3/res
-com.app.upfrica.app-fragment-1.5.5-66 /Users/srikantorajbongshi/.gradle/caches/transforms-3/bbee42d8420db9ee239f9fbf2a5178f4/transformed/fragment-1.5.5/res
-com.app.upfrica.app-material-1.9.0-67 /Users/srikantorajbongshi/.gradle/caches/transforms-3/bc984b4c216b046fb814ced4c0f10e24/transformed/material-1.9.0/res
-com.app.upfrica.app-jetified-fragment-ktx-1.5.5-68 /Users/srikantorajbongshi/.gradle/caches/transforms-3/bda3f239b044c99c27bc683f3ebf8701/transformed/jetified-fragment-ktx-1.5.5/res
-com.app.upfrica.app-jetified-payments-ui-core-20.29.2-69 /Users/srikantorajbongshi/.gradle/caches/transforms-3/c79372a35e0743a48c96b527fa400a35/transformed/jetified-payments-ui-core-20.29.2/res
-com.app.upfrica.app-jetified-ui-1.4.3-70 /Users/srikantorajbongshi/.gradle/caches/transforms-3/c8c4ace5a82162679206452ee7a69608/transformed/jetified-ui-1.4.3/res
-com.app.upfrica.app-jetified-tracing-1.1.0-71 /Users/srikantorajbongshi/.gradle/caches/transforms-3/cbe5f1c83f5a2c5ce0737dee20bbdd1b/transformed/jetified-tracing-1.1.0/res
-com.app.upfrica.app-jetified-annotation-experimental-1.3.0-72 /Users/srikantorajbongshi/.gradle/caches/transforms-3/cf47ff6a7e1af6f0699b27c30f9cb671/transformed/jetified-annotation-experimental-1.3.0/res
-com.app.upfrica.app-jetified-ui-tooling-preview-1.4.3-73 /Users/srikantorajbongshi/.gradle/caches/transforms-3/d0b6691cc84db4c32446c72f41b1bd71/transformed/jetified-ui-tooling-preview-1.4.3/res
-com.app.upfrica.app-jetified-glide-4.12.0-74 /Users/srikantorajbongshi/.gradle/caches/transforms-3/d36ae0ede7080f8825438ce3c18a48c1/transformed/jetified-glide-4.12.0/res
-com.app.upfrica.app-jetified-play-services-basement-18.1.0-75 /Users/srikantorajbongshi/.gradle/caches/transforms-3/d907f746f04f215d6be91c8609ed7a91/transformed/jetified-play-services-basement-18.1.0/res
-com.app.upfrica.app-jetified-lifecycle-service-2.6.1-76 /Users/srikantorajbongshi/.gradle/caches/transforms-3/db79ece87f1a5653fe120332ca93d1a0/transformed/jetified-lifecycle-service-2.6.1/res
-com.app.upfrica.app-navigation-runtime-ktx-2.5.3-77 /Users/srikantorajbongshi/.gradle/caches/transforms-3/e1f7ebacb4764da9452cc6b4e2a760dc/transformed/navigation-runtime-ktx-2.5.3/res
-com.app.upfrica.app-jetified-lifecycle-viewmodel-compose-2.6.1-78 /Users/srikantorajbongshi/.gradle/caches/transforms-3/e4a175eeb67e4d1232c0d5453a24e7a1/transformed/jetified-lifecycle-viewmodel-compose-2.6.1/res
-com.app.upfrica.app-jetified-stripe-core-20.29.2-79 /Users/srikantorajbongshi/.gradle/caches/transforms-3/eb5942447e9884073db4015b3081b3c1/transformed/jetified-stripe-core-20.29.2/res
-com.app.upfrica.app-jetified-drawee-2.6.0-80 /Users/srikantorajbongshi/.gradle/caches/transforms-3/f207e6818cb03f8f52a7c04d20776d52/transformed/jetified-drawee-2.6.0/res
-com.app.upfrica.app-navigation-runtime-2.5.3-81 /Users/srikantorajbongshi/.gradle/caches/transforms-3/f5d3564073f62191284634beba4b9f3f/transformed/navigation-runtime-2.5.3/res
-com.app.upfrica.app-lifecycle-viewmodel-2.6.1-82 /Users/srikantorajbongshi/.gradle/caches/transforms-3/fd1b585bc8270b2a38748bdece39ab49/transformed/lifecycle-viewmodel-2.6.1/res
-com.app.upfrica.app-work-runtime-2.7.1-83 /Users/srikantorajbongshi/.gradle/caches/transforms-3/fd9dc4d0d85fd0495e580b582ff9a3c7/transformed/work-runtime-2.7.1/res
-com.app.upfrica.app-jetified-ui-graphics-1.4.3-84 /Users/srikantorajbongshi/.gradle/caches/transforms-3/fddbe2d2bc6ad5afb51d9cd40499f445/transformed/jetified-ui-graphics-1.4.3/res
-com.app.upfrica.app-lifecycle-livedata-2.6.1-85 /Users/srikantorajbongshi/.gradle/caches/transforms-3/fefea93bf27e7cbd22ed4cb4be783439/transformed/lifecycle-livedata-2.6.1/res
-com.app.upfrica.app-pngs-86 /Users/srikantorajbongshi/RN/Upfrica/android/app/build/generated/res/pngs/debug
-com.app.upfrica.app-resValues-87 /Users/srikantorajbongshi/RN/Upfrica/android/app/build/generated/res/resValues/debug
-com.app.upfrica.app-rs-88 /Users/srikantorajbongshi/RN/Upfrica/android/app/build/generated/res/rs/debug
-com.app.upfrica.app-mergeDebugResources-89 /Users/srikantorajbongshi/RN/Upfrica/android/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir
-com.app.upfrica.app-mergeDebugResources-90 /Users/srikantorajbongshi/RN/Upfrica/android/app/build/intermediates/incremental/debug/mergeDebugResources/stripped.dir
-com.app.upfrica.app-merged_res-91 /Users/srikantorajbongshi/RN/Upfrica/android/app/build/intermediates/merged_res/debug
-com.app.upfrica.app-debug-92 /Users/srikantorajbongshi/RN/Upfrica/android/app/src/debug/res
-com.app.upfrica.app-main-93 /Users/srikantorajbongshi/RN/Upfrica/android/app/src/main/res
-com.app.upfrica.app-packaged_res-94 /Users/srikantorajbongshi/RN/Upfrica/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/packaged_res/debug
-com.app.upfrica.app-packaged_res-95 /Users/srikantorajbongshi/RN/Upfrica/node_modules/@react-native-community/checkbox/android/build/intermediates/packaged_res/debug
-com.app.upfrica.app-packaged_res-96 /Users/srikantorajbongshi/RN/Upfrica/node_modules/@react-native-community/datetimepicker/android/build/intermediates/packaged_res/debug
-com.app.upfrica.app-packaged_res-97 /Users/srikantorajbongshi/RN/Upfrica/node_modules/@react-native-picker/picker/android/build/intermediates/packaged_res/debug
-com.app.upfrica.app-packaged_res-98 /Users/srikantorajbongshi/RN/Upfrica/node_modules/@stripe/stripe-react-native/android/build/intermediates/packaged_res/debug
-com.app.upfrica.app-packaged_res-99 /Users/srikantorajbongshi/RN/Upfrica/node_modules/react-native-drop-shadow/android/build/intermediates/packaged_res/debug
-com.app.upfrica.app-packaged_res-100 /Users/srikantorajbongshi/RN/Upfrica/node_modules/react-native-gesture-handler/android/build/intermediates/packaged_res/debug
-com.app.upfrica.app-packaged_res-101 /Users/srikantorajbongshi/RN/Upfrica/node_modules/react-native-image-picker/android/build/intermediates/packaged_res/debug
-com.app.upfrica.app-packaged_res-102 /Users/srikantorajbongshi/RN/Upfrica/node_modules/react-native-inappbrowser-reborn/android/build/intermediates/packaged_res/debug
-com.app.upfrica.app-packaged_res-103 /Users/srikantorajbongshi/RN/Upfrica/node_modules/react-native-linear-gradient/android/build/intermediates/packaged_res/debug
-com.app.upfrica.app-packaged_res-104 /Users/srikantorajbongshi/RN/Upfrica/node_modules/react-native-maps/android/build/intermediates/packaged_res/debug
-com.app.upfrica.app-packaged_res-105 /Users/srikantorajbongshi/RN/Upfrica/node_modules/react-native-pager-view/android/build/intermediates/packaged_res/debug
-com.app.upfrica.app-packaged_res-106 /Users/srikantorajbongshi/RN/Upfrica/node_modules/react-native-reanimated/android/build/intermediates/packaged_res/debug
-com.app.upfrica.app-packaged_res-107 /Users/srikantorajbongshi/RN/Upfrica/node_modules/react-native-safe-area-context/android/build/intermediates/packaged_res/debug
-com.app.upfrica.app-packaged_res-108 /Users/srikantorajbongshi/RN/Upfrica/node_modules/react-native-screens/android/build/intermediates/packaged_res/debug
-com.app.upfrica.app-packaged_res-109 /Users/srikantorajbongshi/RN/Upfrica/node_modules/react-native-snackbar/android/build/intermediates/packaged_res/debug
-com.app.upfrica.app-packaged_res-110 /Users/srikantorajbongshi/RN/Upfrica/node_modules/react-native-svg/android/build/intermediates/packaged_res/debug
-com.app.upfrica.app-packaged_res-111 /Users/srikantorajbongshi/RN/Upfrica/node_modules/react-native-vector-icons/android/build/intermediates/packaged_res/debug
-com.app.upfrica.app-packaged_res-112 /Users/srikantorajbongshi/RN/Upfrica/node_modules/react-native-webview/android/build/intermediates/packaged_res/debug
+com.app.upfrica.app-jetified-animation-1.4.0-0 /home/rakib/.gradle/caches/transforms-3/007ff5b43541149741f8a49a05ff146a/transformed/jetified-animation-1.4.0/res
+com.app.upfrica.app-jetified-link-20.29.2-1 /home/rakib/.gradle/caches/transforms-3/057ebfdb47d014f7781d3d0a8902e5a2/transformed/jetified-link-20.29.2/res
+com.app.upfrica.app-jetified-react-android-0.71.8-debug-2 /home/rakib/.gradle/caches/transforms-3/065ec53aec35c6822e50d60161b0331c/transformed/jetified-react-android-0.71.8-debug/res
+com.app.upfrica.app-jetified-ui-unit-1.4.3-3 /home/rakib/.gradle/caches/transforms-3/091eeaf0205c3c62fafe652753fcc9df/transformed/jetified-ui-unit-1.4.3/res
+com.app.upfrica.app-jetified-security-crypto-1.1.0-alpha05-4 /home/rakib/.gradle/caches/transforms-3/0a8621c9f338a1d221aba7647268f0b9/transformed/jetified-security-crypto-1.1.0-alpha05/res
+com.app.upfrica.app-jetified-stripe-ui-core-20.29.2-5 /home/rakib/.gradle/caches/transforms-3/0a8f9ed7d5dbdde033eaf48af6ad1940/transformed/jetified-stripe-ui-core-20.29.2/res
+com.app.upfrica.app-jetified-activity-ktx-1.7.2-6 /home/rakib/.gradle/caches/transforms-3/1068baf3ec8bbc0fc9b7b8916eb3032f/transformed/jetified-activity-ktx-1.7.2/res
+com.app.upfrica.app-recyclerview-1.2.1-7 /home/rakib/.gradle/caches/transforms-3/11bb7c61b361b601a55c05d42a1a8823/transformed/recyclerview-1.2.1/res
+com.app.upfrica.app-jetified-paymentsheet-20.29.2-8 /home/rakib/.gradle/caches/transforms-3/13e53d367064c93b0f1699c409f85ad0/transformed/jetified-paymentsheet-20.29.2/res
+com.app.upfrica.app-jetified-customview-poolingcontainer-1.0.0-9 /home/rakib/.gradle/caches/transforms-3/14afae8db4145619f66c8510501758a8/transformed/jetified-customview-poolingcontainer-1.0.0/res
+com.app.upfrica.app-jetified-payments-model-20.29.2-10 /home/rakib/.gradle/caches/transforms-3/16d63857dafe430af515f27f5d4d89d1/transformed/jetified-payments-model-20.29.2/res
+com.app.upfrica.app-jetified-activity-1.7.2-11 /home/rakib/.gradle/caches/transforms-3/18ab3ca2c99134fe765fa4ff49bf2827/transformed/jetified-activity-1.7.2/res
+com.app.upfrica.app-jetified-savedstate-1.2.1-12 /home/rakib/.gradle/caches/transforms-3/1d0bcafc0cb66b47774a81747ee3cdea/transformed/jetified-savedstate-1.2.1/res
+com.app.upfrica.app-appcompat-1.6.1-13 /home/rakib/.gradle/caches/transforms-3/1ebf47d3dd0e5a81935f335e067e5ab1/transformed/appcompat-1.6.1/res
+com.app.upfrica.app-drawerlayout-1.1.1-14 /home/rakib/.gradle/caches/transforms-3/1fb8749a9f1d1f20bb9969b1ae0f8e30/transformed/drawerlayout-1.1.1/res
+com.app.upfrica.app-jetified-lifecycle-viewmodel-ktx-2.6.1-15 /home/rakib/.gradle/caches/transforms-3/22084144741f8823cd038e7a6c5a2ed2/transformed/jetified-lifecycle-viewmodel-ktx-2.6.1/res
+com.app.upfrica.app-transition-1.2.0-16 /home/rakib/.gradle/caches/transforms-3/27f149f98e8a196934f0a0c01a838aff/transformed/transition-1.2.0/res
+com.app.upfrica.app-media-1.0.0-17 /home/rakib/.gradle/caches/transforms-3/28cb6e20fa03579911c48e52dd2adf64/transformed/media-1.0.0/res
+com.app.upfrica.app-jetified-play-services-wallet-19.2.0-18 /home/rakib/.gradle/caches/transforms-3/2f9cbbfa8a77a097650212debf27fffd/transformed/jetified-play-services-wallet-19.2.0/res
+com.app.upfrica.app-jetified-payments-core-20.29.2-19 /home/rakib/.gradle/caches/transforms-3/35a6336b7baed2749fa5ecaa987d97d9/transformed/jetified-payments-core-20.29.2/res
+com.app.upfrica.app-jetified-ui-util-1.4.3-20 /home/rakib/.gradle/caches/transforms-3/3a3bc916bc8f0b2260b80f03b0b3197e/transformed/jetified-ui-util-1.4.3/res
+com.app.upfrica.app-jetified-lifecycle-livedata-core-ktx-2.6.1-21 /home/rakib/.gradle/caches/transforms-3/3b0080f2abb507c11ab484c5df06bf68/transformed/jetified-lifecycle-livedata-core-ktx-2.6.1/res
+com.app.upfrica.app-jetified-material-1.4.3-22 /home/rakib/.gradle/caches/transforms-3/3b85de5409cf47f5d58d3f93bb529db7/transformed/jetified-material-1.4.3/res
+com.app.upfrica.app-jetified-profileinstaller-1.3.0-23 /home/rakib/.gradle/caches/transforms-3/3f77bce1e92d339a15ec489a7ca00ff2/transformed/jetified-profileinstaller-1.3.0/res
+com.app.upfrica.app-coordinatorlayout-1.2.0-24 /home/rakib/.gradle/caches/transforms-3/406d929e20c23da27f998fdee54ae835/transformed/coordinatorlayout-1.2.0/res
+com.app.upfrica.app-jetified-activity-compose-1.7.2-25 /home/rakib/.gradle/caches/transforms-3/41fa5e8d5ebd28d1d383785690b026fc/transformed/jetified-activity-compose-1.7.2/res
+com.app.upfrica.app-jetified-play-services-base-18.2.0-26 /home/rakib/.gradle/caches/transforms-3/4565451810fe46382ba7dd69845cbf3c/transformed/jetified-play-services-base-18.2.0/res
+com.app.upfrica.app-jetified-runtime-saveable-1.4.3-27 /home/rakib/.gradle/caches/transforms-3/4a9f54e591b31ea9561d5c3eb8199af2/transformed/jetified-runtime-saveable-1.4.3/res
+com.app.upfrica.app-jetified-ui-viewbinding-1.4.3-28 /home/rakib/.gradle/caches/transforms-3/4b9066c9657fe5191d3397a5e9decd04/transformed/jetified-ui-viewbinding-1.4.3/res
+com.app.upfrica.app-jetified-viewpager2-1.0.0-29 /home/rakib/.gradle/caches/transforms-3/4c9158d8e99590720e6250d25b3c2568/transformed/jetified-viewpager2-1.0.0/res
+com.app.upfrica.app-jetified-ui-text-1.4.3-30 /home/rakib/.gradle/caches/transforms-3/4e9d676f85c7f494ba1949461fd8510b/transformed/jetified-ui-text-1.4.3/res
+com.app.upfrica.app-core-1.9.0-31 /home/rakib/.gradle/caches/transforms-3/559d20c2360c0b466f043196b5e9f81d/transformed/core-1.9.0/res
+com.app.upfrica.app-jetified-stripe-3ds2-android-6.1.7-32 /home/rakib/.gradle/caches/transforms-3/5ba3801dd24b38f85a46bc64a082b0e3/transformed/jetified-stripe-3ds2-android-6.1.7/res
+com.app.upfrica.app-jetified-appcompat-resources-1.6.1-33 /home/rakib/.gradle/caches/transforms-3/5c13c32454e1c2bc0b953fcca3620f03/transformed/jetified-appcompat-resources-1.6.1/res
+com.app.upfrica.app-jetified-runtime-livedata-1.4.3-34 /home/rakib/.gradle/caches/transforms-3/5dfa7e52da0b4d67e9e587e78b3df7eb/transformed/jetified-runtime-livedata-1.4.3/res
+com.app.upfrica.app-jetified-savedstate-ktx-1.2.1-35 /home/rakib/.gradle/caches/transforms-3/656f29c2efedd749807ae3a1ee9f18d3/transformed/jetified-savedstate-ktx-1.2.1/res
+com.app.upfrica.app-core-runtime-2.2.0-36 /home/rakib/.gradle/caches/transforms-3/67d409b2581c7bde48ce0c7a606fa007/transformed/core-runtime-2.2.0/res
+com.app.upfrica.app-jetified-flipper-0.125.0-37 /home/rakib/.gradle/caches/transforms-3/7791fe77b8ab9730d0e25ce55c6aa090/transformed/jetified-flipper-0.125.0/res
+com.app.upfrica.app-jetified-financial-connections-20.29.2-38 /home/rakib/.gradle/caches/transforms-3/794a944da27277ee6864b0aeba47d052/transformed/jetified-financial-connections-20.29.2/res
+com.app.upfrica.app-cardview-1.0.0-39 /home/rakib/.gradle/caches/transforms-3/7ac1297a65d7e60cab9847fc28b2b130/transformed/cardview-1.0.0/res
+com.app.upfrica.app-jetified-lifecycle-process-2.6.1-40 /home/rakib/.gradle/caches/transforms-3/7b0cffc2621151ec9a68fd8e27f3fca4/transformed/jetified-lifecycle-process-2.6.1/res
+com.app.upfrica.app-jetified-play-services-maps-18.2.0-41 /home/rakib/.gradle/caches/transforms-3/7eff580d6dc24d1308cfc2e86492fe64/transformed/jetified-play-services-maps-18.2.0/res
+com.app.upfrica.app-jetified-android-maps-utils-3.8.2-42 /home/rakib/.gradle/caches/transforms-3/82ac9b070673308d52c58a0fd3106e5f/transformed/jetified-android-maps-utils-3.8.2/res
+com.app.upfrica.app-lifecycle-livedata-core-2.6.1-43 /home/rakib/.gradle/caches/transforms-3/88c0ceb23ae6d738c537bfa652183d0a/transformed/lifecycle-livedata-core-2.6.1/res
+com.app.upfrica.app-navigation-common-ktx-2.5.3-44 /home/rakib/.gradle/caches/transforms-3/896ad4f65a09d51f50a16dec41769f3f/transformed/navigation-common-ktx-2.5.3/res
+com.app.upfrica.app-jetified-autofill-1.1.0-45 /home/rakib/.gradle/caches/transforms-3/8a384341752d328d6389029a8be9e815/transformed/jetified-autofill-1.1.0/res
+com.app.upfrica.app-jetified-navigation-compose-2.5.3-46 /home/rakib/.gradle/caches/transforms-3/90f1f994ad84bd759d1cf874d3ede13d/transformed/jetified-navigation-compose-2.5.3/res
+com.app.upfrica.app-jetified-material-icons-core-1.4.3-47 /home/rakib/.gradle/caches/transforms-3/9838ea6e94b88b90aa9d1fd6f2e5f3c4/transformed/jetified-material-icons-core-1.4.3/res
+com.app.upfrica.app-jetified-emoji2-views-helper-1.3.0-48 /home/rakib/.gradle/caches/transforms-3/983d5b34b99e16cf4bba0beb62cfbf90/transformed/jetified-emoji2-views-helper-1.3.0/res
+com.app.upfrica.app-jetified-material-ripple-1.4.3-49 /home/rakib/.gradle/caches/transforms-3/9c9aa9389cf2fc5b4f8374aaaa8551f9/transformed/jetified-material-ripple-1.4.3/res
+com.app.upfrica.app-browser-1.5.0-50 /home/rakib/.gradle/caches/transforms-3/9ccb3f8235bf3df2f63e28f976342894/transformed/browser-1.5.0/res
+com.app.upfrica.app-jetified-ui-geometry-1.4.3-51 /home/rakib/.gradle/caches/transforms-3/9e4c7ca01f8714d6102ab58a294d4fa4/transformed/jetified-ui-geometry-1.4.3/res
+com.app.upfrica.app-swiperefreshlayout-1.1.0-52 /home/rakib/.gradle/caches/transforms-3/9f3f2c3188f38327ba24fabea0cd84f7/transformed/swiperefreshlayout-1.1.0/res
+com.app.upfrica.app-lifecycle-runtime-2.6.1-53 /home/rakib/.gradle/caches/transforms-3/a3facd931739086fe204aaa52c9a043b/transformed/lifecycle-runtime-2.6.1/res
+com.app.upfrica.app-jetified-emoji2-1.3.0-54 /home/rakib/.gradle/caches/transforms-3/a47f469aa0ea642ca72aa7466ed434cc/transformed/jetified-emoji2-1.3.0/res
+com.app.upfrica.app-jetified-startup-runtime-1.1.1-55 /home/rakib/.gradle/caches/transforms-3/a4c840c160268a1ca6a325e3c4345dc9/transformed/jetified-startup-runtime-1.1.1/res
+com.app.upfrica.app-jetified-foundation-1.4.3-56 /home/rakib/.gradle/caches/transforms-3/a55db8dccc1bf0856323d95cac277d17/transformed/jetified-foundation-1.4.3/res
+com.app.upfrica.app-jetified-runtime-1.4.3-57 /home/rakib/.gradle/caches/transforms-3/a7185864142ad7ff54f01dad7846ef40/transformed/jetified-runtime-1.4.3/res
+com.app.upfrica.app-jetified-lifecycle-livedata-ktx-2.6.1-58 /home/rakib/.gradle/caches/transforms-3/a795d9283f0e9ebe855faf783b978d3a/transformed/jetified-lifecycle-livedata-ktx-2.6.1/res
+com.app.upfrica.app-constraintlayout-2.1.4-59 /home/rakib/.gradle/caches/transforms-3/a9d092006cca51774bf83ff42f1c27ac/transformed/constraintlayout-2.1.4/res
+com.app.upfrica.app-jetified-foundation-layout-1.4.3-60 /home/rakib/.gradle/caches/transforms-3/aff306b6a6aa042b5b808675754764f3/transformed/jetified-foundation-layout-1.4.3/res
+com.app.upfrica.app-jetified-lifecycle-viewmodel-savedstate-2.6.1-61 /home/rakib/.gradle/caches/transforms-3/b4230bbb173cb94d5f30e58c810272dd/transformed/jetified-lifecycle-viewmodel-savedstate-2.6.1/res
+com.app.upfrica.app-jetified-lifecycle-runtime-ktx-2.6.1-62 /home/rakib/.gradle/caches/transforms-3/b438e84c850fe76d8144b255138a3ef3/transformed/jetified-lifecycle-runtime-ktx-2.6.1/res
+com.app.upfrica.app-jetified-core-ktx-1.9.0-63 /home/rakib/.gradle/caches/transforms-3/b5f1973cef353c523a488d373817cf76/transformed/jetified-core-ktx-1.9.0/res
+com.app.upfrica.app-jetified-animation-core-1.4.0-64 /home/rakib/.gradle/caches/transforms-3/b78c2317da9ca7d6fabc58e71a311cc5/transformed/jetified-animation-core-1.4.0/res
+com.app.upfrica.app-navigation-common-2.5.3-65 /home/rakib/.gradle/caches/transforms-3/ba8f1745ce3bd7f19867755813e7a259/transformed/navigation-common-2.5.3/res
+com.app.upfrica.app-fragment-1.5.5-66 /home/rakib/.gradle/caches/transforms-3/bbee42d8420db9ee239f9fbf2a5178f4/transformed/fragment-1.5.5/res
+com.app.upfrica.app-material-1.9.0-67 /home/rakib/.gradle/caches/transforms-3/bc984b4c216b046fb814ced4c0f10e24/transformed/material-1.9.0/res
+com.app.upfrica.app-jetified-fragment-ktx-1.5.5-68 /home/rakib/.gradle/caches/transforms-3/bda3f239b044c99c27bc683f3ebf8701/transformed/jetified-fragment-ktx-1.5.5/res
+com.app.upfrica.app-jetified-payments-ui-core-20.29.2-69 /home/rakib/.gradle/caches/transforms-3/c79372a35e0743a48c96b527fa400a35/transformed/jetified-payments-ui-core-20.29.2/res
+com.app.upfrica.app-jetified-ui-1.4.3-70 /home/rakib/.gradle/caches/transforms-3/c8c4ace5a82162679206452ee7a69608/transformed/jetified-ui-1.4.3/res
+com.app.upfrica.app-jetified-tracing-1.1.0-71 /home/rakib/.gradle/caches/transforms-3/cbe5f1c83f5a2c5ce0737dee20bbdd1b/transformed/jetified-tracing-1.1.0/res
+com.app.upfrica.app-jetified-annotation-experimental-1.3.0-72 /home/rakib/.gradle/caches/transforms-3/cf47ff6a7e1af6f0699b27c30f9cb671/transformed/jetified-annotation-experimental-1.3.0/res
+com.app.upfrica.app-jetified-ui-tooling-preview-1.4.3-73 /home/rakib/.gradle/caches/transforms-3/d0b6691cc84db4c32446c72f41b1bd71/transformed/jetified-ui-tooling-preview-1.4.3/res
+com.app.upfrica.app-jetified-glide-4.12.0-74 /home/rakib/.gradle/caches/transforms-3/d36ae0ede7080f8825438ce3c18a48c1/transformed/jetified-glide-4.12.0/res
+com.app.upfrica.app-jetified-play-services-basement-18.1.0-75 /home/rakib/.gradle/caches/transforms-3/d907f746f04f215d6be91c8609ed7a91/transformed/jetified-play-services-basement-18.1.0/res
+com.app.upfrica.app-jetified-lifecycle-service-2.6.1-76 /home/rakib/.gradle/caches/transforms-3/db79ece87f1a5653fe120332ca93d1a0/transformed/jetified-lifecycle-service-2.6.1/res
+com.app.upfrica.app-navigation-runtime-ktx-2.5.3-77 /home/rakib/.gradle/caches/transforms-3/e1f7ebacb4764da9452cc6b4e2a760dc/transformed/navigation-runtime-ktx-2.5.3/res
+com.app.upfrica.app-jetified-lifecycle-viewmodel-compose-2.6.1-78 /home/rakib/.gradle/caches/transforms-3/e4a175eeb67e4d1232c0d5453a24e7a1/transformed/jetified-lifecycle-viewmodel-compose-2.6.1/res
+com.app.upfrica.app-jetified-stripe-core-20.29.2-79 /home/rakib/.gradle/caches/transforms-3/eb5942447e9884073db4015b3081b3c1/transformed/jetified-stripe-core-20.29.2/res
+com.app.upfrica.app-jetified-drawee-2.6.0-80 /home/rakib/.gradle/caches/transforms-3/f207e6818cb03f8f52a7c04d20776d52/transformed/jetified-drawee-2.6.0/res
+com.app.upfrica.app-navigation-runtime-2.5.3-81 /home/rakib/.gradle/caches/transforms-3/f5d3564073f62191284634beba4b9f3f/transformed/navigation-runtime-2.5.3/res
+com.app.upfrica.app-lifecycle-viewmodel-2.6.1-82 /home/rakib/.gradle/caches/transforms-3/fd1b585bc8270b2a38748bdece39ab49/transformed/lifecycle-viewmodel-2.6.1/res
+com.app.upfrica.app-work-runtime-2.7.1-83 /home/rakib/.gradle/caches/transforms-3/fd9dc4d0d85fd0495e580b582ff9a3c7/transformed/work-runtime-2.7.1/res
+com.app.upfrica.app-jetified-ui-graphics-1.4.3-84 /home/rakib/.gradle/caches/transforms-3/fddbe2d2bc6ad5afb51d9cd40499f445/transformed/jetified-ui-graphics-1.4.3/res
+com.app.upfrica.app-lifecycle-livedata-2.6.1-85 /home/rakib/.gradle/caches/transforms-3/fefea93bf27e7cbd22ed4cb4be783439/transformed/lifecycle-livedata-2.6.1/res
+com.app.upfrica.app-pngs-86 /home/rakib/RN/Upfrica Clone from Git march 03/Upfrica/android/app/build/generated/res/pngs/debug
+com.app.upfrica.app-resValues-87 /home/rakib/RN/Upfrica Clone from Git march 03/Upfrica/android/app/build/generated/res/resValues/debug
+com.app.upfrica.app-rs-88 /home/rakib/RN/Upfrica Clone from Git march 03/Upfrica/android/app/build/generated/res/rs/debug
+com.app.upfrica.app-mergeDebugResources-89 /home/rakib/RN/Upfrica Clone from Git march 03/Upfrica/android/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir
+com.app.upfrica.app-mergeDebugResources-90 /home/rakib/RN/Upfrica Clone from Git march 03/Upfrica/android/app/build/intermediates/incremental/debug/mergeDebugResources/stripped.dir
+com.app.upfrica.app-merged_res-91 /home/rakib/RN/Upfrica Clone from Git march 03/Upfrica/android/app/build/intermediates/merged_res/debug
+com.app.upfrica.app-debug-92 /home/rakib/RN/Upfrica Clone from Git march 03/Upfrica/android/app/src/debug/res
+com.app.upfrica.app-main-93 /home/rakib/RN/Upfrica Clone from Git march 03/Upfrica/android/app/src/main/res
+com.app.upfrica.app-packaged_res-94 /home/rakib/RN/Upfrica Clone from Git march 03/Upfrica/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/packaged_res/debug
+com.app.upfrica.app-packaged_res-95 /home/rakib/RN/Upfrica Clone from Git march 03/Upfrica/node_modules/@react-native-community/checkbox/android/build/intermediates/packaged_res/debug
+com.app.upfrica.app-packaged_res-96 /home/rakib/RN/Upfrica Clone from Git march 03/Upfrica/node_modules/@react-native-community/datetimepicker/android/build/intermediates/packaged_res/debug
+com.app.upfrica.app-packaged_res-97 /home/rakib/RN/Upfrica Clone from Git march 03/Upfrica/node_modules/@react-native-picker/picker/android/build/intermediates/packaged_res/debug
+com.app.upfrica.app-packaged_res-98 /home/rakib/RN/Upfrica Clone from Git march 03/Upfrica/node_modules/@stripe/stripe-react-native/android/build/intermediates/packaged_res/debug
+com.app.upfrica.app-packaged_res-99 /home/rakib/RN/Upfrica Clone from Git march 03/Upfrica/node_modules/react-native-drop-shadow/android/build/intermediates/packaged_res/debug
+com.app.upfrica.app-packaged_res-100 /home/rakib/RN/Upfrica Clone from Git march 03/Upfrica/node_modules/react-native-gesture-handler/android/build/intermediates/packaged_res/debug
+com.app.upfrica.app-packaged_res-101 /home/rakib/RN/Upfrica Clone from Git march 03/Upfrica/node_modules/react-native-image-picker/android/build/intermediates/packaged_res/debug
+com.app.upfrica.app-packaged_res-102 /home/rakib/RN/Upfrica Clone from Git march 03/Upfrica/node_modules/react-native-inappbrowser-reborn/android/build/intermediates/packaged_res/debug
+com.app.upfrica.app-packaged_res-103 /home/rakib/RN/Upfrica Clone from Git march 03/Upfrica/node_modules/react-native-linear-gradient/android/build/intermediates/packaged_res/debug
+com.app.upfrica.app-packaged_res-104 /home/rakib/RN/Upfrica Clone from Git march 03/Upfrica/node_modules/react-native-maps/android/build/intermediates/packaged_res/debug
+com.app.upfrica.app-packaged_res-105 /home/rakib/RN/Upfrica Clone from Git march 03/Upfrica/node_modules/react-native-pager-view/android/build/intermediates/packaged_res/debug
+com.app.upfrica.app-packaged_res-106 /home/rakib/RN/Upfrica Clone from Git march 03/Upfrica/node_modules/react-native-reanimated/android/build/intermediates/packaged_res/debug
+com.app.upfrica.app-packaged_res-107 /home/rakib/RN/Upfrica Clone from Git march 03/Upfrica/node_modules/react-native-safe-area-context/android/build/intermediates/packaged_res/debug
+com.app.upfrica.app-packaged_res-108 /home/rakib/RN/Upfrica Clone from Git march 03/Upfrica/node_modules/react-native-screens/android/build/intermediates/packaged_res/debug
+com.app.upfrica.app-packaged_res-109 /home/rakib/RN/Upfrica Clone from Git march 03/Upfrica/node_modules/react-native-snackbar/android/build/intermediates/packaged_res/debug
+com.app.upfrica.app-packaged_res-110 /home/rakib/RN/Upfrica Clone from Git march 03/Upfrica/node_modules/react-native-svg/android/build/intermediates/packaged_res/debug
+com.app.upfrica.app-packaged_res-111 /home/rakib/RN/Upfrica Clone from Git march 03/Upfrica/node_modules/react-native-vector-icons/android/build/intermediates/packaged_res/debug
+com.app.upfrica.app-packaged_res-112 /home/rakib/RN/Upfrica Clone from Git march 03/Upfrica/node_modules/react-native-webview/android/build/intermediates/packaged_res/debug
