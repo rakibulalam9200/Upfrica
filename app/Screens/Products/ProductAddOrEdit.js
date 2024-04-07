@@ -41,14 +41,14 @@ const ProductAddorEdit = ({ navigation, route }) => {
   const [postAgeFee, setPostAgeFee] = useState(0);
   const [sndPostAgeFee, setSndPostAgeFee] = useState(0);
   const [selctedCategoryId, setSelectCategoryId] = useState(-1);
-  const [productImages,setProductImages] = []
+  const [productImages,setProductImages] = useState([])
 
   let fetchedProductData = () => {
     if (id) {
       fetch(`${apiUrl}/products/${id}`)
         .then((response) => response.json())
         .then((data) => {
-          console.log("single product.......", data?.category_id);
+          // console.log("single product.......", data?.category_id);
           if (data?.title) {
             setTitle(data?.title);
           }
@@ -80,7 +80,7 @@ const ProductAddorEdit = ({ navigation, route }) => {
             setCurrency(data?.price?.currency_iso);
           }
           if(data?.product_images){
-
+            setProductImages(data?.product_images)
           }
         })
         .catch((error) => {
