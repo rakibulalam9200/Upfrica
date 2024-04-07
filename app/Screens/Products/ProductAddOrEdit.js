@@ -43,7 +43,7 @@ const ProductAddorEdit = ({ navigation, route }) => {
     { label: "GHS", value: "GHS" },
     { label: "EURO", value: "EURO" },
   ]);
-  const [currency, setCurrency] = useState("");
+  const [currency, setCurrency] = useState("USD");
   const [postAgeFee, setPostAgeFee] = useState(0);
   const [sndPostAgeFee, setSndPostAgeFee] = useState(0);
   const [selctedCategoryId, setSelectCategoryId] = useState(-1);
@@ -199,7 +199,34 @@ const ProductAddorEdit = ({ navigation, route }) => {
   };
 
   const saveOrEditProduct = async () => {
-    console.log(categoryId, "category ID");
+    if (title === "") {
+      Alert.alert("Product Title is Required.");
+      return;
+    }
+    if (slug === "") {
+      Alert.alert("Product Slug is Required.");
+      return;
+    }
+
+    if (!categoryId || +categoryId < 0) {
+      Alert.alert("Please, Select Category");
+      return;
+    }
+
+    if (productQuantity <= 0) {
+      Alert.alert("Minimum quantiy required one");
+      return;
+    }
+    console.log(price, salesPrice, "price sales price");
+
+    if (price < 0) {
+      Alert.alert("Please, Enter valid price.");
+      return;
+    }
+    if (salesPrice < 0) {
+      Alert.alert("Please, Enter valid sales price.");
+      return;
+    }
 
     let product = {
       title: title,
@@ -236,7 +263,9 @@ const ProductAddorEdit = ({ navigation, route }) => {
           navigation.navigate("Seller", { refetch: Math.random() });
         }
       } catch (error) {
-        Alert.alert(error?.response?.data?.error);
+        if (error?.response?.data?.errors?.slug[0]) {
+          Alert.alert("Slug already taken, Try different one.");
+        }
         console.log(error?.response?.data, "errror...");
       } finally {
         setIsLoading(false);
@@ -252,8 +281,11 @@ const ProductAddorEdit = ({ navigation, route }) => {
           navigation.navigate("Seller", { refetch: Math.random() });
         }
       } catch (error) {
-        Alert.alert(error?.response?.data?.error);
-        console.log(error?.response?.data, "errror...");
+        if (error?.response?.data?.errors?.slug[0]) {
+          Alert.alert("Slug already taken, Try different one.");
+        }
+
+        console.log(error?.response?.data?.errors?.slug[0], "errror...");
       } finally {
         setIsLoading(false);
       }
@@ -399,7 +431,7 @@ const ProductAddorEdit = ({ navigation, route }) => {
                 borderRadius: 5,
               },
             ]}
-            value={productQuantity}
+            value={productQuantity.toString()}
             onChangeText={(text) => setProductQuantity(text)}
             //   onFocus={() => setisFocused(true)}
             //   onBlur={() => setisFocused(false)}
@@ -422,7 +454,7 @@ const ProductAddorEdit = ({ navigation, route }) => {
                 borderRadius: 5,
               },
             ]}
-            value={price}
+            value={price.toString()}
             onChangeText={(text) => setPrice(text)}
             //   onFocus={() => setisFocused(true)}
             //   onBlur={() => setisFocused(false)}
@@ -445,7 +477,7 @@ const ProductAddorEdit = ({ navigation, route }) => {
                 borderRadius: 5,
               },
             ]}
-            value={salesPrice}
+            value={salesPrice.toString()}
             onChangeText={(text) => setSalesPrice(text)}
             //   onFocus={() => setisFocused(true)}
             //   onBlur={() => setisFocused(false)}
@@ -468,7 +500,7 @@ const ProductAddorEdit = ({ navigation, route }) => {
                 borderRadius: 5,
               },
             ]}
-            value={postAgeFee}
+            value={postAgeFee.toString()}
             onChangeText={(text) => setPostAgeFee(text)}
             //   onFocus={() => setisFocused(true)}
             //   onBlur={() => setisFocused(false)}
@@ -491,7 +523,7 @@ const ProductAddorEdit = ({ navigation, route }) => {
                 borderRadius: 5,
               },
             ]}
-            value={sndPostAgeFee}
+            value={sndPostAgeFee.toString()}
             onChangeText={(text) => setSndPostAgeFee(text)}
             //   onFocus={() => setisFocused(true)}
             //   onBlur={() => setisFocused(false)}
