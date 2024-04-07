@@ -45,10 +45,10 @@ const OrdersList = () => {
           },
         })
         .then((response) => {
-          // console.log('response.......',response)
+          //  console.log('response.......',response)
           if (response?.status === 200) {
             console.log("data response......0 index", response.data[0]);
-            setOrders(response?.data);
+            setOrders(response?.data?.orders);
             setDataLoader(false);
           }
         })
