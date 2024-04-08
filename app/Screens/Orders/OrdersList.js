@@ -7,9 +7,9 @@ import {
   SafeAreaView,
   StyleSheet,
   View,
+  Image,
 } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
-// import { COLORS, FONTS } from '../constants/theme';
 import { baseURL } from "@env";
 import axios from "axios";
 import { Text } from "react-native";
@@ -32,7 +32,7 @@ const OrdersList = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const orderInfo = useRef(null);
 
-  useEffect(() => {}, [currency]);
+  useEffect(() => { }, [currency]);
 
   const getOrders = () => {
     try {
@@ -94,34 +94,16 @@ const OrdersList = () => {
     fetch(`${baseURL}/order_cancellation_requests`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
-        console.log(result,'result.................')
+        console.log(result, 'result.................')
         if (result) {
 
-          console.log(result,'result..........')
+          console.log(result, 'result..........')
           setRefresh((pre) => !pre);
           setIsModalVisible(false);
-         
-       }
+
+        }
       })
       .catch((error) => console.log("error", error));
-
-      // try {
-      //   axios
-      //   .delete(`${baseURL}/orders/${orderInfo?.current?.id}`, {
-      //     headers: {
-      //       Authorization: `Bearer ${token}`,
-      //     },
-      //   })
-      //   .then((response) => {
-      //     console.log("response.......", response);
-      //     setRefresh((pre) => !pre);
-      //     setIsModalVisible(false);
-      //   });
-      // } catch (error) {
-        
-      // }finally{
-
-      // }
   };
 
   useEffect(() => {
@@ -165,7 +147,9 @@ const OrdersList = () => {
                 marginBottom: 4,
               }}
             >
-              {order?.buyer?.first_name + " " + order?.buyer?.last_name}
+              {/* {order?.buyer?.first_name + " " + order?.buyer?.last_name} */}
+              {`Order Id: ${order?.id}`}
+
             </Text>
             <Pressable
               onPress={() => {
@@ -181,36 +165,38 @@ const OrdersList = () => {
             </Pressable>
           </View>
         </View>
-        <Text
-          numberOfLines={1}
-          style={{
-            ...FONTS.font,
-            ...FONTS.h6,
-            color: colors.secondary,
-            marginBottom: 4,
-          }}
-        >
-          {`Order Id: ${order?.id}`}
-        </Text>
-        <Text
-          numberOfLines={1}
-          style={{
-            ...FONTS.font,
-            ...FONTS.h6,
-            color: colors.secondary,
-            marginBottom: 4,
-          }}
-        >
-          {`Product Quantity: ${order?.order_quantity}`}
-        </Text>
-        <View
-          activeOpacity={0.9}
-          //   onPress={onPress}
-          style={{
-            flexDirection: "row",
-          }}
-        >
-          <View
+        <View style={{ flexDirection: 'row' }}>
+          <View style={{ flex: 7 }}>
+            <Text
+              numberOfLines={1}
+              style={{
+                ...FONTS.font,
+                ...FONTS.h6,
+                color: colors.secondary,
+                marginBottom: 4,
+              }}>
+              Name: {order?.cart_items?.[0]?.product?.description?.name}
+
+            </Text>
+            <Text
+              numberOfLines={1}
+              style={{
+                ...FONTS.font,
+                ...FONTS.h6,
+                color: colors.secondary,
+                marginBottom: 4,
+              }}
+            >
+              {`Quantity: ${order?.order_quantity}`}
+            </Text>
+            <View
+              activeOpacity={0.9}
+              //   onPress={onPress}
+              style={{
+                flexDirection: "row",
+              }}
+            >
+              {/* <View
             style={{
               flex: 1,
               flexDirection: "row",
@@ -228,66 +214,69 @@ const OrdersList = () => {
             >
               {order?.buyer?.email}
             </Text>
-          </View>
-        </View>
-        <Text
-          numberOfLines={1}
-          style={{
-            ...FONTS.font,
-            ...FONTS.fontRegular,
-            color: colors.secondary,
-            marginBottom: 4,
-          }}
-        >
-          {`Address:  ${order?.address?.address_data?.address_line_1}, ${order?.address?.address_data?.postcode}, ${order?.address?.address_data?.town}, ${order?.address?.address_data?.country}`}
-        </Text>
-        <Text
-          numberOfLines={1}
-          style={{
-            ...FONTS.font,
-            ...FONTS.fontRegular,
-            color: colors.secondary,
-            marginBottom: 4,
-          }}
-        >
-          {`Mobile no. ${order?.address?.address_data?.phone_number}`}
-        </Text>
-        <View
-          activeOpacity={0.9}
-          //   onPress={onPress}
-          style={{
-            flexDirection: "row",
-          }}
-        >
-          <View
-            style={{
-              flex: 1,
-              flexDirection: "row",
-              justifyContent: "space-between",
-            }}
-          >
+          </View> */}
+            </View>
             <Text
               numberOfLines={1}
               style={{
                 ...FONTS.font,
-                ...FONTS.h6,
+                ...FONTS.fontRegular,
                 color: colors.secondary,
                 marginBottom: 4,
               }}
             >
-              {`Total: ${order?.total_fee?.cents} ${order?.buyer?.currency}`}
+              {/* {`Address:  ${order?.address?.address_data?.address_line_1}, ${order?.address?.address_data?.postcode}, ${order?.address?.address_data?.town}, ${order?.address?.address_data?.country}`} */}
+              {order?.cart_items?.[0]?.product?.description?.body}
+
             </Text>
-            <Text
-              numberOfLines={1}
-              style={{
-                ...FONTS.font,
-                ...FONTS.h6,
-                color: colors.primary,
-                marginBottom: 4,
-              }}
+
+            <View
+              activeOpacity={0.9}
+            //   onPress={onPress}
+            // style={{
+            //   flexDirection: "row",
+            // }}
             >
-              {`Status: ${order?.status}`}
-            </Text>
+              {/* <View
+                style={{
+                  flex: 1,
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                }}
+              > */}
+              <Text
+                numberOfLines={1}
+                style={{
+                  ...FONTS.font,
+                  ...FONTS.h6,
+                  color: colors.secondary,
+                  marginBottom: 4,
+                }}
+              >
+                {`Total: ${(order?.cart_items?.[0]?.product?.price?.cents) / 100} ${order?.buyer?.currency}`}
+              </Text>
+              <Text
+                numberOfLines={1}
+                style={{
+                  ...FONTS.font,
+                  ...FONTS.h6,
+                  color: colors.primary,
+                  marginBottom: 4,
+                }}
+              >
+                {`Status: ${order?.status}`}
+              </Text>
+              {/* </View> */}
+            </View>
+          </View>
+          <View style={{ flex: 4, padding: 5 }}>
+            <Image
+              source={{ uri: order?.cart_items?.[0]?.product?.product_images[0] }}
+              style={{
+                width: 120,
+                height: 120,
+              }}
+            />
           </View>
         </View>
       </View>

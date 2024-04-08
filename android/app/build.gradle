@@ -98,8 +98,8 @@ android {
         applicationId "com.app.upfrica"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 17
-        versionName "1.16"
+        versionCode 19
+        versionName "1.18"
     }
 
     splits {

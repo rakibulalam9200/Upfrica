@@ -1,6 +1,6 @@
 {
   "name": "upfrica",
-  "version": "0.0.3",
+  "version": "1.18",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
