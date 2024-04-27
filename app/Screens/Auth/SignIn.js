@@ -33,10 +33,10 @@ const SignIn = (props) => {
 
   const [isLoading, setIsLoading] = useState(false);
   // sign in module
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  // const [email, setEmail] = useState("srikantorajbongshi139@gmail.com");
-  // const [password, setPassword] = useState("@srikanto12345");
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("srikantorajbongshi139@gmail.com");
+  const [password, setPassword] = useState("@srikanto12345");
   // const [email, setEmail] = useState("rakibul9200+1@gmail.com");
   // const [password, setPassword] = useState("rakibul@123#");
 

@@ -202,7 +202,13 @@ const Seller = ({ navigation, route }) => {
             return (
               <View
                 key={index}
-                style={[GlobalStyleSheet.col50, { marginBottom: 15 }]}
+                style={[
+                  GlobalStyleSheet.col50,
+                  {
+                    marginBottom: 6,
+                    height: 300,
+                  },
+                ]}
               >
                 <SellerProductCard
                   onPress={() => navigation.navigate("ProductDetail", { data })}

@@ -81,6 +81,8 @@ const SellerProductCard = ({
         styles.productCard,
         {
           backgroundColor: colors.card,
+          marginVertical: 6,
+          flex: 1,
         },
       ]}
     >
@@ -102,8 +104,9 @@ const SellerProductCard = ({
         <Image
           source={{ uri: image }}
           style={{
-            width: 100,
-            height: 100,
+            width: "100%",
+            height: 180,
+            resizeMode: "stretch",
           }}
         />
         <View
@@ -144,29 +147,32 @@ const SellerProductCard = ({
                         color={isLike ? "#F9427B" : COLORS.text}
                         name={isLike ? "heart" : "heart-o"}
                     /> */}
+        </TouchableOpacity>
+      </View>
+      <View style={{}}>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            padding:6,
+          }}
+        >
+          <Text
+            style={{
+              ...FONTS.fontSm,
+              color: colors.text,
+              marginBottom: 5,
+            }}
+          >
+            {category}
+          </Text>
           <Text style={{ ...FONTS.h6, color: COLORS.upfricaTitle }}>
             {currency.value}
             {price}
           </Text>
-        </TouchableOpacity>
-      </View>
-      <View
-        style={{
-          paddingHorizontal: 10,
-          paddingVertical: 10,
-        }}
-      >
+        </View>
         <Text
-          style={{
-            ...FONTS.fontSm,
-            color: colors.text,
-            marginBottom: 5,
-          }}
-        >
-          {category}
-        </Text>
-        <Text
-          numberOfLines={2}
+          numberOfLines={1}
           style={{
             ...FONTS.h6,
             ...FONTS.fontTitle,

@@ -420,7 +420,7 @@ const Home = ({ navigation }) => {
                 {tradingProducts.map((data, index) => {
                   return (
                     <ProductBox
-                      containerStyle={{ marginRight: 16, width: 150, flex: 1 }}
+                      containerStyle={{ marginRight: 16, width: 150,height:280, flex: 1 }}
                       key={index}
                       onPress={() =>
                         navigation.navigate("ProductDetail", { data })
@@ -498,8 +498,7 @@ const Home = ({ navigation }) => {
                       GlobalStyleSheet.col50,
                       {
                         marginBottom: 15,
-                        height: 240,
-                        
+                        height: 280, 
                       },
                     ]}
                   >

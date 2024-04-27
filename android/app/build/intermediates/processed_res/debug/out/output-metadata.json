@@ -11,8 +11,8 @@
       "type": "UNIVERSAL",
       "filters": [],
       "attributes": [],
-      "versionCode": 17,
-      "versionName": "1.16",
+      "versionCode": 21,
+      "versionName": "1.20",
       "outputFile": "resources-universalDebug.ap_"
     },
     {
@@ -24,8 +24,8 @@
         }
       ],
       "attributes": [],
-      "versionCode": 17004,
-      "versionName": "1.16",
+      "versionCode": 21004,
+      "versionName": "1.20",
       "outputFile": "resources-x86_64Debug.ap_"
     },
     {
@@ -37,8 +37,8 @@
         }
       ],
       "attributes": [],
-      "versionCode": 17002,
-      "versionName": "1.16",
+      "versionCode": 21002,
+      "versionName": "1.20",
       "outputFile": "resources-x86Debug.ap_"
     },
     {
@@ -50,8 +50,8 @@
         }
       ],
       "attributes": [],
-      "versionCode": 17001,
-      "versionName": "1.16",
+      "versionCode": 21001,
+      "versionName": "1.20",
       "outputFile": "resources-armeabi-v7aDebug.ap_"
     },
     {
@@ -63,8 +63,8 @@
         }
       ],
       "attributes": [],
-      "versionCode": 17003,
-      "versionName": "1.16",
+      "versionCode": 21003,
+      "versionName": "1.20",
       "outputFile": "resources-arm64-v8aDebug.ap_"
     }
   ],

@@ -44,13 +44,14 @@ const ProductCard = ({
         containerStyle,
       ]}
     >
-      <View style={{flex:1}}>
+      <View style={{  }}>
         <View>
           <Image
             source={{ uri: image }}
             style={{
-              width: 120,
-              height: 120,
+              width: '100%',
+              height: 180,
+              resizeMode:'stretch'
             }}
           />
           <View
@@ -99,15 +100,17 @@ const ProductCard = ({
             paddingVertical: 10,
           }}
         >
-          <Text
-            style={{
-              ...FONTS.fontSm,
-              color: colors.text,
-              marginBottom: 5,
-            }}
-          >
-            {category}
-          </Text>
+          {category && (
+            <Text
+              style={{
+                ...FONTS.fontSm,
+                color: colors.text,
+                marginBottom: 5,
+              }}
+            >
+              {category}
+            </Text>
+          )}
           <Text
             numberOfLines={2}
             style={{
