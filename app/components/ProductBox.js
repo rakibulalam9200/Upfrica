@@ -25,6 +25,7 @@ const ProductBox = ({
   containerStyle,
 }) => {
   const currency = useSelector((state) => state.currency.currency);
+  const { token, user } = useSelector((state) => state.user);
   const { colors } = useTheme();
   const navigation = useNavigation();
   let dispatch = useDispatch();
@@ -40,12 +41,12 @@ const ProductBox = ({
       ]}
     >
       <View style={{ flex: 1 }}>
-        <View style={{ marginBottom: 10}}>
+        <View style={{ marginBottom: 10 }}>
           <Image
             style={{
               width: "100%",
               height: 180,
-              resizeMode:'stretch'
+              resizeMode: "stretch",
             }}
             source={{ uri: image }}
           />
@@ -122,7 +123,7 @@ const ProductBox = ({
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "space-between",
-          marginTop:8,
+          marginTop: 8,
           marginBottom: 8,
         }}
       >
@@ -144,17 +145,21 @@ const ProductBox = ({
               secondary_postage: secondary_postage_fee?.cents / 100,
               type: type,
             };
-            dispatch(addToCart(tempData));
-            navigation.navigate("DirectBuy", {
-              id: id,
-              image: image,
-              title: title,
-              price: price,
-              isLike: isLike,
-              type: description?.body,
-              postage: postage_fee?.cents / 100,
-              secondary_postage: secondary_postage_fee?.cents / 100,
-            });
+            if (token) {
+              dispatch(addToCart(tempData));
+              navigation.navigate("DirectBuy", {
+                id: id,
+                image: image,
+                title: title,
+                price: price,
+                isLike: isLike,
+                type: description?.body,
+                postage: postage_fee?.cents / 100,
+                secondary_postage: secondary_postage_fee?.cents / 100,
+              });
+            } else {
+              navigation.navigate("SignIn");
+            }
           }}
           style={{
             backgroundColor: COLORS.upfricaTitle,

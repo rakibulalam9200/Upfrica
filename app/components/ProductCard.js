@@ -24,6 +24,7 @@ const ProductCard = ({
   containerStyle,
 }) => {
   const currency = useSelector((state) => state.currency.currency);
+  const { token, user } = useSelector((state) => state.user);
   const navigation = useNavigation();
   const product = {};
   const { colors } = useTheme();
@@ -44,14 +45,14 @@ const ProductCard = ({
         containerStyle,
       ]}
     >
-      <View style={{  }}>
+      <View style={{}}>
         <View>
           <Image
             source={{ uri: image }}
             style={{
-              width: '100%',
+              width: "100%",
               height: 180,
-              resizeMode:'stretch'
+              resizeMode: "stretch",
             }}
           />
           <View
@@ -159,17 +160,21 @@ const ProductCard = ({
               secondary_postage: secondary_postage_fee?.cents / 100,
               type: type,
             };
-            dispatch(addToCart(tempData));
-            navigation.navigate("DirectBuy", {
-              id: id,
-              image: image,
-              title: title,
-              price: price,
-              isLike: isLike,
-              type: description?.body,
-              postage: postage_fee?.cents / 100,
-              secondary_postage: secondary_postage_fee?.cents / 100,
-            });
+            if (token) {
+              dispatch(addToCart(tempData));
+              navigation.navigate("DirectBuy", {
+                id: id,
+                image: image,
+                title: title,
+                price: price,
+                isLike: isLike,
+                type: description?.body,
+                postage: postage_fee?.cents / 100,
+                secondary_postage: secondary_postage_fee?.cents / 100,
+              });
+            } else {
+              navigation.navigate("SignIn");
+            }
           }}
           style={{
             backgroundColor: COLORS.upfricaTitle,

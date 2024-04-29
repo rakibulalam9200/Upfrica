@@ -11,48 +11,9 @@
       "type": "UNIVERSAL",
       "filters": [],
       "attributes": [],
-      "versionCode": 21,
-      "versionName": "1.20",
+      "versionCode": 22,
+      "versionName": "1.21",
       "outputFile": "app-universal-debug.apk"
-    },
-    {
-      "type": "ONE_OF_MANY",
-      "filters": [
-        {
-          "filterType": "ABI",
-          "value": "x86_64"
-        }
-      ],
-      "attributes": [],
-      "versionCode": 21004,
-      "versionName": "1.20",
-      "outputFile": "app-x86_64-debug.apk"
-    },
-    {
-      "type": "ONE_OF_MANY",
-      "filters": [
-        {
-          "filterType": "ABI",
-          "value": "x86"
-        }
-      ],
-      "attributes": [],
-      "versionCode": 21002,
-      "versionName": "1.20",
-      "outputFile": "app-x86-debug.apk"
-    },
-    {
-      "type": "ONE_OF_MANY",
-      "filters": [
-        {
-          "filterType": "ABI",
-          "value": "armeabi-v7a"
-        }
-      ],
-      "attributes": [],
-      "versionCode": 21001,
-      "versionName": "1.20",
-      "outputFile": "app-armeabi-v7a-debug.apk"
     },
     {
       "type": "ONE_OF_MANY",
@@ -63,9 +24,48 @@
         }
       ],
       "attributes": [],
-      "versionCode": 21003,
-      "versionName": "1.20",
+      "versionCode": 22003,
+      "versionName": "1.21",
       "outputFile": "app-arm64-v8a-debug.apk"
+    },
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "x86_64"
+        }
+      ],
+      "attributes": [],
+      "versionCode": 22004,
+      "versionName": "1.21",
+      "outputFile": "app-x86_64-debug.apk"
+    },
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "armeabi-v7a"
+        }
+      ],
+      "attributes": [],
+      "versionCode": 22001,
+      "versionName": "1.21",
+      "outputFile": "app-armeabi-v7a-debug.apk"
+    },
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "x86"
+        }
+      ],
+      "attributes": [],
+      "versionCode": 22002,
+      "versionName": "1.21",
+      "outputFile": "app-x86-debug.apk"
     }
   ],
   "elementType": "File"
