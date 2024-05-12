@@ -98,10 +98,9 @@ android {
         applicationId "com.app.upfrica"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 22
-        versionName "1.21"
+        versionCode 23
+        versionName "1.22"
     }
-
     splits {
         abi {
             reset()
